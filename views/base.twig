@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} - DoYouBuzz API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/dyb-api.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+  
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">DoYouBuzz API</a>
+          {#          
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+          #}
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Overwiew</li>
+              <li{% if template == '.' %} class="active"{% endif %}><a href="/">Welcome</a></li>
+              <li{% if template == 'overview/summary' %} class="active"{% endif %}><a href="/overview/summary">Summary</a></li>
+              <li{% if template == 'baselist' %} class="active"{% endif %}><a href="/baselist">Baselist</a></li>
+              
+              <li class="nav-header">Authentication</li>
+              <li{% if template == 'authentication/oauth' %} class="active"{% endif %}><a href="/authentication/oauth">Application (oAuth)</a></li>
+              <li{% if template == 'authentication/global' %} class="active"{% endif %}><a href="#">Global</a></li>
+              <li{% if template == 'authentication/partner' %} class="active"{% endif %}><a href="/authentication/partner">Partner</a></li>
+              <li class="nav-header">Application API</li>
+              <li{% if template == 'app/user' %} class="active"{% endif %}><a href="/app/user">User</a></li>
+              <li{% if template == 'app/cv' %} class="active"{% endif %}><a href="/app/cv">CV</a></li>
+              <li{% if template == 'app/employment-preferences' %} class="active"{% endif %}><a href="/app/employment-preferences">Employment preferences</a></li>              
+              <li{% if template == 'app/search' %} class="active"{% endif %}><a href="/app/search">Search</a></li>
+              <li class="nav-header">Partner API</li>
+              <li{% if template == 'partner/user' %} class="active"{% endif %}><a href="/partner/user">User</a></li>
+              <li{% if template == 'partner/employment' %} class="active"{% endif %}><a href="/partner/employment">Employment preferences</a></li>
+              <li{% if template == 'partner/cv' %} class="active"{% endif %}><a href="/partner/cv">CV</a></li>
+              <li{% if template == 'partner/partner' %} class="active"{% endif %}><a href="/partner/partner">Partner</a></li>
+              <li{% if template == 'partner/groups' %} class="active"{% endif %}><a href="/partner/groups">Partner groups</a></li>
+              <li{% if template == 'partner/partner-group-users' %} class="active"{% endif %}><a href="/partner/partner-group-users">Partner group users</a></li>
+              <li{% if template == 'partner/partner-last-update' %} class="active"{% endif %}><a href="/partner/partner-last-update">Partner last update</a></li>
+              <li{% if template == 'partner/member-by-external-id' %} class="active"{% endif %}><a href="/partner/member-by-external-id">Member by external id</a></li>
+              <li{% if template == 'partner/search' %} class="active"{% endif %}><a href="/partner/search">Search</a></li>
+              <li class="nav-header">Search API</li>
+              <li{% if template == 'search/search' %} class="active"{% endif %}><a href="/search/search">Search</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+        
+            
+          {% block content %}
+          
+          {% endblock %}
+          
+
+          
+          
+			
+          		
+          
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; DoYouBuzz 2012</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+    <script src="../assets/js/dyb-api.js"></script>
+    
+    
+    <link type="text/css" rel="stylesheet" href="../assets/js/dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css"></link>
+	<script language="javascript" src="../assets/js/dp.SyntaxHighlighter/Scripts/shCore.js"></script>
+	<script language="javascript" src="../assets/js/dp.SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+	<script language="javascript" src="../assets/js/dp.SyntaxHighlighter/Scripts/shBrushJScript.js"></script>
+	<script language="javascript" src="../assets/js/dp.SyntaxHighlighter/Scripts/shBrushPhp.js"></script>
+	<script language="javascript">
+	dp.SyntaxHighlighter.ClipboardSwf = '/flash/clipboard.swf';
+	dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+
+
+  </body>
+</html>

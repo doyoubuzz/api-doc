@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block title %} Employment preferences {% endblock %}
+{% block content %}
+
+
+
+<h1>Employment preferences</h1>
+
+<p>These information describe the employment preferences of the user, such as his location preferences, his wished salary, his main industry, etc.</p>
+
+<h2>Access</h2>
+<span class="label label-info">GET</span> <code> http://api.doyoubuzz.com/employmentpreferences</code>
+
+<p>&nbsp;</p>
+
+{% include 'common/employment.twig' %}
+		
+{% endblock %}
+

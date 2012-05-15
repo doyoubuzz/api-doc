@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block title %} Search {% endblock %}
+{% block content %}
+
+<h1>Search</h1>
+<p>Search CV by keywords and filters</p>
+
+<p><span class="label label-warning">Note</span> The search will apply on the users who have authorized your application.</p>
+
+<h2>Access</h2>
+<span class="label label-info">POST</span> <code> http://api.doyoubuzz.com/search/?apiKey=:apiKey</code>
+
+<p>&nbsp;</p>
+
+{% include 'common/search.twig' %}		
+
+{% endblock %}
+

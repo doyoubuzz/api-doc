@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block title %} User {% endblock %}
+{% block content %}
+
+
+<h1>User</h1>
+
+<p>Return a user's basic informations.</p>
+
+<h2>Access</h2>
+<span class="label label-info">GET</span> <code> http://api.doyoubuzz.com/user</code>
+
+<p>&nbsp;</p>
+
+{% include 'common/user.twig' %}	
+		
+{% endblock %}
+

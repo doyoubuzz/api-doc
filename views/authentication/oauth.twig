@@ -1,0 +1,196 @@
+{% extends "base.twig" %}
+
+{%  block title %}oAuth authentication{% endblock %}
+
+{% block content %}
+
+<h1>oAuth authentication</h1>
+<br>
+
+<div class="alert alert-danger">This page describes the full oAuth 1.0 process. If you want to keep it simple, you should rely on a client library: a full list is available on <a href="http://oauth.net/code/">the oAuth site</a>.</div>
+
+<p>DoYouBuzz User API uses oAuth 1.0 protocol for authentication and authorization. For more information on oAuth you can refer to the <a href="http://oauth.net/documentation/getting-started">official documentation</a>.</p>
+<h2>Summary</h2>
+<p>Before you can access a user's data, you must do the following :</p>
+
+<ul>
+	<li>Obtain a request token (using <a href="#requestToken">RequestToken</a>)</li>
+	<li>Authorize the request token (using <a href="#authorizeToken">AuthorizeToken</a>)</li>
+	<li>Exchange the authorized request token for an access token (using <a href="#getAccessToken">GetAccessToken</a>)</li>
+</ul>
+
+<a name="requestToken"></a>
+<h2>RequestToken (obtain a request token)</h2>
+
+<h3>Send the request</h3>
+
+<p><span class="label label-info">GET</span> <code> http://www.doyoubuzz.com/fr/oauth/requestToken</code></p>
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Parameter (all required)</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>oauth_consumer_key</td>
+		<td>The API key of your application, given by DoYouBuzz</td>
+	</tr>
+	<tr>
+		<td>oauth_signature_method</td>
+		<td>Signature algorithm. The legal values for this parameter "RSA-SHA1" or "HMAC-SHA1".</td>
+	</tr>
+	<tr>
+		<td>oauth_timestamp</td>
+		<td> Integer representing the time the request is sent. The timestamp should be expressed in number of seconds after January 1, 1970 00:00:00 GMT.</td>
+	</tr>
+	<tr>
+		<td>oauth_nonce</td>
+		<td>Random 64-bit, unsigned number encoded as an ASCII string in decimal format. The nonce/timestamp pair should always be unique to prevent replay attacks.</td>
+	</tr>	
+	<tr>
+		<td>oauth_callback</td>
+		<td>URL the user should be redirected to after the access is granted (in response to a call to AuthorizeToken). The callback URL can include url-encoded query parameters.</td>
+	</tr>
+	<tr>
+		<td>oauth_signature</td>
+		<td>String generated using the referenced signature method. See <a href="http://oauth.net/core/1.0a/#signing_process">Signing requests</a>.
+	</td>	
+</table>
+
+<h3>Get the tokens</h3>
+<p>If the request for a request token is successfull, DoYouBuzz responds with a <span class="label label-info">GET</span> <code>200 OK</code> message containing <code>oauth_token</code> and <code>oauth_token_secret</code>.
+
+<p><strong>Sample response:</strong></p>
+<p><code>oauth_token=ac3cd9j512ks73he4g&oauth_token_secret=YXacbXBsZS6jb21</code></p>
+
+<a name="#authorizeToken"></a>
+<h2>authorizeToken (ask the user for his authorization)</h2>
+
+
+<p><span class="label label-info">GET</span> <code>http://www.doyoubuzz.com/fr/oauth/authorize</code>
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Parameter</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>oauth_token</td>
+		<td>Request token obtained from DoYouBuzz with <a href="#requestToken">requestToken</a> </td>
+	</tr>
+	<tr>
+		<td>oauth_callback</td>
+		<td>The same value you sent to DoYouBuzz with <a href="#requestToken">requestToken</a> </td>
+	</tr>
+</table>
+
+<p>The user will be redirected on DoYouBuzz.com and prompted to authorize your application.</p>
+
+<a class="btn btn-primary" data-toggle="modal" href="#myModal" >See the authorization screen</a>
+
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <button class="close" data-dismiss="modal">×</button>
+    <h3>Authorization screen</h3>
+    <p class="alert alert-info">The authorization page is reponsive: it will be automatically adapted for small screens.</p>
+  </div>
+  <div class="modal-body">
+    <p><img src="/assets/img/authorize-screen.png"></p>
+
+
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>
+
+<a name="#getAccessToken"></a>
+<h2>getAccessToken (get the access token)</h2>
+
+<p>When the user has authorized your application, he is redirected to your callback url with the following parameters : <code>oauth_token</code> and <code>oauth_verifier</code>
+
+<p>On your callback page, you need to contact one last time DoYouBuzz to exchange an authorize token for an access token</p>
+
+<p><span class="label label-info">GET</span> <code>http://www.doyoubuzz.com/fr/oauth/accessToken</code> with the following parameters</p>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Parameter (all required)</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>oauth_verifier</td>
+		<td>Token obtained from DoYouBuzz with <a htef="#getAccessToken"></a></td>		
+	</tr>
+	<tr>
+		<td>oauth_consumer_key</td>
+		<td>The API key of your application, given by DoYouBuzz</td>
+	<tr>
+		<td>oauth_signature_method</td>
+		<td>Signature algorithm. The legal values for this parameter "RSA-SHA1" or "HMAC-SHA1".</td>
+	</tr>
+	<tr>
+		<td>oauth_nonce</td>
+		<td>Random 64-bit, unsigned number encoded as an ASCII string in decimal format. The nonce/timestamp pair should always be unique to prevent replay attacks.</td>
+	</tr>
+	<tr>
+		<td>oauth_timestamp</td>
+		<td>Integer representing the time the request is sent. The timestamp should be expressed in number of seconds after January 1, 1970 00:00:00 GMT.</td>
+	</tr>	
+	<tr>
+		<td>oauth_version</td>
+		<td>Use "1.0"</td>
+	</tr>
+	<tr>
+		<td>oauth_signature</td>
+		<td>String generated using the referenced signature method. See <a href="http://oauth.net/core/1.0a/#signing_process">Signing requests</a>.
+	</td>	
+</table> 
+
+<p>If the request for an access token is successfull, DoYouBuzz responds with a <span class="label label-info">GET</span> <code>200 OK</code> message containing <code>oauth_token</code> and <code>oauth_token_secret</code>.
+
+<p>You will need these values to access the protected ressources. The oauth_token is different from the previous one returned by DoYouBuzz. This one will allow you to access the protected ressources (and can be saved in your database for later use).</p>
+
+<a name="protectedRessources"></a>
+<h2>Access protected ressources</h2>
+
+<p>
+	<span class="label label-info">GET</span> <code> http://api.doyoubuzz.com/&lt;ENDPOINT&gt;</code>	
+</p>
+
+<p>(replace ENDPOINT with one of the ENDPOINTS of the USER API)</p>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Parameter (all required)</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>oauth_consumer_key</td>
+		<td>The API key of your application, given by DoYouBuzz</td>
+	</tr>
+	<tr>
+		<td>oauth_token</td>
+		<td>Request token obtained from DoYouBuzz with <a href="#getAccessToken">getAccessToken</a> </td>
+	</tr>		
+	<tr>
+		<td>oauth_signature_method</td>
+		<td>Signature algorithm. The legal values for this parameter "RSA-SHA1" or "HMAC-SHA1".</td>
+	</tr>
+	<tr>
+		<td>oauth_timestamp</td>
+		<td> Integer representing the time the request is sent. The timestamp should be expressed in number of seconds after January 1, 1970 00:00:00 GMT.</td>
+	</tr>
+	<tr>
+		<td>oauth_nonce</td>
+		<td>Random 64-bit, unsigned number encoded as an ASCII string in decimal format. The nonce/timestamp pair should always be unique to prevent replay attacks.</td>
+	</tr>	
+	<tr>
+		<td>oauth_signature</td>
+		<td>String generated using the referenced signature method. See <a href="http://oauth.net/core/1.0a/#signing_process">Signing requests</a>.
+	</td>	
+</table>
+
+		
+	
+	
+
+{% endblock %}

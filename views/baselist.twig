@@ -1,0 +1,7091 @@
+{% extends "base.twig" %}
+
+{% block title %} Baselist {% endblock %}
+{% block content %}
+
+
+
+<h1>Base list</h1>
+
+<p>The base list return a list of the different datas used on DoYouBuzz.</p>
+
+<h2>Access</h2>
+<span class="label label-info">GET</span> <code> http://api.doyoubuzz.com/baselist</code>
+
+<p>&nbsp;</p>
+
+<h2>Datas</h2>
+
+<p>&nbsp;</p>
+<table class="table .table-bordered .table-striped">	
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>contractType</td>
+		<td>List of contracts</td>
+	</tr>
+	<tr>
+		<td>positions</td>
+		<td>List if positions, organized in two levels</td>
+	</tr>
+	<tr>
+		<td>businness</td>
+		<td>List of industries, organized in two levels</td>
+	</tr>
+	<tr>
+		<td>businessTrip</td>
+		<td>List of business trips frequencies</td>		
+	</tr>
+	<tr>
+		<td>educationLevel</td>
+		<td>List of education levels</td>
+	</tr>		
+	<tr>
+		<td>hoursNumber</td>
+		<td>List of part-time / fill-time hours</td>
+	</tr>	
+	<tr>
+		<td>grossSalary</td>
+		<td>List of salary ranges</td>
+	</tr>
+	<tr>
+		<td>nationality</td>
+		<td>List of nationalities</td>
+	</tr>
+	<tr>
+		<td>seniority</td>
+		<td>List of seniorty ranges</td>
+	</tr>
+	
+</table>
+
+
+<p>&nbsp;</p>
+
+
+
+{% set xml %}
+
+
+<?xml version="1.0"?>
+<response>
+ <base>
+  <title>contractType</title>
+  <elements>
+   <element>
+    <id>1</id>
+    <title>CDI</title>
+   </element>
+   <element>
+    <id>2</id>
+    <title>CDD / IntÃ©rim</title>
+   </element>
+   <element>
+    <id>3</id>
+    <title>Mission Freelance</title>
+   </element>
+   <element>
+    <id>4</id>
+    <title>Stage</title>
+   </element>
+   <element>
+    <id>7</id>
+    <title>Apprentissage</title>
+   </element>
+   <element>
+    <id>8</id>
+    <title>Alternance</title>
+   </element>
+   <element>
+    <id>9</id>
+    <title>VIE</title>
+   </element>
+  </elements>
+ </base>
+ <base>
+  <title>positions</title>
+  <elements>
+   <title>Achat / Vente</title>
+   <elements>
+    <element>
+     <id>201</id>
+     <title>Acheteur</title>
+    </element>
+    <element>
+     <id>202</id>
+     <title>Commercial</title>
+    </element>
+    <element>
+     <id>203</id>
+     <title>Analyste pricing</title>
+    </element>
+    <element>
+     <id>204</id>
+     <title>ChargÃ© de relations clientÃ¨le</title>
+    </element>
+    <element>
+     <id>205</id>
+     <title>Chef de secteur</title>
+    </element>
+    <element>
+     <id>206</id>
+     <title>Commercial terrain, VRP</title>
+    </element>
+    <element>
+     <id>207</id>
+     <title>Conseiller commercial</title>
+    </element>
+    <element>
+     <id>222</id>
+     <title>Directeur Commercial</title>
+    </element>
+    <element>
+     <id>208</id>
+     <title>Directeur des achats</title>
+    </element>
+    <element>
+     <id>209</id>
+     <title>Directeur des ventes</title>
+    </element>
+    <element>
+     <id>210</id>
+     <title>EmployÃ© aux achats</title>
+    </element>
+    <element>
+     <id>211</id>
+     <title>IngÃ©nieur dâ€™affaires</title>
+    </element>
+    <element>
+     <id>212</id>
+     <title>Responsable achats</title>
+    </element>
+    <element>
+     <id>213</id>
+     <title>Responsable clientÃ¨le</title>
+    </element>
+    <element>
+     <id>214</id>
+     <title>Responsable de comptes client</title>
+    </element>
+    <element>
+     <id>215</id>
+     <title>Responsable de point de vente</title>
+    </element>
+    <element>
+     <id>216</id>
+     <title>Responsable dâ€™Ã©quipe de vente</title>
+    </element>
+    <element>
+     <id>217</id>
+     <title>Technico-commercial</title>
+    </element>
+    <element>
+     <id>218</id>
+     <title>TÃ©lÃ©vendeur</title>
+    </element>
+    <element>
+     <id>219</id>
+     <title>Vendeur</title>
+    </element>
+    <element>
+     <id>220</id>
+     <title>Vendeur Ã  domicile</title>
+    </element>
+    <element>
+     <id>299</id>
+     <title>Autre mÃ©tier Achat / Vente</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Agriculture / PÃªche / Environnement</title>
+   <elements>
+    <element>
+     <id>301</id>
+     <title>Agent dâ€™assainissement</title>
+    </element>
+    <element>
+     <id>302</id>
+     <title>Agent dâ€™entretien des espaces naturels</title>
+    </element>
+    <element>
+     <id>303</id>
+     <title>Agent dâ€™Ã©puration</title>
+    </element>
+    <element>
+     <id>305</id>
+     <title>Agriculteur</title>
+    </element>
+    <element>
+     <id>306</id>
+     <title>Animateur nature</title>
+    </element>
+    <element>
+     <id>307</id>
+     <title>Aquaculteur</title>
+    </element>
+    <element>
+     <id>308</id>
+     <title>Arboriculteur</title>
+    </element>
+    <element>
+     <id>309</id>
+     <title>BÃ»cheron</title>
+    </element>
+    <element>
+     <id>310</id>
+     <title>Chef de culture</title>
+    </element>
+    <element>
+     <id>311</id>
+     <title>Collecteur de dÃ©chets</title>
+    </element>
+    <element>
+     <id>313</id>
+     <title>EmployÃ© de dÃ©chetterie</title>
+    </element>
+    <element>
+     <id>314</id>
+     <title>Horticulteur</title>
+    </element>
+    <element>
+     <id>315</id>
+     <title>Jardinier</title>
+    </element>
+    <element>
+     <id>316</id>
+     <title>Marin pÃªcheur</title>
+    </element>
+    <element>
+     <id>317</id>
+     <title>OstrÃ©iculteur</title>
+    </element>
+    <element>
+     <id>318</id>
+     <title>Ouvrier agricole</title>
+    </element>
+    <element>
+     <id>319</id>
+     <title>Paysagiste</title>
+    </element>
+    <element>
+     <id>320</id>
+     <title>PÃ©piniÃ©riste</title>
+    </element>
+    <element>
+     <id>321</id>
+     <title>Responsable environnement</title>
+    </element>
+    <element>
+     <id>322</id>
+     <title>Technicien agricole</title>
+    </element>
+    <element>
+     <id>323</id>
+     <title>Technicien des Ã©nergies renouvelables</title>
+    </element>
+    <element>
+     <id>324</id>
+     <title>VÃ©tÃ©rinaire</title>
+    </element>
+    <element>
+     <id>325</id>
+     <title>Vigneron</title>
+    </element>
+    <element>
+     <id>399</id>
+     <title>Autre mÃ©tier Agriculture / PÃªche / Environnement</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Artisanat</title>
+   <elements>
+    <element>
+     <id>401</id>
+     <title>Carrossier</title>
+    </element>
+    <element>
+     <id>402</id>
+     <title>Chaudronnier</title>
+    </element>
+    <element>
+     <id>403</id>
+     <title>Cordonnier</title>
+    </element>
+    <element>
+     <id>404</id>
+     <title>Couturier</title>
+    </element>
+    <element>
+     <id>405</id>
+     <title>Ferronier</title>
+    </element>
+    <element>
+     <id>406</id>
+     <title>Frigoriste</title>
+    </element>
+    <element>
+     <id>407</id>
+     <title>Joallier</title>
+    </element>
+    <element>
+     <id>408</id>
+     <title>MÃ©canicien</title>
+    </element>
+    <element>
+     <id>409</id>
+     <title>Miroitier</title>
+    </element>
+    <element>
+     <id>410</id>
+     <title>Poseur de papier peint</title>
+    </element>
+    <element>
+     <id>411</id>
+     <title>Poseur dâ€™affiches</title>
+    </element>
+    <element>
+     <id>418</id>
+     <title>Serrurier</title>
+    </element>
+    <element>
+     <id>412</id>
+     <title>Tailleur</title>
+    </element>
+    <element>
+     <id>413</id>
+     <title>Tapissier</title>
+    </element>
+    <element>
+     <id>414</id>
+     <title>Teinturier</title>
+    </element>
+    <element>
+     <id>415</id>
+     <title>TÃ´lier</title>
+    </element>
+    <element>
+     <id>416</id>
+     <title>Tourneur-fraiseur</title>
+    </element>
+    <element>
+     <id>499</id>
+     <title>Autre mÃ©tier Artisanat</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Commerce / Distribution</title>
+   <elements>
+    <element>
+     <id>501</id>
+     <title>Agent immobilier</title>
+    </element>
+    <element>
+     <id>502</id>
+     <title>Antiquaire</title>
+    </element>
+    <element>
+     <id>503</id>
+     <title>Boucher</title>
+    </element>
+    <element>
+     <id>504</id>
+     <title>Boucher - charcutier</title>
+    </element>
+    <element>
+     <id>505</id>
+     <title>Boulanger</title>
+    </element>
+    <element>
+     <id>506</id>
+     <title>Caissier</title>
+    </element>
+    <element>
+     <id>507</id>
+     <title>Caviste</title>
+    </element>
+    <element>
+     <id>508</id>
+     <title>Chef de magasin</title>
+    </element>
+    <element>
+     <id>509</id>
+     <title>Chef de rayon</title>
+    </element>
+    <element>
+     <id>510</id>
+     <title>Chocolatier</title>
+    </element>
+    <element>
+     <id>512</id>
+     <title>Disquaire</title>
+    </element>
+    <element>
+     <id>513</id>
+     <title>EmployÃ© de grande surface</title>
+    </element>
+    <element>
+     <id>515</id>
+     <title>EmployÃ© de poste</title>
+    </element>
+    <element>
+     <id>516</id>
+     <title>Fleuriste</title>
+    </element>
+    <element>
+     <id>517</id>
+     <title>Garagiste</title>
+    </element>
+    <element>
+     <id>518</id>
+     <title>Grossiste</title>
+    </element>
+    <element>
+     <id>519</id>
+     <title>Libraire</title>
+    </element>
+    <element>
+     <id>520</id>
+     <title>Loueur de voitures</title>
+    </element>
+    <element>
+     <id>521</id>
+     <title>MaraÃ®cher</title>
+    </element>
+    <element>
+     <id>523</id>
+     <title>PÃ¢tissier</title>
+    </element>
+    <element>
+     <id>524</id>
+     <title>Poissonnier</title>
+    </element>
+    <element>
+     <id>525</id>
+     <title>Pompiste</title>
+    </element>
+    <element>
+     <id>526</id>
+     <title>Quincaillier</title>
+    </element>
+    <element>
+     <id>527</id>
+     <title>Responsable dâ€™agence immobiliÃ¨re</title>
+    </element>
+    <element>
+     <id>599</id>
+     <title>Autre mÃ©tier Commerce / Distribution</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>ComptabilitÃ© / Finance / Assurance</title>
+   <elements>
+    <element>
+     <id>623</id>
+     <title>Actuaire</title>
+    </element>
+    <element>
+     <id>601</id>
+     <title>Agent de change</title>
+    </element>
+    <element>
+     <id>602</id>
+     <title>Analyste financier</title>
+    </element>
+    <element>
+     <id>625</id>
+     <title>Conseiller fiscal</title>
+    </element>
+    <element>
+     <id>604</id>
+     <title>Auditeur</title>
+    </element>
+    <element>
+     <id>606</id>
+     <title>Commissaire aux comptes</title>
+    </element>
+    <element>
+     <id>607</id>
+     <title>Comptable</title>
+    </element>
+    <element>
+     <id>608</id>
+     <title>Conseiller financier</title>
+    </element>
+    <element>
+     <id>609</id>
+     <title>ContrÃ´leur de gestion</title>
+    </element>
+    <element>
+     <id>610</id>
+     <title>Courtier</title>
+    </element>
+    <element>
+     <id>611</id>
+     <title>Directeur administratif et financier</title>
+    </element>
+    <element>
+     <id>612</id>
+     <title>Directeur financier</title>
+    </element>
+    <element>
+     <id>613</id>
+     <title>EmployÃ© de comptabilitÃ©</title>
+    </element>
+    <element>
+     <id>614</id>
+     <title>EmployÃ© financier</title>
+    </element>
+    <element>
+     <id>615</id>
+     <title>Expert-comptable</title>
+    </element>
+    <element>
+     <id>626</id>
+     <title>Fiscaliste</title>
+    </element>
+    <element>
+     <id>624</id>
+     <title>Gestionnaire de paie</title>
+    </element>
+    <element>
+     <id>616</id>
+     <title>Gestionnaire de patrimoine</title>
+    </element>
+    <element>
+     <id>617</id>
+     <title>Gestionnaire de portefeuille</title>
+    </element>
+    <element>
+     <id>618</id>
+     <title>RÃ©dacteur assurances</title>
+    </element>
+    <element>
+     <id>619</id>
+     <title>SecrÃ©taire comptable</title>
+    </element>
+    <element>
+     <id>620</id>
+     <title>Trader</title>
+    </element>
+    <element>
+     <id>621</id>
+     <title>Chef comptable</title>
+    </element>
+    <element>
+     <id>699</id>
+     <title>Autre mÃ©tier ComptabilitÃ© / Finance / Assurance</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Construction / BTP / IngÃ©nierie</title>
+   <elements>
+    <element>
+     <id>701</id>
+     <title>Architecte</title>
+    </element>
+    <element>
+     <id>702</id>
+     <title>Charpentier</title>
+    </element>
+    <element>
+     <id>703</id>
+     <title>Chef de chantier</title>
+    </element>
+    <element>
+     <id>704</id>
+     <title>Conducteur de chantier</title>
+    </element>
+    <element>
+     <id>705</id>
+     <title>Conducteur dâ€™engins</title>
+    </element>
+    <element>
+     <id>706</id>
+     <title>Couvreur - zingueur</title>
+    </element>
+    <element>
+     <id>707</id>
+     <title>Dessinateur-projeteur</title>
+    </element>
+    <element>
+     <id>708</id>
+     <title>Electricien</title>
+    </element>
+    <element>
+     <id>709</id>
+     <title>EmployÃ© de bureau dâ€™Ã©tudes</title>
+    </element>
+    <element>
+     <id>710</id>
+     <title>GÃ©omÃ¨tre</title>
+    </element>
+    <element>
+     <id>711</id>
+     <title>Grutier</title>
+    </element>
+    <element>
+     <id>712</id>
+     <title>MaÃ§on</title>
+    </element>
+    <element>
+     <id>713</id>
+     <title>Menuisier</title>
+    </element>
+    <element>
+     <id>714</id>
+     <title>Peintre</title>
+    </element>
+    <element>
+     <id>715</id>
+     <title>PlÃ¢trier</title>
+    </element>
+    <element>
+     <id>716</id>
+     <title>Plombier</title>
+    </element>
+    <element>
+     <id>717</id>
+     <title>Soudeur</title>
+    </element>
+    <element>
+     <id>718</id>
+     <title>Vitrier</title>
+    </element>
+    <element>
+     <id>799</id>
+     <title>Autre mÃ©tier Construction / BTP / IngÃ©nierie</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>CrÃ©ation / Arts / Spectacle</title>
+   <elements>
+    <element>
+     <id>801</id>
+     <title>Acteur</title>
+    </element>
+    <element>
+     <id>802</id>
+     <title>Artiste</title>
+    </element>
+    <element>
+     <id>803</id>
+     <title>CinÃ©aste</title>
+    </element>
+    <element>
+     <id>804</id>
+     <title>CrÃ©ateur de mode</title>
+    </element>
+    <element>
+     <id>805</id>
+     <title>DÃ©corateur</title>
+    </element>
+    <element>
+     <id>806</id>
+     <title>Designer</title>
+    </element>
+    <element>
+     <id>807</id>
+     <title>Directeur artistique</title>
+    </element>
+    <element>
+     <id>808</id>
+     <title>Ecrivain</title>
+    </element>
+    <element>
+     <id>809</id>
+     <title>Ergonome</title>
+    </element>
+    <element>
+     <id>810</id>
+     <title>Graphiste, Illustrateur</title>
+    </element>
+    <element>
+     <id>811</id>
+     <title>Infographiste</title>
+    </element>
+    <element>
+     <id>812</id>
+     <title>Mannequin</title>
+    </element>
+    <element>
+     <id>813</id>
+     <title>Organisateur de spectacles</title>
+    </element>
+    <element>
+     <id>814</id>
+     <title>Photographe</title>
+    </element>
+    <element>
+     <id>815</id>
+     <title>Producteur</title>
+    </element>
+    <element>
+     <id>816</id>
+     <title>Technicien de lâ€™image</title>
+    </element>
+    <element>
+     <id>817</id>
+     <title>Technicien du son</title>
+    </element>
+    <element>
+     <id>899</id>
+     <title>Autre mÃ©tier CrÃ©ation / Arts / Spectacle</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Fabrication / Production</title>
+   <elements>
+    <element>
+     <id>901</id>
+     <title>Agent de fabrication</title>
+    </element>
+    <element>
+     <id>902</id>
+     <title>Agent de maÃ®trise</title>
+    </element>
+    <element>
+     <id>903</id>
+     <title>Ajusteur</title>
+    </element>
+    <element>
+     <id>904</id>
+     <title>Chef de poste</title>
+    </element>
+    <element>
+     <id>905</id>
+     <title>Chef dâ€™atelier</title>
+    </element>
+    <element>
+     <id>906</id>
+     <title>Conditionneur</title>
+    </element>
+    <element>
+     <id>907</id>
+     <title>Directeur de production</title>
+    </element>
+    <element>
+     <id>908</id>
+     <title>EmployÃ© de plateforme pÃ©troliÃ¨re</title>
+    </element>
+    <element>
+     <id>909</id>
+     <title>EmployÃ© dâ€™exploitation gaziÃ¨re</title>
+    </element>
+    <element>
+     <id>910</id>
+     <title>EmployÃ© dâ€™exploitation miniÃ¨re</title>
+    </element>
+    <element>
+     <id>911</id>
+     <title>OpÃ©rateur</title>
+    </element>
+    <element>
+     <id>912</id>
+     <title>Ouvrier de production</title>
+    </element>
+    <element>
+     <id>913</id>
+     <title>Responsable de production</title>
+    </element>
+    <element>
+     <id>914</id>
+     <title>Technicien</title>
+    </element>
+    <element>
+     <id>999</id>
+     <title>Autre mÃ©tier Fabrication / Production</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Formation / Education</title>
+   <elements>
+    <element>
+     <id>1001</id>
+     <title>Conseiller professionnel</title>
+    </element>
+    <element>
+     <id>1002</id>
+     <title>Directeur dâ€™Ã©tablissement</title>
+    </element>
+    <element>
+     <id>1003</id>
+     <title>Educateur</title>
+    </element>
+    <element>
+     <id>1004</id>
+     <title>EmployÃ© scolaire</title>
+    </element>
+    <element>
+     <id>1005</id>
+     <title>Enseignant</title>
+    </element>
+    <element>
+     <id>1006</id>
+     <title>Formateur</title>
+    </element>
+    <element>
+     <id>1007</id>
+     <title>Instituteur</title>
+    </element>
+    <element>
+     <id>1008</id>
+     <title>MaÃ®tre de confÃ©rences</title>
+    </element>
+    <element>
+     <id>1009</id>
+     <title>Moniteur</title>
+    </element>
+    <element>
+     <id>1010</id>
+     <title>Professeur</title>
+    </element>
+    <element>
+     <id>1011</id>
+     <title>PuÃ©riculteur</title>
+    </element>
+    <element>
+     <id>1012</id>
+     <title>Responsable de formation continue</title>
+    </element>
+    <element>
+     <id>1013</id>
+     <title>Responsable pÃ©dagogique</title>
+    </element>
+    <element>
+     <id>1099</id>
+     <title>Autre mÃ©tier Formation / Education</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>HÃ´tellerie / Restauration / Tourisme</title>
+   <elements>
+    <element>
+     <id>1101</id>
+     <title>Agent de voyage</title>
+    </element>
+    <element>
+     <id>1102</id>
+     <title>Agent dâ€™accueil</title>
+    </element>
+    <element>
+     <id>1103</id>
+     <title>Animateur</title>
+    </element>
+    <element>
+     <id>1104</id>
+     <title>Bagagiste</title>
+    </element>
+    <element>
+     <id>1105</id>
+     <title>Barman</title>
+    </element>
+    <element>
+     <id>1106</id>
+     <title>Chef de partie</title>
+    </element>
+    <element>
+     <id>1107</id>
+     <title>Chef de rang</title>
+    </element>
+    <element>
+     <id>1108</id>
+     <title>Cuisinier</title>
+    </element>
+    <element>
+     <id>1109</id>
+     <title>Directeur de centre de vacances</title>
+    </element>
+    <element>
+     <id>1110</id>
+     <title>Directeur de restaurant</title>
+    </element>
+    <element>
+     <id>1111</id>
+     <title>Directeur dâ€™hÃ´tel</title>
+    </element>
+    <element>
+     <id>1112</id>
+     <title>EmployÃ© de cuisine</title>
+    </element>
+    <element>
+     <id>1113</id>
+     <title>EmployÃ© de restaurant</title>
+    </element>
+    <element>
+     <id>1114</id>
+     <title>EmployÃ© dâ€™hÃ´tel</title>
+    </element>
+    <element>
+     <id>1115</id>
+     <title>Guide touristique</title>
+    </element>
+    <element>
+     <id>1116</id>
+     <title>Responsable dâ€™agence de voyages</title>
+    </element>
+    <element>
+     <id>1117</id>
+     <title>Serveur</title>
+    </element>
+    <element>
+     <id>1199</id>
+     <title>Autre mÃ©tier HÃ´tellerie / Restauration / Tourisme</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Informatique / TÃ©lÃ©com / Technologies</title>
+   <elements>
+    <element>
+     <id>1201</id>
+     <title>Administrateur de bases de donnÃ©es</title>
+    </element>
+    <element>
+     <id>1203</id>
+     <title>Analyste programmeur</title>
+    </element>
+    <element>
+     <id>1204</id>
+     <title>Animateur Web / Community manager</title>
+    </element>
+    <element>
+     <id>1205</id>
+     <title>Architecte systÃ¨me</title>
+    </element>
+    <element>
+     <id>1206</id>
+     <title>Architecte tÃ©lÃ©com</title>
+    </element>
+    <element>
+     <id>1207</id>
+     <title>Chef de projet informatique</title>
+    </element>
+    <element>
+     <id>1208</id>
+     <title>Chef de projet web / multimÃ©dia</title>
+    </element>
+    <element>
+     <id>1209</id>
+     <title>Concepteur multimÃ©dia</title>
+    </element>
+    <element>
+     <id>1235</id>
+     <title>Consultant en informatique dÃ©cisionnelle</title>
+    </element>
+    <element>
+     <id>1211</id>
+     <title>DÃ©veloppeur web</title>
+    </element>
+    <element>
+     <id>1212</id>
+     <title>Directeur des systÃ¨mes dâ€™information</title>
+    </element>
+    <element>
+     <id>1213</id>
+     <title>Directeur informatique</title>
+    </element>
+    <element>
+     <id>1236</id>
+     <title>Directeur Technique</title>
+    </element>
+    <element>
+     <id>1214</id>
+     <title>EmployÃ© de centre tÃ©lÃ©phonique</title>
+    </element>
+    <element>
+     <id>1215</id>
+     <title>Expert en sÃ©curitÃ© informatique</title>
+    </element>
+    <element>
+     <id>1202</id>
+     <title>Hotliner</title>
+    </element>
+    <element>
+     <id>1216</id>
+     <title>IngÃ©nieur sytÃ¨me et rÃ©seau</title>
+    </element>
+    <element>
+     <id>1217</id>
+     <title>IntÃ©grateur web</title>
+    </element>
+    <element>
+     <id>1226</id>
+     <title>Programmeur</title>
+    </element>
+    <element>
+     <id>1228</id>
+     <title>Administrateur rÃ©seau</title>
+    </element>
+    <element>
+     <id>1229</id>
+     <title>Responsable sÃ©curitÃ©</title>
+    </element>
+    <element>
+     <id>1232</id>
+     <title>SpÃ©cialiste en rÃ©fÃ©rencement (SEO / SEM)</title>
+    </element>
+    <element>
+     <id>1233</id>
+     <title>Webdesigner</title>
+    </element>
+    <element>
+     <id>1234</id>
+     <title>Webmaster</title>
+    </element>
+    <element>
+     <id>1299</id>
+     <title>Autre mÃ©tiers Informatique / TÃ©lÃ©com / Technologies</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Juridique / FiscalitÃ©</title>
+   <elements>
+    <element>
+     <id>1301</id>
+     <title>Avocat</title>
+    </element>
+    <element>
+     <id>1302</id>
+     <title>AvouÃ©</title>
+    </element>
+    <element>
+     <id>1303</id>
+     <title>Clerc de notaire</title>
+    </element>
+    <element>
+     <id>1305</id>
+     <title>Directeur juridique</title>
+    </element>
+    <element>
+     <id>1306</id>
+     <title>EmployÃ© de service contentieux</title>
+    </element>
+    <element>
+     <id>1307</id>
+     <title>EmployÃ© de service juridique</title>
+    </element>
+    <element>
+     <id>1308</id>
+     <title>EmployÃ© de tribunal</title>
+    </element>
+    <element>
+     <id>1309</id>
+     <title>Expert en propriÃ©tÃ© intellectuelle</title>
+    </element>
+    <element>
+     <id>1311</id>
+     <title>Huissier de justice</title>
+    </element>
+    <element>
+     <id>1312</id>
+     <title>Juge</title>
+    </element>
+    <element>
+     <id>1313</id>
+     <title>Juriste</title>
+    </element>
+    <element>
+     <id>1314</id>
+     <title>Notaire</title>
+    </element>
+    <element>
+     <id>1315</id>
+     <title>RÃ©dacteur juridique</title>
+    </element>
+    <element>
+     <id>1316</id>
+     <title>Responsable juridique</title>
+    </element>
+    <element>
+     <id>1399</id>
+     <title>Autre mÃ©tier Juridique / FiscalitÃ©</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Maintenance / Entretien / Nettoyage</title>
+   <elements>
+    <element>
+     <id>1401</id>
+     <title>Agent dâ€™entretien</title>
+    </element>
+    <element>
+     <id>1402</id>
+     <title>ChargÃ© dâ€™entretien dâ€™Ã©quipement industriel</title>
+    </element>
+    <element>
+     <id>1403</id>
+     <title>Chauffagiste</title>
+    </element>
+    <element>
+     <id>1404</id>
+     <title>DÃ©panneur</title>
+    </element>
+    <element>
+     <id>1405</id>
+     <title>DÃ©ratiseur</title>
+    </element>
+    <element>
+     <id>1406</id>
+     <title>EmployÃ© de service aprÃ¨s-vente</title>
+    </element>
+    <element>
+     <id>1407</id>
+     <title>Femme de mÃ©nage</title>
+    </element>
+    <element>
+     <id>1408</id>
+     <title>Laveur de carreaux</title>
+    </element>
+    <element>
+     <id>1409</id>
+     <title>Outilleur</title>
+    </element>
+    <element>
+     <id>1410</id>
+     <title>RÃ©parateur</title>
+    </element>
+    <element>
+     <id>1411</id>
+     <title>RÃ©parateur informatique</title>
+    </element>
+    <element>
+     <id>1412</id>
+     <title>Responsable aprÃ¨s-vente</title>
+    </element>
+    <element>
+     <id>1413</id>
+     <title>Responsable de la maintenance</title>
+    </element>
+    <element>
+     <id>1414</id>
+     <title>Serrurier</title>
+    </element>
+    <element>
+     <id>1415</id>
+     <title>Technicien de maintenance</title>
+    </element>
+    <element>
+     <id>1416</id>
+     <title>Technicien de surface</title>
+    </element>
+    <element>
+     <id>1499</id>
+     <title>Autre mÃ©tier Maintenance / Entretien / Nettoyage</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Marketing / Communication / PublicitÃ©</title>
+   <elements>
+    <element>
+     <id>1501</id>
+     <title>Assistant chef de produit</title>
+    </element>
+    <element>
+     <id>1522</id>
+     <title>Animateur Web / Community manager</title>
+    </element>
+    <element>
+     <id>1502</id>
+     <title>AttachÃ© de presse</title>
+    </element>
+    <element>
+     <id>1503</id>
+     <title>ChargÃ© de communication</title>
+    </element>
+    <element>
+     <id>1504</id>
+     <title>Gestionnaire de projet Ã©vÃ©nementiel</title>
+    </element>
+    <element>
+     <id>1505</id>
+     <title>ChargÃ© de partenariats</title>
+    </element>
+    <element>
+     <id>1506</id>
+     <title>ChargÃ© de relations publiques</title>
+    </element>
+    <element>
+     <id>1507</id>
+     <title>Chef de produit</title>
+    </element>
+    <element>
+     <id>1508</id>
+     <title>Chef de publicitÃ©</title>
+    </element>
+    <element>
+     <id>1509</id>
+     <title>Directeur de la communication</title>
+    </element>
+    <element>
+     <id>1510</id>
+     <title>Directeur marketing</title>
+    </element>
+    <element>
+     <id>1511</id>
+     <title>RÃ©dacteur publicitaire</title>
+    </element>
+    <element>
+     <id>1512</id>
+     <title>Responsable communication</title>
+    </element>
+    <element>
+     <id>1513</id>
+     <title>Responsable de marque</title>
+    </element>
+    <element>
+     <id>1514</id>
+     <title>Responsable marketing</title>
+    </element>
+    <element>
+     <id>1515</id>
+     <title>TÃ©lÃ©marketeur</title>
+    </element>
+    <element>
+     <id>1516</id>
+     <title>Traffic manager</title>
+    </element>
+    <element>
+     <id>1517</id>
+     <title>Vendeur dâ€™espaces publicitaires</title>
+    </element>
+    <element>
+     <id>1518</id>
+     <title>Webmarketer</title>
+    </element>
+    <element>
+     <id>1519</id>
+     <title>Journaliste</title>
+    </element>
+    <element>
+     <id>1520</id>
+     <title>MÃ©diateur culturel</title>
+    </element>
+    <element>
+     <id>1599</id>
+     <title>Autre mÃ©tier Marketing / Communication / PublicitÃ©</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Conseil / StratÃ©gie / RH</title>
+   <elements>
+    <element>
+     <id>1601</id>
+     <title>Administrateur de sociÃ©tÃ©s</title>
+    </element>
+    <element>
+     <id>1602</id>
+     <title>Business analyst</title>
+    </element>
+    <element>
+     <id>1603</id>
+     <title>Chef dâ€™entreprise</title>
+    </element>
+    <element>
+     <id>1604</id>
+     <title>Consultant</title>
+    </element>
+    <element>
+     <id>1605</id>
+     <title>Directeur</title>
+    </element>
+    <element>
+     <id>1606</id>
+     <title>Directeur des Ressources Humaines</title>
+    </element>
+    <element>
+     <id>1607</id>
+     <title>GÃ©rant</title>
+    </element>
+    <element>
+     <id>1608</id>
+     <title>Gestionnaire de projets</title>
+    </element>
+    <element>
+     <id>1609</id>
+     <title>PDG</title>
+    </element>
+    <element>
+     <id>1610</id>
+     <title>Planificateur</title>
+    </element>
+    <element>
+     <id>1611</id>
+     <title>PrÃ©sident</title>
+    </element>
+    <element>
+     <id>1612</id>
+     <title>Responsable business development</title>
+    </element>
+    <element>
+     <id>1613</id>
+     <title>Responsable fusions-acquisitions</title>
+    </element>
+    <element>
+     <id>1614</id>
+     <title>Responsable ressources humaines</title>
+    </element>
+    <element>
+     <id>1615</id>
+     <title>EmployÃ© des ressources humaines</title>
+    </element>
+    <element>
+     <id>1616</id>
+     <title>ChargÃ© de recrutement</title>
+    </element>
+    <element>
+     <id>1699</id>
+     <title>Autre mÃ©tier Conseil / StratÃ©gie / RH</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>R&amp;D / Etudes / Analyses</title>
+   <elements>
+    <element>
+     <id>1701</id>
+     <title>Chercheur</title>
+    </element>
+    <element>
+     <id>1702</id>
+     <title>Directeur R&amp;D</title>
+    </element>
+    <element>
+     <id>1703</id>
+     <title>Economiste</title>
+    </element>
+    <element>
+     <id>1704</id>
+     <title>EmployÃ© de service statistique</title>
+    </element>
+    <element>
+     <id>1705</id>
+     <title>EnquÃªteur</title>
+    </element>
+    <element>
+     <id>1706</id>
+     <title>IngÃ©nieur</title>
+    </element>
+    <element>
+     <id>1707</id>
+     <title>Laborantin</title>
+    </element>
+    <element>
+     <id>1708</id>
+     <title>Responsable dâ€™Ã©tudes</title>
+    </element>
+    <element>
+     <id>1709</id>
+     <title>Responsable R&amp;D</title>
+    </element>
+    <element>
+     <id>1710</id>
+     <title>Sociologue</title>
+    </element>
+    <element>
+     <id>1711</id>
+     <title>Statisticien</title>
+    </element>
+    <element>
+     <id>1799</id>
+     <title>Autre mÃ©tier R&amp;D / Etudes / Analyses</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>SantÃ© / Action sociale / Sport</title>
+   <elements>
+    <element>
+     <id>1801</id>
+     <title>Agent hospitalier</title>
+    </element>
+    <element>
+     <id>1802</id>
+     <title>Aide soignant</title>
+    </element>
+    <element>
+     <id>1803</id>
+     <title>Ambulancier</title>
+    </element>
+    <element>
+     <id>1804</id>
+     <title>AnesthÃ©siste</title>
+    </element>
+    <element>
+     <id>1805</id>
+     <title>Assistant mÃ©dical</title>
+    </element>
+    <element>
+     <id>1806</id>
+     <title>Auditeur social</title>
+    </element>
+    <element>
+     <id>1807</id>
+     <title>Chirurgien</title>
+    </element>
+    <element>
+     <id>1808</id>
+     <title>Conseiller parental</title>
+    </element>
+    <element>
+     <id>1809</id>
+     <title>Dentiste</title>
+    </element>
+    <element>
+     <id>1810</id>
+     <title>Dermatologue</title>
+    </element>
+    <element>
+     <id>1811</id>
+     <title>Directeur de clinique</title>
+    </element>
+    <element>
+     <id>1812</id>
+     <title>Directeur de crÃ¨che</title>
+    </element>
+    <element>
+     <id>1813</id>
+     <title>Directeur dâ€™hÃ´pital</title>
+    </element>
+    <element>
+     <id>1814</id>
+     <title>EmployÃ© de laboratoire dâ€™analyse</title>
+    </element>
+    <element>
+     <id>1815</id>
+     <title>EmployÃ© de service social</title>
+    </element>
+    <element>
+     <id>1816</id>
+     <title>EmployÃ© de soins Ã  domicile</title>
+    </element>
+    <element>
+     <id>1817</id>
+     <title>EntraÃ®neur</title>
+    </element>
+    <element>
+     <id>1818</id>
+     <title>Externe en mÃ©decine</title>
+    </element>
+    <element>
+     <id>1819</id>
+     <title>Infirmier</title>
+    </element>
+    <element>
+     <id>1820</id>
+     <title>KinÃ©sithÃ©rapeute</title>
+    </element>
+    <element>
+     <id>1821</id>
+     <title>MÃ©decin du sport</title>
+    </element>
+    <element>
+     <id>1822</id>
+     <title>MÃ©decin du travail</title>
+    </element>
+    <element>
+     <id>1823</id>
+     <title>MÃ©decin gÃ©nÃ©raliste</title>
+    </element>
+    <element>
+     <id>1824</id>
+     <title>MÃ©decin spÃ©cialiste</title>
+    </element>
+    <element>
+     <id>1825</id>
+     <title>Nutritionniste</title>
+    </element>
+    <element>
+     <id>1826</id>
+     <title>ORL</title>
+    </element>
+    <element>
+     <id>1827</id>
+     <title>Pharmacien</title>
+    </element>
+    <element>
+     <id>1828</id>
+     <title>PrÃ©parateur en pharmacie</title>
+    </element>
+    <element>
+     <id>1829</id>
+     <title>RÃ©Ã©ducateur</title>
+    </element>
+    <element>
+     <id>1830</id>
+     <title>Responsable de services sociaux</title>
+    </element>
+    <element>
+     <id>1831</id>
+     <title>Sage-femme</title>
+    </element>
+    <element>
+     <id>1832</id>
+     <title>Sportif de haut niveau</title>
+    </element>
+    <element>
+     <id>1833</id>
+     <title>ThÃ©rapeute</title>
+    </element>
+    <element>
+     <id>1834</id>
+     <title>Psychologue</title>
+    </element>
+    <element>
+     <id>1835</id>
+     <title>OsthÃ©opathe</title>
+    </element>
+    <element>
+     <id>1899</id>
+     <title>Autre mÃ©tier SantÃ© / Action sociale / Sport</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Services Ã  la personne</title>
+   <elements>
+    <element>
+     <id>1901</id>
+     <title>Aide Ã  domicile</title>
+    </element>
+    <element>
+     <id>1902</id>
+     <title>Assistant maternel</title>
+    </element>
+    <element>
+     <id>1903</id>
+     <title>Auxiliaire de vie</title>
+    </element>
+    <element>
+     <id>1904</id>
+     <title>Baby-sitter</title>
+    </element>
+    <element>
+     <id>1905</id>
+     <title>Coiffeur</title>
+    </element>
+    <element>
+     <id>1907</id>
+     <title>Manucure</title>
+    </element>
+    <element>
+     <id>1908</id>
+     <title>Maquilleur - visagiste</title>
+    </element>
+    <element>
+     <id>1909</id>
+     <title>EsthÃ©ticienne</title>
+    </element>
+    <element>
+     <id>1999</id>
+     <title>Autre mÃ©tier Services Ã  la personne</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Services administratifs / Services publics</title>
+   <elements>
+    <element>
+     <id>2001</id>
+     <title>Archiviste</title>
+    </element>
+    <element>
+     <id>2002</id>
+     <title>Assistant de direction</title>
+    </element>
+    <element>
+     <id>2003</id>
+     <title>AttachÃ© parlementaire</title>
+    </element>
+    <element>
+     <id>2004</id>
+     <title>Commis de la fonction publique</title>
+    </element>
+    <element>
+     <id>2005</id>
+     <title>Conseiller de lâ€™emploi</title>
+    </element>
+    <element>
+     <id>2006</id>
+     <title>EmployÃ© administratif</title>
+    </element>
+    <element>
+     <id>2007</id>
+     <title>EmployÃ© de collectivitÃ©</title>
+    </element>
+    <element>
+     <id>2008</id>
+     <title>EmployÃ© de la fonction publique</title>
+    </element>
+    <element>
+     <id>2009</id>
+     <title>EmployÃ© de lâ€™administration pÃ©nitentiaire</title>
+    </element>
+    <element>
+     <id>2011</id>
+     <title>EmployÃ© des services gÃ©nÃ©raux</title>
+    </element>
+    <element>
+     <id>2012</id>
+     <title>EmployÃ© des transports publics</title>
+    </element>
+    <element>
+     <id>2014</id>
+     <title>InterprÃªte</title>
+    </element>
+    <element>
+     <id>2015</id>
+     <title>OpÃ©rateur de saisie</title>
+    </element>
+    <element>
+     <id>2016</id>
+     <title>RÃ©ceptionniste</title>
+    </element>
+    <element>
+     <id>2017</id>
+     <title>Responsable administratif</title>
+    </element>
+    <element>
+     <id>2018</id>
+     <title>SecrÃ©taire</title>
+    </element>
+    <element>
+     <id>2019</id>
+     <title>Standardiste</title>
+    </element>
+    <element>
+     <id>2099</id>
+     <title>Autre mÃ©tier Services administratifs / Services publics</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Surveillance / SÃ©curitÃ© / Inspection</title>
+   <elements>
+    <element>
+     <id>2101</id>
+     <title>Agent de sÃ©curitÃ©</title>
+    </element>
+    <element>
+     <id>2102</id>
+     <title>ContrÃ´leur qualitÃ©</title>
+    </element>
+    <element>
+     <id>2103</id>
+     <title>Convoyeur de fonds</title>
+    </element>
+    <element>
+     <id>2104</id>
+     <title>Expert en sÃ©curitÃ© alimentaire</title>
+    </element>
+    <element>
+     <id>2105</id>
+     <title>Garde du corps</title>
+    </element>
+    <element>
+     <id>2106</id>
+     <title>Garde forestier</title>
+    </element>
+    <element>
+     <id>2107</id>
+     <title>Gardien</title>
+    </element>
+    <element>
+     <id>2108</id>
+     <title>Inspecteur</title>
+    </element>
+    <element>
+     <id>2110</id>
+     <title>Militaire</title>
+    </element>
+    <element>
+     <id>2119</id>
+     <title>Ninja</title>
+    </element>
+    <element>
+     <id>2111</id>
+     <title>Policier</title>
+    </element>
+    <element>
+     <id>2112</id>
+     <title>Pompier</title>
+    </element>
+    <element>
+     <id>2113</id>
+     <title>Responsable Certification</title>
+    </element>
+    <element>
+     <id>2114</id>
+     <title>Responsable gardiennage</title>
+    </element>
+    <element>
+     <id>2115</id>
+     <title>Responsable QualitÃ©</title>
+    </element>
+    <element>
+     <id>2116</id>
+     <title>Surveillant</title>
+    </element>
+    <element>
+     <id>2117</id>
+     <title>Veilleur de nuit</title>
+    </element>
+    <element>
+     <id>2118</id>
+     <title>Vigile</title>
+    </element>
+    <element>
+     <id>2199</id>
+     <title>Autre mÃ©tier Surveillance / SÃ©curitÃ© / Inspection</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Transport / Logistique</title>
+   <elements>
+    <element>
+     <id>2201</id>
+     <title>AffrÃ©teur</title>
+    </element>
+    <element>
+     <id>2202</id>
+     <title>Agent de rÃ©servations</title>
+    </element>
+    <element>
+     <id>2203</id>
+     <title>Agent dâ€™escale</title>
+    </element>
+    <element>
+     <id>2204</id>
+     <title>Aiguilleur</title>
+    </element>
+    <element>
+     <id>2205</id>
+     <title>Chauffeur</title>
+    </element>
+    <element>
+     <id>2206</id>
+     <title>Chauffeur de taxi</title>
+    </element>
+    <element>
+     <id>2207</id>
+     <title>Chauffeur de transport public</title>
+    </element>
+    <element>
+     <id>2208</id>
+     <title>Chef dâ€™entrepÃ´t</title>
+    </element>
+    <element>
+     <id>2209</id>
+     <title>Conducteur de Poids Lourds</title>
+    </element>
+    <element>
+     <id>2210</id>
+     <title>Conducteur de train</title>
+    </element>
+    <element>
+     <id>2211</id>
+     <title>Coursier</title>
+    </element>
+    <element>
+     <id>2212</id>
+     <title>DÃ©mÃ©nageur</title>
+    </element>
+    <element>
+     <id>2213</id>
+     <title>Directeur logistique</title>
+    </element>
+    <element>
+     <id>2214</id>
+     <title>EmployÃ© de douane</title>
+    </element>
+    <element>
+     <id>2215</id>
+     <title>EmployÃ© de gare</title>
+    </element>
+    <element>
+     <id>2216</id>
+     <title>EmployÃ© de port</title>
+    </element>
+    <element>
+     <id>2217</id>
+     <title>EmployÃ© de transport maritime</title>
+    </element>
+    <element>
+     <id>2218</id>
+     <title>EmployÃ© dâ€™aÃ©roport</title>
+    </element>
+    <element>
+     <id>2219</id>
+     <title>EmployÃ© Fret</title>
+    </element>
+    <element>
+     <id>2220</id>
+     <title>EmployÃ© Import-Export</title>
+    </element>
+    <element>
+     <id>2221</id>
+     <title>Gestionnaire des stocks</title>
+    </element>
+    <element>
+     <id>2222</id>
+     <title>HÃ´tesse</title>
+    </element>
+    <element>
+     <id>2223</id>
+     <title>Logisticien</title>
+    </element>
+    <element>
+     <id>2224</id>
+     <title>Magasinier</title>
+    </element>
+    <element>
+     <id>2225</id>
+     <title>MaÃ®tre dâ€™Ã©quipage</title>
+    </element>
+    <element>
+     <id>2226</id>
+     <title>Manutentionnaire</title>
+    </element>
+    <element>
+     <id>2227</id>
+     <title>Matelot</title>
+    </element>
+    <element>
+     <id>2228</id>
+     <title>Ouvrier de manutention</title>
+    </element>
+    <element>
+     <id>2229</id>
+     <title>Pilote</title>
+    </element>
+    <element>
+     <id>2230</id>
+     <title>PrÃ©parateur de commandes</title>
+    </element>
+    <element>
+     <id>2231</id>
+     <title>Responsable Import-Export</title>
+    </element>
+    <element>
+     <id>2232</id>
+     <title>Responsable transport</title>
+    </element>
+    <element>
+     <id>2233</id>
+     <title>Steward</title>
+    </element>
+    <element>
+     <id>2234</id>
+     <title>Transporteur</title>
+    </element>
+    <element>
+     <id>2235</id>
+     <title>Autre mÃ©tier Transport / Logistique</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Banque / Assurance</title>
+   <elements>
+    <element>
+     <id>2301</id>
+     <title>Analyste risque</title>
+    </element>
+    <element>
+     <id>2302</id>
+     <title>ChargÃ© d'accueil</title>
+    </element>
+    <element>
+     <id>2303</id>
+     <title>ChargÃ© de clientÃ¨le</title>
+    </element>
+    <element>
+     <id>2304</id>
+     <title>Conseiller Financier</title>
+    </element>
+    <element>
+     <id>2305</id>
+     <title>Courtier</title>
+    </element>
+    <element>
+     <id>2306</id>
+     <title>Gestionnaire de patrimoine</title>
+    </element>
+    <element>
+     <id>2307</id>
+     <title>Gestionnaire de portefeuille</title>
+    </element>
+    <element>
+     <id>2308</id>
+     <title>OpÃ©rateur de marchÃ©</title>
+    </element>
+    <element>
+     <id>2310</id>
+     <title>Responsable de point de vente</title>
+    </element>
+    <element>
+     <id>2311</id>
+     <title>Trader</title>
+    </element>
+    <element>
+     <id>2399</id>
+     <title>Autre mÃ©tier Banque / Assurance</title>
+    </element>
+   </elements>
+  </elements>
+ </base>
+ <base>
+  <title>business</title>
+  <elements>
+   <title>Industries</title>
+   <elements>
+    <element>
+     <id>201</id>
+     <title>AÃ©ronautique et aÃ©rospatiale</title>
+    </element>
+    <element>
+     <id>202</id>
+     <title>Automobile</title>
+    </element>
+    <element>
+     <id>203</id>
+     <title>Ferroviaire / Naval</title>
+    </element>
+    <element>
+     <id>204</id>
+     <title>DÃ©fense</title>
+    </element>
+    <element>
+     <id>205</id>
+     <title>Composant et matÃ©riel Ã©lectrique/Ã©lectronique</title>
+    </element>
+    <element>
+     <id>206</id>
+     <title>Machine et Ã©quipement</title>
+    </element>
+    <element>
+     <id>207</id>
+     <title>Chimie, cosmÃ©tique</title>
+    </element>
+    <element>
+     <id>208</id>
+     <title>Energies et pÃ©trole</title>
+    </element>
+    <element>
+     <id>209</id>
+     <title>Environnement et Ã©nergies renouvelables</title>
+    </element>
+    <element>
+     <id>210</id>
+     <title>Textile, habillement</title>
+    </element>
+    <element>
+     <id>211</id>
+     <title>Luxe, mode</title>
+    </element>
+    <element>
+     <id>212</id>
+     <title>Imprimerie, reproduction</title>
+    </element>
+    <element>
+     <id>213</id>
+     <title>Industrie bois et papiers</title>
+    </element>
+    <element>
+     <id>214</id>
+     <title>Mines et mÃ©taux</title>
+    </element>
+    <element>
+     <id>215</id>
+     <title>Plasturgie</title>
+    </element>
+    <element>
+     <id>216</id>
+     <title>Verres, cÃ©ramiques et ciments</title>
+    </element>
+    <element>
+     <id>217</id>
+     <title>Nanotechnologies</title>
+    </element>
+    <element>
+     <id>218</id>
+     <title>Biotechnologies</title>
+    </element>
+    <element>
+     <id>219</id>
+     <title>Semi-conducteurs</title>
+    </element>
+    <element>
+     <id>220</id>
+     <title>Robotique, automatisme</title>
+    </element>
+    <element>
+     <id>221</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Agroalimentaire</title>
+   <elements>
+    <element>
+     <id>301</id>
+     <title>Agriculture</title>
+    </element>
+    <element>
+     <id>302</id>
+     <title>Agro-alimentaire</title>
+    </element>
+    <element>
+     <id>303</id>
+     <title>Ã‰levage</title>
+    </element>
+    <element>
+     <id>304</id>
+     <title>PÃªche</title>
+    </element>
+    <element>
+     <id>305</id>
+     <title>Secteur laitier </title>
+    </element>
+    <element>
+     <id>306</id>
+     <title>Vins et spiritueux</title>
+    </element>
+    <element>
+     <id>307</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>BÃ¢timent / Travaux Publics</title>
+   <elements>
+    <element>
+     <id>401</id>
+     <title>Architecture et urbanisme</title>
+    </element>
+    <element>
+     <id>402</id>
+     <title>GÃ©nie civil, travaux publlics, amÃ©nagement</title>
+    </element>
+    <element>
+     <id>403</id>
+     <title>Construction immobiliÃ¨re</title>
+    </element>
+    <element>
+     <id>404</id>
+     <title>MatÃ©riaux de construction</title>
+    </element>
+    <element>
+     <id>405</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Banque / Assurance / Finances</title>
+   <elements>
+    <element>
+     <id>501</id>
+     <title>Assurances</title>
+    </element>
+    <element>
+     <id>502</id>
+     <title>Banques</title>
+    </element>
+    <element>
+     <id>503</id>
+     <title>Banques d'investissement</title>
+    </element>
+    <element>
+     <id>504</id>
+     <title>Capital-risque et fonds LBO</title>
+    </element>
+    <element>
+     <id>505</id>
+     <title>ComptabilitÃ©</title>
+    </element>
+    <element>
+     <id>506</id>
+     <title>Gestion de portefeuilles</title>
+    </element>
+    <element>
+     <id>507</id>
+     <title>MarchÃ©s des capitaux</title>
+    </element>
+    <element>
+     <id>508</id>
+     <title>Services financiers</title>
+    </element>
+    <element>
+     <id>509</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Commerce / Distribution</title>
+   <elements>
+    <element>
+     <id>601</id>
+     <title>Commerce de dÃ©tail</title>
+    </element>
+    <element>
+     <id>602</id>
+     <title>Commerce de gros</title>
+    </element>
+    <element>
+     <id>603</id>
+     <title>Grande distribution</title>
+    </element>
+    <element>
+     <id>604</id>
+     <title>Commerce international</title>
+    </element>
+    <element>
+     <id>605</id>
+     <title>Import / export</title>
+    </element>
+    <element>
+     <id>606</id>
+     <title>Immobilier</title>
+    </element>
+    <element>
+     <id>607</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Communication / Media</title>
+   <elements>
+    <element>
+     <id>701</id>
+     <title>Marketing et publicitÃ©</title>
+    </element>
+    <element>
+     <id>702</id>
+     <title>Communication et relations publiques</title>
+    </element>
+    <element>
+     <id>703</id>
+     <title>Organisation d'Ã©vÃ©nements</title>
+    </element>
+    <element>
+     <id>704</id>
+     <title>Production audiovisuelle</title>
+    </element>
+    <element>
+     <id>705</id>
+     <title>Ã‰dition</title>
+    </element>
+    <element>
+     <id>706</id>
+     <title>Presse Ã©crite</title>
+    </element>
+    <element>
+     <id>707</id>
+     <title>MÃ©dias en ligne</title>
+    </element>
+    <element>
+     <id>708</id>
+     <title>MÃ©dias radio et TV</title>
+    </element>
+    <element>
+     <id>709</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Conseil / Audit / Recherche</title>
+   <elements>
+    <element>
+     <id>801</id>
+     <title>Conseil</title>
+    </element>
+    <element>
+     <id>802</id>
+     <title>Audit</title>
+    </element>
+    <element>
+     <id>803</id>
+     <title>Etude</title>
+    </element>
+    <element>
+     <id>804</id>
+     <title>Centres de recherche</title>
+    </element>
+    <element>
+     <id>805</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Education / Formation</title>
+   <elements>
+    <element>
+     <id>901</id>
+     <title>Enseignement primaire et secondaire</title>
+    </element>
+    <element>
+     <id>902</id>
+     <title>Enseignement supÃ©rieur</title>
+    </element>
+    <element>
+     <id>903</id>
+     <title>Formation Ã  distance</title>
+    </element>
+    <element>
+     <id>904</id>
+     <title>Formation professionnelle</title>
+    </element>
+    <element>
+     <id>905</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Informatique / Telecom</title>
+   <elements>
+    <element>
+     <id>1001</id>
+     <title>Internet / Mobile</title>
+    </element>
+    <element>
+     <id>1002</id>
+     <title>Logiciels</title>
+    </element>
+    <element>
+     <id>1003</id>
+     <title>SystÃ¨mes et rÃ©seaux</title>
+    </element>
+    <element>
+     <id>1004</id>
+     <title>SÃ©curitÃ© informatique et des rÃ©seaux</title>
+    </element>
+    <element>
+     <id>1005</id>
+     <title>TÃ©lÃ©communications</title>
+    </element>
+    <element>
+     <id>1006</id>
+     <title>Jeux vidÃ©os</title>
+    </element>
+    <element>
+     <id>1007</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Juridique / RH</title>
+   <elements>
+    <element>
+     <id>1101</id>
+     <title>Ressources humaines</title>
+    </element>
+    <element>
+     <id>1102</id>
+     <title>Recrutement </title>
+    </element>
+    <element>
+     <id>1103</id>
+     <title>Avocats</title>
+    </element>
+    <element>
+     <id>1104</id>
+     <title>Services juridiques</title>
+    </element>
+    <element>
+     <id>1105</id>
+     <title>Institutions judiciaires</title>
+    </element>
+    <element>
+     <id>1106</id>
+     <title>Institutions judiciaires</title>
+    </element>
+    <element>
+     <id>1107</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Logistique / Transport</title>
+   <elements>
+    <element>
+     <id>1201</id>
+     <title>Logistique et chaÃ®ne d'approvisionnement</title>
+    </element>
+    <element>
+     <id>1202</id>
+     <title>Emballages et conteneurs</title>
+    </element>
+    <element>
+     <id>1203</id>
+     <title>Entreposage, stockage</title>
+    </element>
+    <element>
+     <id>1204</id>
+     <title>Transport aÃ©rien</title>
+    </element>
+    <element>
+     <id>1205</id>
+     <title>Transports routiers et ferroviaires</title>
+    </element>
+    <element>
+     <id>1206</id>
+     <title>Transports maritimes</title>
+    </element>
+    <element>
+     <id>1207</id>
+     <title>Messageries et fret</title>
+    </element>
+    <element>
+     <id>1208</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Loisirs / Tourisme</title>
+   <elements>
+    <element>
+     <id>1301</id>
+     <title>Restauration</title>
+    </element>
+    <element>
+     <id>1302</id>
+     <title>HÃ´tellerie et hÃ©bergement</title>
+    </element>
+    <element>
+     <id>1303</id>
+     <title>Voyages et tourisme</title>
+    </element>
+    <element>
+     <id>1304</id>
+     <title>Sports</title>
+    </element>
+    <element>
+     <id>1305</id>
+     <title>Divertissements, loisirs</title>
+    </element>
+    <element>
+     <id>1306</id>
+     <title>Forme et bien-Ãªtre</title>
+    </element>
+    <element>
+     <id>1307</id>
+     <title>Jeux d'argent et casinos</title>
+    </element>
+    <element>
+     <id>1308</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Public / Administration</title>
+   <elements>
+    <element>
+     <id>1401</id>
+     <title>Administration publique</title>
+    </element>
+    <element>
+     <id>1402</id>
+     <title>CollectivitÃ©s publiques et territoriales</title>
+    </element>
+    <element>
+     <id>1403</id>
+     <title>Affaires Ã©trangÃ¨res</title>
+    </element>
+    <element>
+     <id>1404</id>
+     <title>Ã‰quipements collectifs</title>
+    </element>
+    <element>
+     <id>1405</id>
+     <title>Politiques publiques</title>
+    </element>
+    <element>
+     <id>1406</id>
+     <title>Politique</title>
+    </element>
+    <element>
+     <id>1407</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>SantÃ©</title>
+   <elements>
+    <element>
+     <id>1501</id>
+     <title>HÃ´pitaux et centres de soins</title>
+    </element>
+    <element>
+     <id>1502</id>
+     <title>Professions mÃ©dicales</title>
+    </element>
+    <element>
+     <id>1503</id>
+     <title>Industrie pharmaceutique</title>
+    </element>
+    <element>
+     <id>1504</id>
+     <title>VÃ©tÃ©rinaire</title>
+    </element>
+    <element>
+     <id>1505</id>
+     <title>Ã‰quipements mÃ©dicaux</title>
+    </element>
+    <element>
+     <id>1506</id>
+     <title>MÃ©decines alternatives</title>
+    </element>
+    <element>
+     <id>1507</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>SÃ©curitÃ©</title>
+   <elements>
+    <element>
+     <id>1601</id>
+     <title>ArmÃ©e</title>
+    </element>
+    <element>
+     <id>1602</id>
+     <title>SÃ©curitÃ©</title>
+    </element>
+    <element>
+     <id>1603</id>
+     <title>Police/gendarmerie</title>
+    </element>
+    <element>
+     <id>1604</id>
+     <title>SÃ©curitÃ© civile</title>
+    </element>
+    <element>
+     <id>1605</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Secteur associatif / Humanitaire</title>
+   <elements>
+    <element>
+     <id>1701</id>
+     <title>Humanitaire</title>
+    </element>
+    <element>
+     <id>1702</id>
+     <title>Gestion des associations et fondations</title>
+    </element>
+    <element>
+     <id>1703</id>
+     <title>MÃ©cÃ©nat</title>
+    </element>
+    <element>
+     <id>1704</id>
+     <title>Associations et organisations sociales et syndicales</title>
+    </element>
+    <element>
+     <id>1705</id>
+     <title>Institutions religieuses</title>
+    </element>
+    <element>
+     <id>1706</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Arts / Culture</title>
+   <elements>
+    <element>
+     <id>1801</id>
+     <title>Arts</title>
+    </element>
+    <element>
+     <id>1802</id>
+     <title>Arts vivants</title>
+    </element>
+    <element>
+     <id>1803</id>
+     <title>BibliothÃ¨ques</title>
+    </element>
+    <element>
+     <id>1804</id>
+     <title>MusÃ©es et institutions culturelles</title>
+    </element>
+    <element>
+     <id>1805</id>
+     <title>Industrie cinÃ©matographique</title>
+    </element>
+    <element>
+     <id>1806</id>
+     <title>Films d'animation</title>
+    </element>
+    <element>
+     <id>1807</id>
+     <title>Musique</title>
+    </element>
+    <element>
+     <id>1808</id>
+     <title>Photographie</title>
+    </element>
+    <element>
+     <id>1809</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+  <elements>
+   <title>Autres services</title>
+   <elements>
+    <element>
+     <id>1901</id>
+     <title>Traduction et adaptation</title>
+    </element>
+    <element>
+     <id>1902</id>
+     <title>Services aux consommateurs</title>
+    </element>
+    <element>
+     <id>1903</id>
+     <title>Services d'information</title>
+    </element>
+    <element>
+     <id>1904</id>
+     <title>Services pour l'environnement</title>
+    </element>
+    <element>
+     <id>1905</id>
+     <title>Services Ã  la personne</title>
+    </element>
+    <element>
+     <id>1906</id>
+     <title>Design</title>
+    </element>
+    <element>
+     <id>1907</id>
+     <title>Autres</title>
+    </element>
+   </elements>
+  </elements>
+ </base>
+ <base>
+  <title>businessTrip</title>
+  <elements>
+   <element>
+    <id>1</id>
+    <title>IndiffÃ©rent</title>
+   </element>
+   <element>
+    <id>2</id>
+    <title>Aucun dÃ©placement</title>
+   </element>
+   <element>
+    <id>3</id>
+    <title>Occasionnellement (plusieurs fois par an)</title>
+   </element>
+   <element>
+    <id>4</id>
+    <title>RÃ©guliÃ¨rement (plusieurs fois par mois)</title>
+   </element>
+   <element>
+    <id>5</id>
+    <title>FrÃ©quemment (plusieurs fois par semaine)</title>
+   </element>
+  </elements>
+ </base>
+ <base>
+  <title>educationLevel</title>
+  <elements>
+   <element>
+    <id>1</id>
+    <title>Non prÃ©cisÃ©</title>
+   </element>
+   <element>
+    <id>2</id>
+    <title>Non diplÃ´mÃ©</title>
+   </element>
+   <element>
+    <id>3</id>
+    <title>InfÃ©rieur au BAC (CAP, BEP, etc.)</title>
+   </element>
+   <element>
+    <id>4</id>
+    <title>Bac</title>
+   </element>
+   <element>
+    <id>5</id>
+    <title>Bac +2/3</title>
+   </element>
+   <element>
+    <id>6</id>
+    <title>Bac +4/5</title>
+   </element>
+   <element>
+    <id>7</id>
+    <title>SupÃ©rieur Ã  Bac + 5</title>
+   </element>
+  </elements>
+ </base>
+ <base>
+  <title>hoursNumber</title>
+  <elements>
+   <element>
+    <id>1</id>
+    <title>Temps plein</title>
+   </element>
+   <element>
+    <id>2</id>
+    <title>Temps partiel</title>
+   </element>
+  </elements>
+ </base>
+ <base>
+  <title>grossSalary</title>
+  <elements>
+   <element>
+    <id>1</id>
+    <title>-</title>
+   </element>
+   <element>
+    <id>2</id>
+    <title>15K</title>
+   </element>
+   <element>
+    <id>3</id>
+    <title>20K</title>
+   </element>
+   <element>
+    <id>4</id>
+    <title>25K</title>
+   </element>
+   <element>
+    <id>5</id>
+    <title>30K</title>
+   </element>
+   <element>
+    <id>6</id>
+    <title>35K</title>
+   </element>
+   <element>
+    <id>7</id>
+    <title>40K</title>
+   </element>
+   <element>
+    <id>8</id>
+    <title>50K</title>
+   </element>
+   <element>
+    <id>9</id>
+    <title>60K</title>
+   </element>
+   <element>
+    <id>10</id>
+    <title>80K</title>
+   </element>
+   <element>
+    <id>11</id>
+    <title>100K</title>
+   </element>
+  </elements>
+ </base>
+ <base>
+  <title>nationality</title>
+  <elements>
+   <element>
+    <id>1</id>
+    <title>Afghane</title>
+   </element>
+   <element>
+    <id>2</id>
+    <title>Albanaise</title>
+   </element>
+   <element>
+    <id>3</id>
+    <title>Algerienne</title>
+   </element>
+   <element>
+    <id>4</id>
+    <title>Allemande</title>
+   </element>
+   <element>
+    <id>5</id>
+    <title>Americaine</title>
+   </element>
+   <element>
+    <id>6</id>
+    <title>Andorrane</title>
+   </element>
+   <element>
+    <id>7</id>
+    <title>Angolaise</title>
+   </element>
+   <element>
+    <id>8</id>
+    <title>Antiguaise et barbudienne</title>
+   </element>
+   <element>
+    <id>9</id>
+    <title>Argentine</title>
+   </element>
+   <element>
+    <id>10</id>
+    <title>Armenienne</title>
+   </element>
+   <element>
+    <id>11</id>
+    <title>Australienne</title>
+   </element>
+   <element>
+    <id>12</id>
+    <title>Autrichienne</title>
+   </element>
+   <element>
+    <id>13</id>
+    <title>AzerbaÃ¯djanaise</title>
+   </element>
+   <element>
+    <id>14</id>
+    <title>Bahamienne</title>
+   </element>
+   <element>
+    <id>15</id>
+    <title>Bahreinienne</title>
+   </element>
+   <element>
+    <id>16</id>
+    <title>Bangladaise</title>
+   </element>
+   <element>
+    <id>17</id>
+    <title>Barbadienne</title>
+   </element>
+   <element>
+    <id>18</id>
+    <title>Belge</title>
+   </element>
+   <element>
+    <id>19</id>
+    <title>Belizienne</title>
+   </element>
+   <element>
+    <id>20</id>
+    <title>Beninoise</title>
+   </element>
+   <element>
+    <id>21</id>
+    <title>Bhoutanaise</title>
+   </element>
+   <element>
+    <id>22</id>
+    <title>Bielorusse</title>
+   </element>
+   <element>
+    <id>23</id>
+    <title>Birmane</title>
+   </element>
+   <element>
+    <id>24</id>
+    <title>Bissao-guineenne</title>
+   </element>
+   <element>
+    <id>25</id>
+    <title>Bolivienne</title>
+   </element>
+   <element>
+    <id>26</id>
+    <title>Bosnienne</title>
+   </element>
+   <element>
+    <id>27</id>
+    <title>Botswanaise</title>
+   </element>
+   <element>
+    <id>28</id>
+    <title>Bresilienne</title>
+   </element>
+   <element>
+    <id>29</id>
+    <title>Britannique</title>
+   </element>
+   <element>
+    <id>30</id>
+    <title>Bruneienne</title>
+   </element>
+   <element>
+    <id>31</id>
+    <title>Bulgare</title>
+   </element>
+   <element>
+    <id>32</id>
+    <title>Burkinabe</title>
+   </element>
+   <element>
+    <id>33</id>
+    <title>Burundaise</title>
+   </element>
+   <element>
+    <id>35</id>
+    <title>Cambodgienne</title>
+   </element>
+   <element>
+    <id>36</id>
+    <title>Camerounaise</title>
+   </element>
+   <element>
+    <id>37</id>
+    <title>Canadienne</title>
+   </element>
+   <element>
+    <id>38</id>
+    <title>Cap-verdienne</title>
+   </element>
+   <element>
+    <id>39</id>
+    <title>Centrafricaine</title>
+   </element>
+   <element>
+    <id>40</id>
+    <title>Chilienne</title>
+   </element>
+   <element>
+    <id>41</id>
+    <title>Chinoise</title>
+   </element>
+   <element>
+    <id>42</id>
+    <title>Chypriote</title>
+   </element>
+   <element>
+    <id>43</id>
+    <title>Colombienne</title>
+   </element>
+   <element>
+    <id>44</id>
+    <title>Comorienne</title>
+   </element>
+   <element>
+    <id>45</id>
+    <title>Congolaise</title>
+   </element>
+   <element>
+    <id>46</id>
+    <title>Costaricaine</title>
+   </element>
+   <element>
+    <id>47</id>
+    <title>Croate</title>
+   </element>
+   <element>
+    <id>48</id>
+    <title>Cubaine</title>
+   </element>
+   <element>
+    <id>49</id>
+    <title>Danoise</title>
+   </element>
+   <element>
+    <id>50</id>
+    <title>Djiboutienne</title>
+   </element>
+   <element>
+    <id>51</id>
+    <title>Dominicaine</title>
+   </element>
+   <element>
+    <id>52</id>
+    <title>Dominiquaise</title>
+   </element>
+   <element>
+    <id>53</id>
+    <title>Egyptienne</title>
+   </element>
+   <element>
+    <id>54</id>
+    <title>Emirienne</title>
+   </element>
+   <element>
+    <id>55</id>
+    <title>Equato-guineenne</title>
+   </element>
+   <element>
+    <id>56</id>
+    <title>Equatorienne</title>
+   </element>
+   <element>
+    <id>57</id>
+    <title>Erythreenne</title>
+   </element>
+   <element>
+    <id>58</id>
+    <title>Espagnole</title>
+   </element>
+   <element>
+    <id>59</id>
+    <title>Est-timoraise</title>
+   </element>
+   <element>
+    <id>60</id>
+    <title>Estonienne</title>
+   </element>
+   <element>
+    <id>61</id>
+    <title>Ethiopienne</title>
+   </element>
+   <element>
+    <id>62</id>
+    <title>Fidjienne</title>
+   </element>
+   <element>
+    <id>63</id>
+    <title>Finlandaise</title>
+   </element>
+   <element>
+    <id>64</id>
+    <title>FranÃ§aise</title>
+   </element>
+   <element>
+    <id>65</id>
+    <title>Gabonaise</title>
+   </element>
+   <element>
+    <id>66</id>
+    <title>Gambienne</title>
+   </element>
+   <element>
+    <id>67</id>
+    <title>Georgienne</title>
+   </element>
+   <element>
+    <id>68</id>
+    <title>Ghaneenne</title>
+   </element>
+   <element>
+    <id>69</id>
+    <title>Grenadienne</title>
+   </element>
+   <element>
+    <id>70</id>
+    <title>Guatemalteque</title>
+   </element>
+   <element>
+    <id>71</id>
+    <title>Guineenne</title>
+   </element>
+   <element>
+    <id>72</id>
+    <title>Guyanienne</title>
+   </element>
+   <element>
+    <id>73</id>
+    <title>HaÃ¯tienne</title>
+   </element>
+   <element>
+    <id>74</id>
+    <title>Hellenique</title>
+   </element>
+   <element>
+    <id>75</id>
+    <title>Hondurienne</title>
+   </element>
+   <element>
+    <id>76</id>
+    <title>Hongroise</title>
+   </element>
+   <element>
+    <id>77</id>
+    <title>Indienne</title>
+   </element>
+   <element>
+    <id>78</id>
+    <title>Indonesienne</title>
+   </element>
+   <element>
+    <id>79</id>
+    <title>Irakienne</title>
+   </element>
+   <element>
+    <id>80</id>
+    <title>Irlandaise</title>
+   </element>
+   <element>
+    <id>81</id>
+    <title>Islandaise</title>
+   </element>
+   <element>
+    <id>82</id>
+    <title>IsraÃ©lienne</title>
+   </element>
+   <element>
+    <id>83</id>
+    <title>Italienne</title>
+   </element>
+   <element>
+    <id>84</id>
+    <title>Ivoirienne</title>
+   </element>
+   <element>
+    <id>85</id>
+    <title>JamaÃ¯caine</title>
+   </element>
+   <element>
+    <id>86</id>
+    <title>Japonaise</title>
+   </element>
+   <element>
+    <id>87</id>
+    <title>Jordanienne</title>
+   </element>
+   <element>
+    <id>88</id>
+    <title>Kazakhstanaise</title>
+   </element>
+   <element>
+    <id>89</id>
+    <title>Kenyane</title>
+   </element>
+   <element>
+    <id>90</id>
+    <title>Kirghize</title>
+   </element>
+   <element>
+    <id>91</id>
+    <title>Kiribatienne</title>
+   </element>
+   <element>
+    <id>92</id>
+    <title>Kittitienne-et-nevicienne</title>
+   </element>
+   <element>
+    <id>93</id>
+    <title>Kossovienne</title>
+   </element>
+   <element>
+    <id>94</id>
+    <title>Koweitienne</title>
+   </element>
+   <element>
+    <id>95</id>
+    <title>Laotienne</title>
+   </element>
+   <element>
+    <id>96</id>
+    <title>Lesothane</title>
+   </element>
+   <element>
+    <id>97</id>
+    <title>Lettone</title>
+   </element>
+   <element>
+    <id>98</id>
+    <title>Libanaise</title>
+   </element>
+   <element>
+    <id>99</id>
+    <title>Liberienne</title>
+   </element>
+   <element>
+    <id>100</id>
+    <title>Libyenne</title>
+   </element>
+   <element>
+    <id>101</id>
+    <title>Liechtensteinoise</title>
+   </element>
+   <element>
+    <id>102</id>
+    <title>Lituanienne</title>
+   </element>
+   <element>
+    <id>103</id>
+    <title>Luxembourgeoise</title>
+   </element>
+   <element>
+    <id>104</id>
+    <title>Macedonienne</title>
+   </element>
+   <element>
+    <id>105</id>
+    <title>Malaisienne</title>
+   </element>
+   <element>
+    <id>106</id>
+    <title>Malawienne</title>
+   </element>
+   <element>
+    <id>107</id>
+    <title>Maldivienne</title>
+   </element>
+   <element>
+    <id>108</id>
+    <title>Malgache</title>
+   </element>
+   <element>
+    <id>109</id>
+    <title>Malienne</title>
+   </element>
+   <element>
+    <id>110</id>
+    <title>Maltaise</title>
+   </element>
+   <element>
+    <id>111</id>
+    <title>Marocaine</title>
+   </element>
+   <element>
+    <id>112</id>
+    <title>Marshallaise</title>
+   </element>
+   <element>
+    <id>113</id>
+    <title>Mauricienne</title>
+   </element>
+   <element>
+    <id>114</id>
+    <title>Mauritanienne</title>
+   </element>
+   <element>
+    <id>115</id>
+    <title>Mexicaine</title>
+   </element>
+   <element>
+    <id>116</id>
+    <title>Micronesienne</title>
+   </element>
+   <element>
+    <id>117</id>
+    <title>Moldave</title>
+   </element>
+   <element>
+    <id>118</id>
+    <title>Monegasque</title>
+   </element>
+   <element>
+    <id>119</id>
+    <title>Mongole</title>
+   </element>
+   <element>
+    <id>120</id>
+    <title>Montenegrine</title>
+   </element>
+   <element>
+    <id>121</id>
+    <title>Mozambicaine</title>
+   </element>
+   <element>
+    <id>122</id>
+    <title>Namibienne</title>
+   </element>
+   <element>
+    <id>123</id>
+    <title>Nauruane</title>
+   </element>
+   <element>
+    <id>124</id>
+    <title>Neerlandaise</title>
+   </element>
+   <element>
+    <id>125</id>
+    <title>Neo-zelandaise</title>
+   </element>
+   <element>
+    <id>126</id>
+    <title>Nepalaise</title>
+   </element>
+   <element>
+    <id>127</id>
+    <title>Nicaraguayenne</title>
+   </element>
+   <element>
+    <id>128</id>
+    <title>Nigeriane</title>
+   </element>
+   <element>
+    <id>129</id>
+    <title>Nigerienne</title>
+   </element>
+   <element>
+    <id>130</id>
+    <title>Nord-corÃ©enne</title>
+   </element>
+   <element>
+    <id>131</id>
+    <title>Norvegienne</title>
+   </element>
+   <element>
+    <id>132</id>
+    <title>Omanaise</title>
+   </element>
+   <element>
+    <id>133</id>
+    <title>Ougandaise</title>
+   </element>
+   <element>
+    <id>134</id>
+    <title>Ouzbeke</title>
+   </element>
+   <element>
+    <id>135</id>
+    <title>Pakistanaise</title>
+   </element>
+   <element>
+    <id>136</id>
+    <title>Palau</title>
+   </element>
+   <element>
+    <id>137</id>
+    <title>Palestinienne</title>
+   </element>
+   <element>
+    <id>138</id>
+    <title>Panameenne</title>
+   </element>
+   <element>
+    <id>139</id>
+    <title>Papouane-neoguineenne</title>
+   </element>
+   <element>
+    <id>140</id>
+    <title>Paraguayenne</title>
+   </element>
+   <element>
+    <id>141</id>
+    <title>Peruvienne</title>
+   </element>
+   <element>
+    <id>142</id>
+    <title>Philippine</title>
+   </element>
+   <element>
+    <id>143</id>
+    <title>Polonaise</title>
+   </element>
+   <element>
+    <id>144</id>
+    <title>Portoricaine</title>
+   </element>
+   <element>
+    <id>145</id>
+    <title>Portugaise</title>
+   </element>
+   <element>
+    <id>146</id>
+    <title>Qatarienne</title>
+   </element>
+   <element>
+    <id>147</id>
+    <title>Roumaine</title>
+   </element>
+   <element>
+    <id>148</id>
+    <title>Russe</title>
+   </element>
+   <element>
+    <id>149</id>
+    <title>Rwandaise</title>
+   </element>
+   <element>
+    <id>150</id>
+    <title>Saint-lucienne</title>
+   </element>
+   <element>
+    <id>151</id>
+    <title>Saint-marinaise</title>
+   </element>
+   <element>
+    <id>152</id>
+    <title>Saint-vincentaise-et-grenadine</title>
+   </element>
+   <element>
+    <id>153</id>
+    <title>Salomonaise</title>
+   </element>
+   <element>
+    <id>154</id>
+    <title>Salvadorienne</title>
+   </element>
+   <element>
+    <id>155</id>
+    <title>Samoane</title>
+   </element>
+   <element>
+    <id>156</id>
+    <title>Santomeenne</title>
+   </element>
+   <element>
+    <id>157</id>
+    <title>Saoudienne</title>
+   </element>
+   <element>
+    <id>158</id>
+    <title>Senegalaise</title>
+   </element>
+   <element>
+    <id>159</id>
+    <title>Serbe</title>
+   </element>
+   <element>
+    <id>160</id>
+    <title>Seychelloise</title>
+   </element>
+   <element>
+    <id>161</id>
+    <title>Sierra-leonaise</title>
+   </element>
+   <element>
+    <id>162</id>
+    <title>Singapourienne</title>
+   </element>
+   <element>
+    <id>163</id>
+    <title>Slovaque</title>
+   </element>
+   <element>
+    <id>164</id>
+    <title>Slovene</title>
+   </element>
+   <element>
+    <id>165</id>
+    <title>Somalienne</title>
+   </element>
+   <element>
+    <id>166</id>
+    <title>Soudanaise</title>
+   </element>
+   <element>
+    <id>167</id>
+    <title>Sri-lankaise</title>
+   </element>
+   <element>
+    <id>168</id>
+    <title>Sud-africaine</title>
+   </element>
+   <element>
+    <id>169</id>
+    <title>Sud-corÃ©enne</title>
+   </element>
+   <element>
+    <id>170</id>
+    <title>Suedoise</title>
+   </element>
+   <element>
+    <id>171</id>
+    <title>Suisse</title>
+   </element>
+   <element>
+    <id>172</id>
+    <title>Surinamaise</title>
+   </element>
+   <element>
+    <id>173</id>
+    <title>Swazie</title>
+   </element>
+   <element>
+    <id>174</id>
+    <title>Syrienne</title>
+   </element>
+   <element>
+    <id>175</id>
+    <title>Tadjike</title>
+   </element>
+   <element>
+    <id>195</id>
+    <title>Taiwanaise</title>
+   </element>
+   <element>
+    <id>176</id>
+    <title>Tanzanienne</title>
+   </element>
+   <element>
+    <id>177</id>
+    <title>Tchadienne</title>
+   </element>
+   <element>
+    <id>178</id>
+    <title>Tcheque</title>
+   </element>
+   <element>
+    <id>179</id>
+    <title>ThaÃ¯landaise</title>
+   </element>
+   <element>
+    <id>180</id>
+    <title>Togolaise</title>
+   </element>
+   <element>
+    <id>181</id>
+    <title>Tonguienne</title>
+   </element>
+   <element>
+    <id>182</id>
+    <title>Trinidadienne</title>
+   </element>
+   <element>
+    <id>183</id>
+    <title>Tunisienne</title>
+   </element>
+   <element>
+    <id>184</id>
+    <title>Turkmene</title>
+   </element>
+   <element>
+    <id>185</id>
+    <title>Turque</title>
+   </element>
+   <element>
+    <id>186</id>
+    <title>Tuvaluane</title>
+   </element>
+   <element>
+    <id>187</id>
+    <title>Ukrainienne</title>
+   </element>
+   <element>
+    <id>188</id>
+    <title>Uruguayenne</title>
+   </element>
+   <element>
+    <id>189</id>
+    <title>Vanuatuane</title>
+   </element>
+   <element>
+    <id>190</id>
+    <title>Venezuelienne</title>
+   </element>
+   <element>
+    <id>191</id>
+    <title>Vietnamienne</title>
+   </element>
+   <element>
+    <id>192</id>
+    <title>Yemenite</title>
+   </element>
+   <element>
+    <id>193</id>
+    <title>Zambienne</title>
+   </element>
+   <element>
+    <id>194</id>
+    <title>Zimbabweenne</title>
+   </element>
+  </elements>
+ </base>
+ <base>
+  <title>seniority</title>
+  <elements>
+   <element>
+    <id>1</id>
+    <title>0 Ã  2 ans</title>
+   </element>
+   <element>
+    <id>2</id>
+    <title>3 Ã  5 ans</title>
+   </element>
+   <element>
+    <id>3</id>
+    <title>6 Ã  10 ans</title>
+   </element>
+   <element>
+    <id>4</id>
+    <title>+ de 10 ans</title>
+   </element>
+  </elements>
+ </base>
+</response>
+
+
+{%  endset %}
+
+{% set json %}
+
+
+
+
+
+{
+  "base":[
+    {
+      "title":"contractType",
+      "elements":{
+        "element":[
+          {
+            "id":1,
+            "title":"CDI"
+          },
+          {
+            "id":2,
+            "title":"CDD \/ Int\u00e9rim"
+          },
+          {
+            "id":3,
+            "title":"Mission Freelance"
+          },
+          {
+            "id":4,
+            "title":"Stage"
+          },
+          {
+            "id":7,
+            "title":"Apprentissage"
+          },
+          {
+            "id":8,
+            "title":"Alternance"
+          },
+          {
+            "id":9,
+            "title":"VIE"
+          }
+        ]
+      }
+    },
+    {
+      "title":"positions",
+      "elements":[
+        {
+          "title":"Achat \/ Vente",
+          "elements":{
+            "element":[
+              {
+                "id":201,
+                "title":"Acheteur"
+              },
+              {
+                "id":202,
+                "title":"Commercial"
+              },
+              {
+                "id":203,
+                "title":"Analyste pricing"
+              },
+              {
+                "id":204,
+                "title":"Charg\u00e9 de relations client\u00e8le"
+              },
+              {
+                "id":205,
+                "title":"Chef de secteur"
+              },
+              {
+                "id":206,
+                "title":"Commercial terrain, VRP"
+              },
+              {
+                "id":207,
+                "title":"Conseiller commercial"
+              },
+              {
+                "id":222,
+                "title":"Directeur Commercial"
+              },
+              {
+                "id":208,
+                "title":"Directeur des achats"
+              },
+              {
+                "id":209,
+                "title":"Directeur des ventes"
+              },
+              {
+                "id":210,
+                "title":"Employ\u00e9 aux achats"
+              },
+              {
+                "id":211,
+                "title":"Ing\u00e9nieur d\u2019affaires"
+              },
+              {
+                "id":212,
+                "title":"Responsable achats"
+              },
+              {
+                "id":213,
+                "title":"Responsable client\u00e8le"
+              },
+              {
+                "id":214,
+                "title":"Responsable de comptes client"
+              },
+              {
+                "id":215,
+                "title":"Responsable de point de vente"
+              },
+              {
+                "id":216,
+                "title":"Responsable d\u2019\u00e9quipe de vente"
+              },
+              {
+                "id":217,
+                "title":"Technico-commercial"
+              },
+              {
+                "id":218,
+                "title":"T\u00e9l\u00e9vendeur"
+              },
+              {
+                "id":219,
+                "title":"Vendeur"
+              },
+              {
+                "id":220,
+                "title":"Vendeur \u00e0 domicile"
+              },
+              {
+                "id":299,
+                "title":"Autre m\u00e9tier Achat \/ Vente"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Agriculture \/ P\u00eache \/ Environnement",
+          "elements":{
+            "element":[
+              {
+                "id":301,
+                "title":"Agent d\u2019assainissement"
+              },
+              {
+                "id":302,
+                "title":"Agent d\u2019entretien des espaces naturels"
+              },
+              {
+                "id":303,
+                "title":"Agent d\u2019\u00e9puration"
+              },
+              {
+                "id":305,
+                "title":"Agriculteur"
+              },
+              {
+                "id":306,
+                "title":"Animateur nature"
+              },
+              {
+                "id":307,
+                "title":"Aquaculteur"
+              },
+              {
+                "id":308,
+                "title":"Arboriculteur"
+              },
+              {
+                "id":309,
+                "title":"B\u00fbcheron"
+              },
+              {
+                "id":310,
+                "title":"Chef de culture"
+              },
+              {
+                "id":311,
+                "title":"Collecteur de d\u00e9chets"
+              },
+              {
+                "id":313,
+                "title":"Employ\u00e9 de d\u00e9chetterie"
+              },
+              {
+                "id":314,
+                "title":"Horticulteur"
+              },
+              {
+                "id":315,
+                "title":"Jardinier"
+              },
+              {
+                "id":316,
+                "title":"Marin p\u00eacheur"
+              },
+              {
+                "id":317,
+                "title":"Ostr\u00e9iculteur"
+              },
+              {
+                "id":318,
+                "title":"Ouvrier agricole"
+              },
+              {
+                "id":319,
+                "title":"Paysagiste"
+              },
+              {
+                "id":320,
+                "title":"P\u00e9pini\u00e9riste"
+              },
+              {
+                "id":321,
+                "title":"Responsable environnement"
+              },
+              {
+                "id":322,
+                "title":"Technicien agricole"
+              },
+              {
+                "id":323,
+                "title":"Technicien des \u00e9nergies renouvelables"
+              },
+              {
+                "id":324,
+                "title":"V\u00e9t\u00e9rinaire"
+              },
+              {
+                "id":325,
+                "title":"Vigneron"
+              },
+              {
+                "id":399,
+                "title":"Autre m\u00e9tier Agriculture \/ P\u00eache \/ Environnement"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Artisanat",
+          "elements":{
+            "element":[
+              {
+                "id":401,
+                "title":"Carrossier"
+              },
+              {
+                "id":402,
+                "title":"Chaudronnier"
+              },
+              {
+                "id":403,
+                "title":"Cordonnier"
+              },
+              {
+                "id":404,
+                "title":"Couturier"
+              },
+              {
+                "id":405,
+                "title":"Ferronier"
+              },
+              {
+                "id":406,
+                "title":"Frigoriste"
+              },
+              {
+                "id":407,
+                "title":"Joallier"
+              },
+              {
+                "id":408,
+                "title":"M\u00e9canicien"
+              },
+              {
+                "id":409,
+                "title":"Miroitier"
+              },
+              {
+                "id":410,
+                "title":"Poseur de papier peint"
+              },
+              {
+                "id":411,
+                "title":"Poseur d\u2019affiches"
+              },
+              {
+                "id":418,
+                "title":"Serrurier"
+              },
+              {
+                "id":412,
+                "title":"Tailleur"
+              },
+              {
+                "id":413,
+                "title":"Tapissier"
+              },
+              {
+                "id":414,
+                "title":"Teinturier"
+              },
+              {
+                "id":415,
+                "title":"T\u00f4lier"
+              },
+              {
+                "id":416,
+                "title":"Tourneur-fraiseur"
+              },
+              {
+                "id":499,
+                "title":"Autre m\u00e9tier Artisanat"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Commerce \/ Distribution",
+          "elements":{
+            "element":[
+              {
+                "id":501,
+                "title":"Agent immobilier"
+              },
+              {
+                "id":502,
+                "title":"Antiquaire"
+              },
+              {
+                "id":503,
+                "title":"Boucher"
+              },
+              {
+                "id":504,
+                "title":"Boucher - charcutier"
+              },
+              {
+                "id":505,
+                "title":"Boulanger"
+              },
+              {
+                "id":506,
+                "title":"Caissier"
+              },
+              {
+                "id":507,
+                "title":"Caviste"
+              },
+              {
+                "id":508,
+                "title":"Chef de magasin"
+              },
+              {
+                "id":509,
+                "title":"Chef de rayon"
+              },
+              {
+                "id":510,
+                "title":"Chocolatier"
+              },
+              {
+                "id":512,
+                "title":"Disquaire"
+              },
+              {
+                "id":513,
+                "title":"Employ\u00e9 de grande surface"
+              },
+              {
+                "id":515,
+                "title":"Employ\u00e9 de poste"
+              },
+              {
+                "id":516,
+                "title":"Fleuriste"
+              },
+              {
+                "id":517,
+                "title":"Garagiste"
+              },
+              {
+                "id":518,
+                "title":"Grossiste"
+              },
+              {
+                "id":519,
+                "title":"Libraire"
+              },
+              {
+                "id":520,
+                "title":"Loueur de voitures"
+              },
+              {
+                "id":521,
+                "title":"Mara\u00eecher"
+              },
+              {
+                "id":523,
+                "title":"P\u00e2tissier"
+              },
+              {
+                "id":524,
+                "title":"Poissonnier"
+              },
+              {
+                "id":525,
+                "title":"Pompiste"
+              },
+              {
+                "id":526,
+                "title":"Quincaillier"
+              },
+              {
+                "id":527,
+                "title":"Responsable d\u2019agence immobili\u00e8re"
+              },
+              {
+                "id":599,
+                "title":"Autre m\u00e9tier Commerce \/ Distribution"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Comptabilit\u00e9 \/ Finance \/ Assurance",
+          "elements":{
+            "element":[
+              {
+                "id":623,
+                "title":"Actuaire"
+              },
+              {
+                "id":601,
+                "title":"Agent de change"
+              },
+              {
+                "id":602,
+                "title":"Analyste financier"
+              },
+              {
+                "id":625,
+                "title":"Conseiller fiscal"
+              },
+              {
+                "id":604,
+                "title":"Auditeur"
+              },
+              {
+                "id":606,
+                "title":"Commissaire aux comptes"
+              },
+              {
+                "id":607,
+                "title":"Comptable"
+              },
+              {
+                "id":608,
+                "title":"Conseiller financier"
+              },
+              {
+                "id":609,
+                "title":"Contr\u00f4leur de gestion"
+              },
+              {
+                "id":610,
+                "title":"Courtier"
+              },
+              {
+                "id":611,
+                "title":"Directeur administratif et financier"
+              },
+              {
+                "id":612,
+                "title":"Directeur financier"
+              },
+              {
+                "id":613,
+                "title":"Employ\u00e9 de comptabilit\u00e9"
+              },
+              {
+                "id":614,
+                "title":"Employ\u00e9 financier"
+              },
+              {
+                "id":615,
+                "title":"Expert-comptable"
+              },
+              {
+                "id":626,
+                "title":"Fiscaliste"
+              },
+              {
+                "id":624,
+                "title":"Gestionnaire de paie"
+              },
+              {
+                "id":616,
+                "title":"Gestionnaire de patrimoine"
+              },
+              {
+                "id":617,
+                "title":"Gestionnaire de portefeuille"
+              },
+              {
+                "id":618,
+                "title":"R\u00e9dacteur assurances"
+              },
+              {
+                "id":619,
+                "title":"Secr\u00e9taire comptable"
+              },
+              {
+                "id":620,
+                "title":"Trader"
+              },
+              {
+                "id":621,
+                "title":"Chef comptable"
+              },
+              {
+                "id":699,
+                "title":"Autre m\u00e9tier Comptabilit\u00e9 \/ Finance \/ Assurance"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Construction \/ BTP \/ Ing\u00e9nierie",
+          "elements":{
+            "element":[
+              {
+                "id":701,
+                "title":"Architecte"
+              },
+              {
+                "id":702,
+                "title":"Charpentier"
+              },
+              {
+                "id":703,
+                "title":"Chef de chantier"
+              },
+              {
+                "id":704,
+                "title":"Conducteur de chantier"
+              },
+              {
+                "id":705,
+                "title":"Conducteur d\u2019engins"
+              },
+              {
+                "id":706,
+                "title":"Couvreur - zingueur"
+              },
+              {
+                "id":707,
+                "title":"Dessinateur-projeteur"
+              },
+              {
+                "id":708,
+                "title":"Electricien"
+              },
+              {
+                "id":709,
+                "title":"Employ\u00e9 de bureau d\u2019\u00e9tudes"
+              },
+              {
+                "id":710,
+                "title":"G\u00e9om\u00e8tre"
+              },
+              {
+                "id":711,
+                "title":"Grutier"
+              },
+              {
+                "id":712,
+                "title":"Ma\u00e7on"
+              },
+              {
+                "id":713,
+                "title":"Menuisier"
+              },
+              {
+                "id":714,
+                "title":"Peintre"
+              },
+              {
+                "id":715,
+                "title":"Pl\u00e2trier"
+              },
+              {
+                "id":716,
+                "title":"Plombier"
+              },
+              {
+                "id":717,
+                "title":"Soudeur"
+              },
+              {
+                "id":718,
+                "title":"Vitrier"
+              },
+              {
+                "id":799,
+                "title":"Autre m\u00e9tier Construction \/ BTP \/ Ing\u00e9nierie"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Cr\u00e9ation \/ Arts \/ Spectacle",
+          "elements":{
+            "element":[
+              {
+                "id":801,
+                "title":"Acteur"
+              },
+              {
+                "id":802,
+                "title":"Artiste"
+              },
+              {
+                "id":803,
+                "title":"Cin\u00e9aste"
+              },
+              {
+                "id":804,
+                "title":"Cr\u00e9ateur de mode"
+              },
+              {
+                "id":805,
+                "title":"D\u00e9corateur"
+              },
+              {
+                "id":806,
+                "title":"Designer"
+              },
+              {
+                "id":807,
+                "title":"Directeur artistique"
+              },
+              {
+                "id":808,
+                "title":"Ecrivain"
+              },
+              {
+                "id":809,
+                "title":"Ergonome"
+              },
+              {
+                "id":810,
+                "title":"Graphiste, Illustrateur"
+              },
+              {
+                "id":811,
+                "title":"Infographiste"
+              },
+              {
+                "id":812,
+                "title":"Mannequin"
+              },
+              {
+                "id":813,
+                "title":"Organisateur de spectacles"
+              },
+              {
+                "id":814,
+                "title":"Photographe"
+              },
+              {
+                "id":815,
+                "title":"Producteur"
+              },
+              {
+                "id":816,
+                "title":"Technicien de l\u2019image"
+              },
+              {
+                "id":817,
+                "title":"Technicien du son"
+              },
+              {
+                "id":899,
+                "title":"Autre m\u00e9tier Cr\u00e9ation \/ Arts \/ Spectacle"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Fabrication \/ Production",
+          "elements":{
+            "element":[
+              {
+                "id":901,
+                "title":"Agent de fabrication"
+              },
+              {
+                "id":902,
+                "title":"Agent de ma\u00eetrise"
+              },
+              {
+                "id":903,
+                "title":"Ajusteur"
+              },
+              {
+                "id":904,
+                "title":"Chef de poste"
+              },
+              {
+                "id":905,
+                "title":"Chef d\u2019atelier"
+              },
+              {
+                "id":906,
+                "title":"Conditionneur"
+              },
+              {
+                "id":907,
+                "title":"Directeur de production"
+              },
+              {
+                "id":908,
+                "title":"Employ\u00e9 de plateforme p\u00e9troli\u00e8re"
+              },
+              {
+                "id":909,
+                "title":"Employ\u00e9 d\u2019exploitation gazi\u00e8re"
+              },
+              {
+                "id":910,
+                "title":"Employ\u00e9 d\u2019exploitation mini\u00e8re"
+              },
+              {
+                "id":911,
+                "title":"Op\u00e9rateur"
+              },
+              {
+                "id":912,
+                "title":"Ouvrier de production"
+              },
+              {
+                "id":913,
+                "title":"Responsable de production"
+              },
+              {
+                "id":914,
+                "title":"Technicien"
+              },
+              {
+                "id":999,
+                "title":"Autre m\u00e9tier Fabrication \/ Production"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Formation \/ Education",
+          "elements":{
+            "element":[
+              {
+                "id":1001,
+                "title":"Conseiller professionnel"
+              },
+              {
+                "id":1002,
+                "title":"Directeur d\u2019\u00e9tablissement"
+              },
+              {
+                "id":1003,
+                "title":"Educateur"
+              },
+              {
+                "id":1004,
+                "title":"Employ\u00e9 scolaire"
+              },
+              {
+                "id":1005,
+                "title":"Enseignant"
+              },
+              {
+                "id":1006,
+                "title":"Formateur"
+              },
+              {
+                "id":1007,
+                "title":"Instituteur"
+              },
+              {
+                "id":1008,
+                "title":"Ma\u00eetre de conf\u00e9rences"
+              },
+              {
+                "id":1009,
+                "title":"Moniteur"
+              },
+              {
+                "id":1010,
+                "title":"Professeur"
+              },
+              {
+                "id":1011,
+                "title":"Pu\u00e9riculteur"
+              },
+              {
+                "id":1012,
+                "title":"Responsable de formation continue"
+              },
+              {
+                "id":1013,
+                "title":"Responsable p\u00e9dagogique"
+              },
+              {
+                "id":1099,
+                "title":"Autre m\u00e9tier Formation \/ Education"
+              }
+            ]
+          }
+        },
+        {
+          "title":"H\u00f4tellerie \/ Restauration \/ Tourisme",
+          "elements":{
+            "element":[
+              {
+                "id":1101,
+                "title":"Agent de voyage"
+              },
+              {
+                "id":1102,
+                "title":"Agent d\u2019accueil"
+              },
+              {
+                "id":1103,
+                "title":"Animateur"
+              },
+              {
+                "id":1104,
+                "title":"Bagagiste"
+              },
+              {
+                "id":1105,
+                "title":"Barman"
+              },
+              {
+                "id":1106,
+                "title":"Chef de partie"
+              },
+              {
+                "id":1107,
+                "title":"Chef de rang"
+              },
+              {
+                "id":1108,
+                "title":"Cuisinier"
+              },
+              {
+                "id":1109,
+                "title":"Directeur de centre de vacances"
+              },
+              {
+                "id":1110,
+                "title":"Directeur de restaurant"
+              },
+              {
+                "id":1111,
+                "title":"Directeur d\u2019h\u00f4tel"
+              },
+              {
+                "id":1112,
+                "title":"Employ\u00e9 de cuisine"
+              },
+              {
+                "id":1113,
+                "title":"Employ\u00e9 de restaurant"
+              },
+              {
+                "id":1114,
+                "title":"Employ\u00e9 d\u2019h\u00f4tel"
+              },
+              {
+                "id":1115,
+                "title":"Guide touristique"
+              },
+              {
+                "id":1116,
+                "title":"Responsable d\u2019agence de voyages"
+              },
+              {
+                "id":1117,
+                "title":"Serveur"
+              },
+              {
+                "id":1199,
+                "title":"Autre m\u00e9tier H\u00f4tellerie \/ Restauration \/ Tourisme"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Informatique \/ T\u00e9l\u00e9com \/ Technologies",
+          "elements":{
+            "element":[
+              {
+                "id":1201,
+                "title":"Administrateur de bases de donn\u00e9es"
+              },
+              {
+                "id":1203,
+                "title":"Analyste programmeur"
+              },
+              {
+                "id":1204,
+                "title":"Animateur Web \/ Community manager"
+              },
+              {
+                "id":1205,
+                "title":"Architecte syst\u00e8me"
+              },
+              {
+                "id":1206,
+                "title":"Architecte t\u00e9l\u00e9com"
+              },
+              {
+                "id":1207,
+                "title":"Chef de projet informatique"
+              },
+              {
+                "id":1208,
+                "title":"Chef de projet web \/ multim\u00e9dia"
+              },
+              {
+                "id":1209,
+                "title":"Concepteur multim\u00e9dia"
+              },
+              {
+                "id":1235,
+                "title":"Consultant en informatique d\u00e9cisionnelle"
+              },
+              {
+                "id":1211,
+                "title":"D\u00e9veloppeur web"
+              },
+              {
+                "id":1212,
+                "title":"Directeur des syst\u00e8mes d\u2019information"
+              },
+              {
+                "id":1213,
+                "title":"Directeur informatique"
+              },
+              {
+                "id":1236,
+                "title":"Directeur Technique"
+              },
+              {
+                "id":1214,
+                "title":"Employ\u00e9 de centre t\u00e9l\u00e9phonique"
+              },
+              {
+                "id":1215,
+                "title":"Expert en s\u00e9curit\u00e9 informatique"
+              },
+              {
+                "id":1202,
+                "title":"Hotliner"
+              },
+              {
+                "id":1216,
+                "title":"Ing\u00e9nieur syt\u00e8me et r\u00e9seau"
+              },
+              {
+                "id":1217,
+                "title":"Int\u00e9grateur web"
+              },
+              {
+                "id":1226,
+                "title":"Programmeur"
+              },
+              {
+                "id":1228,
+                "title":"Administrateur r\u00e9seau"
+              },
+              {
+                "id":1229,
+                "title":"Responsable s\u00e9curit\u00e9"
+              },
+              {
+                "id":1232,
+                "title":"Sp\u00e9cialiste en r\u00e9f\u00e9rencement (SEO \/ SEM)"
+              },
+              {
+                "id":1233,
+                "title":"Webdesigner"
+              },
+              {
+                "id":1234,
+                "title":"Webmaster"
+              },
+              {
+                "id":1299,
+                "title":"Autre m\u00e9tiers Informatique \/ T\u00e9l\u00e9com \/ Technologies"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Juridique \/ Fiscalit\u00e9",
+          "elements":{
+            "element":[
+              {
+                "id":1301,
+                "title":"Avocat"
+              },
+              {
+                "id":1302,
+                "title":"Avou\u00e9"
+              },
+              {
+                "id":1303,
+                "title":"Clerc de notaire"
+              },
+              {
+                "id":1305,
+                "title":"Directeur juridique"
+              },
+              {
+                "id":1306,
+                "title":"Employ\u00e9 de service contentieux"
+              },
+              {
+                "id":1307,
+                "title":"Employ\u00e9 de service juridique"
+              },
+              {
+                "id":1308,
+                "title":"Employ\u00e9 de tribunal"
+              },
+              {
+                "id":1309,
+                "title":"Expert en propri\u00e9t\u00e9 intellectuelle"
+              },
+              {
+                "id":1311,
+                "title":"Huissier de justice"
+              },
+              {
+                "id":1312,
+                "title":"Juge"
+              },
+              {
+                "id":1313,
+                "title":"Juriste"
+              },
+              {
+                "id":1314,
+                "title":"Notaire"
+              },
+              {
+                "id":1315,
+                "title":"R\u00e9dacteur juridique"
+              },
+              {
+                "id":1316,
+                "title":"Responsable juridique"
+              },
+              {
+                "id":1399,
+                "title":"Autre m\u00e9tier Juridique \/ Fiscalit\u00e9"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Maintenance \/ Entretien \/ Nettoyage",
+          "elements":{
+            "element":[
+              {
+                "id":1401,
+                "title":"Agent d\u2019entretien"
+              },
+              {
+                "id":1402,
+                "title":"Charg\u00e9 d\u2019entretien d\u2019\u00e9quipement industriel"
+              },
+              {
+                "id":1403,
+                "title":"Chauffagiste"
+              },
+              {
+                "id":1404,
+                "title":"D\u00e9panneur"
+              },
+              {
+                "id":1405,
+                "title":"D\u00e9ratiseur"
+              },
+              {
+                "id":1406,
+                "title":"Employ\u00e9 de service apr\u00e8s-vente"
+              },
+              {
+                "id":1407,
+                "title":"Femme de m\u00e9nage"
+              },
+              {
+                "id":1408,
+                "title":"Laveur de carreaux"
+              },
+              {
+                "id":1409,
+                "title":"Outilleur"
+              },
+              {
+                "id":1410,
+                "title":"R\u00e9parateur"
+              },
+              {
+                "id":1411,
+                "title":"R\u00e9parateur informatique"
+              },
+              {
+                "id":1412,
+                "title":"Responsable apr\u00e8s-vente"
+              },
+              {
+                "id":1413,
+                "title":"Responsable de la maintenance"
+              },
+              {
+                "id":1414,
+                "title":"Serrurier"
+              },
+              {
+                "id":1415,
+                "title":"Technicien de maintenance"
+              },
+              {
+                "id":1416,
+                "title":"Technicien de surface"
+              },
+              {
+                "id":1499,
+                "title":"Autre m\u00e9tier Maintenance \/ Entretien \/ Nettoyage"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Marketing \/ Communication \/ Publicit\u00e9",
+          "elements":{
+            "element":[
+              {
+                "id":1501,
+                "title":"Assistant chef de produit"
+              },
+              {
+                "id":1522,
+                "title":"Animateur Web \/ Community manager"
+              },
+              {
+                "id":1502,
+                "title":"Attach\u00e9 de presse"
+              },
+              {
+                "id":1503,
+                "title":"Charg\u00e9 de communication"
+              },
+              {
+                "id":1504,
+                "title":"Gestionnaire de projet \u00e9v\u00e9nementiel"
+              },
+              {
+                "id":1505,
+                "title":"Charg\u00e9 de partenariats"
+              },
+              {
+                "id":1506,
+                "title":"Charg\u00e9 de relations publiques"
+              },
+              {
+                "id":1507,
+                "title":"Chef de produit"
+              },
+              {
+                "id":1508,
+                "title":"Chef de publicit\u00e9"
+              },
+              {
+                "id":1509,
+                "title":"Directeur de la communication"
+              },
+              {
+                "id":1510,
+                "title":"Directeur marketing"
+              },
+              {
+                "id":1511,
+                "title":"R\u00e9dacteur publicitaire"
+              },
+              {
+                "id":1512,
+                "title":"Responsable communication"
+              },
+              {
+                "id":1513,
+                "title":"Responsable de marque"
+              },
+              {
+                "id":1514,
+                "title":"Responsable marketing"
+              },
+              {
+                "id":1515,
+                "title":"T\u00e9l\u00e9marketeur"
+              },
+              {
+                "id":1516,
+                "title":"Traffic manager"
+              },
+              {
+                "id":1517,
+                "title":"Vendeur d\u2019espaces publicitaires"
+              },
+              {
+                "id":1518,
+                "title":"Webmarketer"
+              },
+              {
+                "id":1519,
+                "title":"Journaliste"
+              },
+              {
+                "id":1520,
+                "title":"M\u00e9diateur culturel"
+              },
+              {
+                "id":1599,
+                "title":"Autre m\u00e9tier Marketing \/ Communication \/ Publicit\u00e9"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Conseil \/ Strat\u00e9gie \/ RH",
+          "elements":{
+            "element":[
+              {
+                "id":1601,
+                "title":"Administrateur de soci\u00e9t\u00e9s"
+              },
+              {
+                "id":1602,
+                "title":"Business analyst"
+              },
+              {
+                "id":1603,
+                "title":"Chef d\u2019entreprise"
+              },
+              {
+                "id":1604,
+                "title":"Consultant"
+              },
+              {
+                "id":1605,
+                "title":"Directeur"
+              },
+              {
+                "id":1606,
+                "title":"Directeur des Ressources Humaines"
+              },
+              {
+                "id":1607,
+                "title":"G\u00e9rant"
+              },
+              {
+                "id":1608,
+                "title":"Gestionnaire de projets"
+              },
+              {
+                "id":1609,
+                "title":"PDG"
+              },
+              {
+                "id":1610,
+                "title":"Planificateur"
+              },
+              {
+                "id":1611,
+                "title":"Pr\u00e9sident"
+              },
+              {
+                "id":1612,
+                "title":"Responsable business development"
+              },
+              {
+                "id":1613,
+                "title":"Responsable fusions-acquisitions"
+              },
+              {
+                "id":1614,
+                "title":"Responsable ressources humaines"
+              },
+              {
+                "id":1615,
+                "title":"Employ\u00e9 des ressources humaines"
+              },
+              {
+                "id":1616,
+                "title":"Charg\u00e9 de recrutement"
+              },
+              {
+                "id":1699,
+                "title":"Autre m\u00e9tier Conseil \/ Strat\u00e9gie \/ RH"
+              }
+            ]
+          }
+        },
+        {
+          "title":"R&D \/ Etudes \/ Analyses",
+          "elements":{
+            "element":[
+              {
+                "id":1701,
+                "title":"Chercheur"
+              },
+              {
+                "id":1702,
+                "title":"Directeur R&D"
+              },
+              {
+                "id":1703,
+                "title":"Economiste"
+              },
+              {
+                "id":1704,
+                "title":"Employ\u00e9 de service statistique"
+              },
+              {
+                "id":1705,
+                "title":"Enqu\u00eateur"
+              },
+              {
+                "id":1706,
+                "title":"Ing\u00e9nieur"
+              },
+              {
+                "id":1707,
+                "title":"Laborantin"
+              },
+              {
+                "id":1708,
+                "title":"Responsable d\u2019\u00e9tudes"
+              },
+              {
+                "id":1709,
+                "title":"Responsable R&D"
+              },
+              {
+                "id":1710,
+                "title":"Sociologue"
+              },
+              {
+                "id":1711,
+                "title":"Statisticien"
+              },
+              {
+                "id":1799,
+                "title":"Autre m\u00e9tier R&D \/ Etudes \/ Analyses"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Sant\u00e9 \/ Action sociale \/ Sport",
+          "elements":{
+            "element":[
+              {
+                "id":1801,
+                "title":"Agent hospitalier"
+              },
+              {
+                "id":1802,
+                "title":"Aide soignant"
+              },
+              {
+                "id":1803,
+                "title":"Ambulancier"
+              },
+              {
+                "id":1804,
+                "title":"Anesth\u00e9siste"
+              },
+              {
+                "id":1805,
+                "title":"Assistant m\u00e9dical"
+              },
+              {
+                "id":1806,
+                "title":"Auditeur social"
+              },
+              {
+                "id":1807,
+                "title":"Chirurgien"
+              },
+              {
+                "id":1808,
+                "title":"Conseiller parental"
+              },
+              {
+                "id":1809,
+                "title":"Dentiste"
+              },
+              {
+                "id":1810,
+                "title":"Dermatologue"
+              },
+              {
+                "id":1811,
+                "title":"Directeur de clinique"
+              },
+              {
+                "id":1812,
+                "title":"Directeur de cr\u00e8che"
+              },
+              {
+                "id":1813,
+                "title":"Directeur d\u2019h\u00f4pital"
+              },
+              {
+                "id":1814,
+                "title":"Employ\u00e9 de laboratoire d\u2019analyse"
+              },
+              {
+                "id":1815,
+                "title":"Employ\u00e9 de service social"
+              },
+              {
+                "id":1816,
+                "title":"Employ\u00e9 de soins \u00e0 domicile"
+              },
+              {
+                "id":1817,
+                "title":"Entra\u00eeneur"
+              },
+              {
+                "id":1818,
+                "title":"Externe en m\u00e9decine"
+              },
+              {
+                "id":1819,
+                "title":"Infirmier"
+              },
+              {
+                "id":1820,
+                "title":"Kin\u00e9sith\u00e9rapeute"
+              },
+              {
+                "id":1821,
+                "title":"M\u00e9decin du sport"
+              },
+              {
+                "id":1822,
+                "title":"M\u00e9decin du travail"
+              },
+              {
+                "id":1823,
+                "title":"M\u00e9decin g\u00e9n\u00e9raliste"
+              },
+              {
+                "id":1824,
+                "title":"M\u00e9decin sp\u00e9cialiste"
+              },
+              {
+                "id":1825,
+                "title":"Nutritionniste"
+              },
+              {
+                "id":1826,
+                "title":"ORL"
+              },
+              {
+                "id":1827,
+                "title":"Pharmacien"
+              },
+              {
+                "id":1828,
+                "title":"Pr\u00e9parateur en pharmacie"
+              },
+              {
+                "id":1829,
+                "title":"R\u00e9\u00e9ducateur"
+              },
+              {
+                "id":1830,
+                "title":"Responsable de services sociaux"
+              },
+              {
+                "id":1831,
+                "title":"Sage-femme"
+              },
+              {
+                "id":1832,
+                "title":"Sportif de haut niveau"
+              },
+              {
+                "id":1833,
+                "title":"Th\u00e9rapeute"
+              },
+              {
+                "id":1834,
+                "title":"Psychologue"
+              },
+              {
+                "id":1835,
+                "title":"Osth\u00e9opathe"
+              },
+              {
+                "id":1899,
+                "title":"Autre m\u00e9tier Sant\u00e9 \/ Action sociale \/ Sport"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Services \u00e0 la personne",
+          "elements":{
+            "element":[
+              {
+                "id":1901,
+                "title":"Aide \u00e0 domicile"
+              },
+              {
+                "id":1902,
+                "title":"Assistant maternel"
+              },
+              {
+                "id":1903,
+                "title":"Auxiliaire de vie"
+              },
+              {
+                "id":1904,
+                "title":"Baby-sitter"
+              },
+              {
+                "id":1905,
+                "title":"Coiffeur"
+              },
+              {
+                "id":1907,
+                "title":"Manucure"
+              },
+              {
+                "id":1908,
+                "title":"Maquilleur - visagiste"
+              },
+              {
+                "id":1909,
+                "title":"Esth\u00e9ticienne"
+              },
+              {
+                "id":1999,
+                "title":"Autre m\u00e9tier Services \u00e0 la personne"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Services administratifs \/ Services publics",
+          "elements":{
+            "element":[
+              {
+                "id":2001,
+                "title":"Archiviste"
+              },
+              {
+                "id":2002,
+                "title":"Assistant de direction"
+              },
+              {
+                "id":2003,
+                "title":"Attach\u00e9 parlementaire"
+              },
+              {
+                "id":2004,
+                "title":"Commis de la fonction publique"
+              },
+              {
+                "id":2005,
+                "title":"Conseiller de l\u2019emploi"
+              },
+              {
+                "id":2006,
+                "title":"Employ\u00e9 administratif"
+              },
+              {
+                "id":2007,
+                "title":"Employ\u00e9 de collectivit\u00e9"
+              },
+              {
+                "id":2008,
+                "title":"Employ\u00e9 de la fonction publique"
+              },
+              {
+                "id":2009,
+                "title":"Employ\u00e9 de l\u2019administration p\u00e9nitentiaire"
+              },
+              {
+                "id":2011,
+                "title":"Employ\u00e9 des services g\u00e9n\u00e9raux"
+              },
+              {
+                "id":2012,
+                "title":"Employ\u00e9 des transports publics"
+              },
+              {
+                "id":2014,
+                "title":"Interpr\u00eate"
+              },
+              {
+                "id":2015,
+                "title":"Op\u00e9rateur de saisie"
+              },
+              {
+                "id":2016,
+                "title":"R\u00e9ceptionniste"
+              },
+              {
+                "id":2017,
+                "title":"Responsable administratif"
+              },
+              {
+                "id":2018,
+                "title":"Secr\u00e9taire"
+              },
+              {
+                "id":2019,
+                "title":"Standardiste"
+              },
+              {
+                "id":2099,
+                "title":"Autre m\u00e9tier Services administratifs \/ Services publics"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Surveillance \/ S\u00e9curit\u00e9 \/ Inspection",
+          "elements":{
+            "element":[
+              {
+                "id":2101,
+                "title":"Agent de s\u00e9curit\u00e9"
+              },
+              {
+                "id":2102,
+                "title":"Contr\u00f4leur qualit\u00e9"
+              },
+              {
+                "id":2103,
+                "title":"Convoyeur de fonds"
+              },
+              {
+                "id":2104,
+                "title":"Expert en s\u00e9curit\u00e9 alimentaire"
+              },
+              {
+                "id":2105,
+                "title":"Garde du corps"
+              },
+              {
+                "id":2106,
+                "title":"Garde forestier"
+              },
+              {
+                "id":2107,
+                "title":"Gardien"
+              },
+              {
+                "id":2108,
+                "title":"Inspecteur"
+              },
+              {
+                "id":2110,
+                "title":"Militaire"
+              },
+              {
+                "id":2119,
+                "title":"Ninja"
+              },
+              {
+                "id":2111,
+                "title":"Policier"
+              },
+              {
+                "id":2112,
+                "title":"Pompier"
+              },
+              {
+                "id":2113,
+                "title":"Responsable Certification"
+              },
+              {
+                "id":2114,
+                "title":"Responsable gardiennage"
+              },
+              {
+                "id":2115,
+                "title":"Responsable Qualit\u00e9"
+              },
+              {
+                "id":2116,
+                "title":"Surveillant"
+              },
+              {
+                "id":2117,
+                "title":"Veilleur de nuit"
+              },
+              {
+                "id":2118,
+                "title":"Vigile"
+              },
+              {
+                "id":2199,
+                "title":"Autre m\u00e9tier Surveillance \/ S\u00e9curit\u00e9 \/ Inspection"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Transport \/ Logistique",
+          "elements":{
+            "element":[
+              {
+                "id":2201,
+                "title":"Affr\u00e9teur"
+              },
+              {
+                "id":2202,
+                "title":"Agent de r\u00e9servations"
+              },
+              {
+                "id":2203,
+                "title":"Agent d\u2019escale"
+              },
+              {
+                "id":2204,
+                "title":"Aiguilleur"
+              },
+              {
+                "id":2205,
+                "title":"Chauffeur"
+              },
+              {
+                "id":2206,
+                "title":"Chauffeur de taxi"
+              },
+              {
+                "id":2207,
+                "title":"Chauffeur de transport public"
+              },
+              {
+                "id":2208,
+                "title":"Chef d\u2019entrep\u00f4t"
+              },
+              {
+                "id":2209,
+                "title":"Conducteur de Poids Lourds"
+              },
+              {
+                "id":2210,
+                "title":"Conducteur de train"
+              },
+              {
+                "id":2211,
+                "title":"Coursier"
+              },
+              {
+                "id":2212,
+                "title":"D\u00e9m\u00e9nageur"
+              },
+              {
+                "id":2213,
+                "title":"Directeur logistique"
+              },
+              {
+                "id":2214,
+                "title":"Employ\u00e9 de douane"
+              },
+              {
+                "id":2215,
+                "title":"Employ\u00e9 de gare"
+              },
+              {
+                "id":2216,
+                "title":"Employ\u00e9 de port"
+              },
+              {
+                "id":2217,
+                "title":"Employ\u00e9 de transport maritime"
+              },
+              {
+                "id":2218,
+                "title":"Employ\u00e9 d\u2019a\u00e9roport"
+              },
+              {
+                "id":2219,
+                "title":"Employ\u00e9 Fret"
+              },
+              {
+                "id":2220,
+                "title":"Employ\u00e9 Import-Export"
+              },
+              {
+                "id":2221,
+                "title":"Gestionnaire des stocks"
+              },
+              {
+                "id":2222,
+                "title":"H\u00f4tesse"
+              },
+              {
+                "id":2223,
+                "title":"Logisticien"
+              },
+              {
+                "id":2224,
+                "title":"Magasinier"
+              },
+              {
+                "id":2225,
+                "title":"Ma\u00eetre d\u2019\u00e9quipage"
+              },
+              {
+                "id":2226,
+                "title":"Manutentionnaire"
+              },
+              {
+                "id":2227,
+                "title":"Matelot"
+              },
+              {
+                "id":2228,
+                "title":"Ouvrier de manutention"
+              },
+              {
+                "id":2229,
+                "title":"Pilote"
+              },
+              {
+                "id":2230,
+                "title":"Pr\u00e9parateur de commandes"
+              },
+              {
+                "id":2231,
+                "title":"Responsable Import-Export"
+              },
+              {
+                "id":2232,
+                "title":"Responsable transport"
+              },
+              {
+                "id":2233,
+                "title":"Steward"
+              },
+              {
+                "id":2234,
+                "title":"Transporteur"
+              },
+              {
+                "id":2235,
+                "title":"Autre m\u00e9tier Transport \/ Logistique"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Banque \/ Assurance",
+          "elements":{
+            "element":[
+              {
+                "id":2301,
+                "title":"Analyste risque"
+              },
+              {
+                "id":2302,
+                "title":"Charg\u00e9 d'accueil"
+              },
+              {
+                "id":2303,
+                "title":"Charg\u00e9 de client\u00e8le"
+              },
+              {
+                "id":2304,
+                "title":"Conseiller Financier"
+              },
+              {
+                "id":2305,
+                "title":"Courtier"
+              },
+              {
+                "id":2306,
+                "title":"Gestionnaire de patrimoine"
+              },
+              {
+                "id":2307,
+                "title":"Gestionnaire de portefeuille"
+              },
+              {
+                "id":2308,
+                "title":"Op\u00e9rateur de march\u00e9"
+              },
+              {
+                "id":2310,
+                "title":"Responsable de point de vente"
+              },
+              {
+                "id":2311,
+                "title":"Trader"
+              },
+              {
+                "id":2399,
+                "title":"Autre m\u00e9tier Banque \/ Assurance"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title":"business",
+      "elements":[
+        {
+          "title":"Industries",
+          "elements":{
+            "element":[
+              {
+                "id":201,
+                "title":"A\u00e9ronautique et a\u00e9rospatiale"
+              },
+              {
+                "id":202,
+                "title":"Automobile"
+              },
+              {
+                "id":203,
+                "title":"Ferroviaire \/ Naval"
+              },
+              {
+                "id":204,
+                "title":"D\u00e9fense"
+              },
+              {
+                "id":205,
+                "title":"Composant et mat\u00e9riel \u00e9lectrique\/\u00e9lectronique"
+              },
+              {
+                "id":206,
+                "title":"Machine et \u00e9quipement"
+              },
+              {
+                "id":207,
+                "title":"Chimie, cosm\u00e9tique"
+              },
+              {
+                "id":208,
+                "title":"Energies et p\u00e9trole"
+              },
+              {
+                "id":209,
+                "title":"Environnement et \u00e9nergies renouvelables"
+              },
+              {
+                "id":210,
+                "title":"Textile, habillement"
+              },
+              {
+                "id":211,
+                "title":"Luxe, mode"
+              },
+              {
+                "id":212,
+                "title":"Imprimerie, reproduction"
+              },
+              {
+                "id":213,
+                "title":"Industrie bois et papiers"
+              },
+              {
+                "id":214,
+                "title":"Mines et m\u00e9taux"
+              },
+              {
+                "id":215,
+                "title":"Plasturgie"
+              },
+              {
+                "id":216,
+                "title":"Verres, c\u00e9ramiques et ciments"
+              },
+              {
+                "id":217,
+                "title":"Nanotechnologies"
+              },
+              {
+                "id":218,
+                "title":"Biotechnologies"
+              },
+              {
+                "id":219,
+                "title":"Semi-conducteurs"
+              },
+              {
+                "id":220,
+                "title":"Robotique, automatisme"
+              },
+              {
+                "id":221,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Agroalimentaire",
+          "elements":{
+            "element":[
+              {
+                "id":301,
+                "title":"Agriculture"
+              },
+              {
+                "id":302,
+                "title":"Agro-alimentaire"
+              },
+              {
+                "id":303,
+                "title":"\u00c9levage"
+              },
+              {
+                "id":304,
+                "title":"P\u00eache"
+              },
+              {
+                "id":305,
+                "title":"Secteur laitier "
+              },
+              {
+                "id":306,
+                "title":"Vins et spiritueux"
+              },
+              {
+                "id":307,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"B\u00e2timent \/ Travaux Publics",
+          "elements":{
+            "element":[
+              {
+                "id":401,
+                "title":"Architecture et urbanisme"
+              },
+              {
+                "id":402,
+                "title":"G\u00e9nie civil, travaux publlics, am\u00e9nagement"
+              },
+              {
+                "id":403,
+                "title":"Construction immobili\u00e8re"
+              },
+              {
+                "id":404,
+                "title":"Mat\u00e9riaux de construction"
+              },
+              {
+                "id":405,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Banque \/ Assurance \/ Finances",
+          "elements":{
+            "element":[
+              {
+                "id":501,
+                "title":"Assurances"
+              },
+              {
+                "id":502,
+                "title":"Banques"
+              },
+              {
+                "id":503,
+                "title":"Banques d'investissement"
+              },
+              {
+                "id":504,
+                "title":"Capital-risque et fonds LBO"
+              },
+              {
+                "id":505,
+                "title":"Comptabilit\u00e9"
+              },
+              {
+                "id":506,
+                "title":"Gestion de portefeuilles"
+              },
+              {
+                "id":507,
+                "title":"March\u00e9s des capitaux"
+              },
+              {
+                "id":508,
+                "title":"Services financiers"
+              },
+              {
+                "id":509,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Commerce \/ Distribution",
+          "elements":{
+            "element":[
+              {
+                "id":601,
+                "title":"Commerce de d\u00e9tail"
+              },
+              {
+                "id":602,
+                "title":"Commerce de gros"
+              },
+              {
+                "id":603,
+                "title":"Grande distribution"
+              },
+              {
+                "id":604,
+                "title":"Commerce international"
+              },
+              {
+                "id":605,
+                "title":"Import \/ export"
+              },
+              {
+                "id":606,
+                "title":"Immobilier"
+              },
+              {
+                "id":607,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Communication \/ Media",
+          "elements":{
+            "element":[
+              {
+                "id":701,
+                "title":"Marketing et publicit\u00e9"
+              },
+              {
+                "id":702,
+                "title":"Communication et relations publiques"
+              },
+              {
+                "id":703,
+                "title":"Organisation d'\u00e9v\u00e9nements"
+              },
+              {
+                "id":704,
+                "title":"Production audiovisuelle"
+              },
+              {
+                "id":705,
+                "title":"\u00c9dition"
+              },
+              {
+                "id":706,
+                "title":"Presse \u00e9crite"
+              },
+              {
+                "id":707,
+                "title":"M\u00e9dias en ligne"
+              },
+              {
+                "id":708,
+                "title":"M\u00e9dias radio et TV"
+              },
+              {
+                "id":709,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Conseil \/ Audit \/ Recherche",
+          "elements":{
+            "element":[
+              {
+                "id":801,
+                "title":"Conseil"
+              },
+              {
+                "id":802,
+                "title":"Audit"
+              },
+              {
+                "id":803,
+                "title":"Etude"
+              },
+              {
+                "id":804,
+                "title":"Centres de recherche"
+              },
+              {
+                "id":805,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Education \/ Formation",
+          "elements":{
+            "element":[
+              {
+                "id":901,
+                "title":"Enseignement primaire et secondaire"
+              },
+              {
+                "id":902,
+                "title":"Enseignement sup\u00e9rieur"
+              },
+              {
+                "id":903,
+                "title":"Formation \u00e0 distance"
+              },
+              {
+                "id":904,
+                "title":"Formation professionnelle"
+              },
+              {
+                "id":905,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Informatique \/ Telecom",
+          "elements":{
+            "element":[
+              {
+                "id":1001,
+                "title":"Internet \/ Mobile"
+              },
+              {
+                "id":1002,
+                "title":"Logiciels"
+              },
+              {
+                "id":1003,
+                "title":"Syst\u00e8mes et r\u00e9seaux"
+              },
+              {
+                "id":1004,
+                "title":"S\u00e9curit\u00e9 informatique et des r\u00e9seaux"
+              },
+              {
+                "id":1005,
+                "title":"T\u00e9l\u00e9communications"
+              },
+              {
+                "id":1006,
+                "title":"Jeux vid\u00e9os"
+              },
+              {
+                "id":1007,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Juridique \/ RH",
+          "elements":{
+            "element":[
+              {
+                "id":1101,
+                "title":"Ressources humaines"
+              },
+              {
+                "id":1102,
+                "title":"Recrutement "
+              },
+              {
+                "id":1103,
+                "title":"Avocats"
+              },
+              {
+                "id":1104,
+                "title":"Services juridiques"
+              },
+              {
+                "id":1105,
+                "title":"Institutions judiciaires"
+              },
+              {
+                "id":1106,
+                "title":"Institutions judiciaires"
+              },
+              {
+                "id":1107,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Logistique \/ Transport",
+          "elements":{
+            "element":[
+              {
+                "id":1201,
+                "title":"Logistique et cha\u00eene d'approvisionnement"
+              },
+              {
+                "id":1202,
+                "title":"Emballages et conteneurs"
+              },
+              {
+                "id":1203,
+                "title":"Entreposage, stockage"
+              },
+              {
+                "id":1204,
+                "title":"Transport a\u00e9rien"
+              },
+              {
+                "id":1205,
+                "title":"Transports routiers et ferroviaires"
+              },
+              {
+                "id":1206,
+                "title":"Transports maritimes"
+              },
+              {
+                "id":1207,
+                "title":"Messageries et fret"
+              },
+              {
+                "id":1208,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Loisirs \/ Tourisme",
+          "elements":{
+            "element":[
+              {
+                "id":1301,
+                "title":"Restauration"
+              },
+              {
+                "id":1302,
+                "title":"H\u00f4tellerie et h\u00e9bergement"
+              },
+              {
+                "id":1303,
+                "title":"Voyages et tourisme"
+              },
+              {
+                "id":1304,
+                "title":"Sports"
+              },
+              {
+                "id":1305,
+                "title":"Divertissements, loisirs"
+              },
+              {
+                "id":1306,
+                "title":"Forme et bien-\u00eatre"
+              },
+              {
+                "id":1307,
+                "title":"Jeux d'argent et casinos"
+              },
+              {
+                "id":1308,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Public \/ Administration",
+          "elements":{
+            "element":[
+              {
+                "id":1401,
+                "title":"Administration publique"
+              },
+              {
+                "id":1402,
+                "title":"Collectivit\u00e9s publiques et territoriales"
+              },
+              {
+                "id":1403,
+                "title":"Affaires \u00e9trang\u00e8res"
+              },
+              {
+                "id":1404,
+                "title":"\u00c9quipements collectifs"
+              },
+              {
+                "id":1405,
+                "title":"Politiques publiques"
+              },
+              {
+                "id":1406,
+                "title":"Politique"
+              },
+              {
+                "id":1407,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Sant\u00e9",
+          "elements":{
+            "element":[
+              {
+                "id":1501,
+                "title":"H\u00f4pitaux et centres de soins"
+              },
+              {
+                "id":1502,
+                "title":"Professions m\u00e9dicales"
+              },
+              {
+                "id":1503,
+                "title":"Industrie pharmaceutique"
+              },
+              {
+                "id":1504,
+                "title":"V\u00e9t\u00e9rinaire"
+              },
+              {
+                "id":1505,
+                "title":"\u00c9quipements m\u00e9dicaux"
+              },
+              {
+                "id":1506,
+                "title":"M\u00e9decines alternatives"
+              },
+              {
+                "id":1507,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"S\u00e9curit\u00e9",
+          "elements":{
+            "element":[
+              {
+                "id":1601,
+                "title":"Arm\u00e9e"
+              },
+              {
+                "id":1602,
+                "title":"S\u00e9curit\u00e9"
+              },
+              {
+                "id":1603,
+                "title":"Police\/gendarmerie"
+              },
+              {
+                "id":1604,
+                "title":"S\u00e9curit\u00e9 civile"
+              },
+              {
+                "id":1605,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Secteur associatif \/ Humanitaire",
+          "elements":{
+            "element":[
+              {
+                "id":1701,
+                "title":"Humanitaire"
+              },
+              {
+                "id":1702,
+                "title":"Gestion des associations et fondations"
+              },
+              {
+                "id":1703,
+                "title":"M\u00e9c\u00e9nat"
+              },
+              {
+                "id":1704,
+                "title":"Associations et organisations sociales et syndicales"
+              },
+              {
+                "id":1705,
+                "title":"Institutions religieuses"
+              },
+              {
+                "id":1706,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Arts \/ Culture",
+          "elements":{
+            "element":[
+              {
+                "id":1801,
+                "title":"Arts"
+              },
+              {
+                "id":1802,
+                "title":"Arts vivants"
+              },
+              {
+                "id":1803,
+                "title":"Biblioth\u00e8ques"
+              },
+              {
+                "id":1804,
+                "title":"Mus\u00e9es et institutions culturelles"
+              },
+              {
+                "id":1805,
+                "title":"Industrie cin\u00e9matographique"
+              },
+              {
+                "id":1806,
+                "title":"Films d'animation"
+              },
+              {
+                "id":1807,
+                "title":"Musique"
+              },
+              {
+                "id":1808,
+                "title":"Photographie"
+              },
+              {
+                "id":1809,
+                "title":"Autres"
+              }
+            ]
+          }
+        },
+        {
+          "title":"Autres services",
+          "elements":{
+            "element":[
+              {
+                "id":1901,
+                "title":"Traduction et adaptation"
+              },
+              {
+                "id":1902,
+                "title":"Services aux consommateurs"
+              },
+              {
+                "id":1903,
+                "title":"Services d'information"
+              },
+              {
+                "id":1904,
+                "title":"Services pour l'environnement"
+              },
+              {
+                "id":1905,
+                "title":"Services \u00e0 la personne"
+              },
+              {
+                "id":1906,
+                "title":"Design"
+              },
+              {
+                "id":1907,
+                "title":"Autres"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title":"businessTrip",
+      "elements":{
+        "element":[
+          {
+            "id":1,
+            "title":"Indiff\u00e9rent"
+          },
+          {
+            "id":2,
+            "title":"Aucun d\u00e9placement"
+          },
+          {
+            "id":3,
+            "title":"Occasionnellement (plusieurs fois par an)"
+          },
+          {
+            "id":4,
+            "title":"R\u00e9guli\u00e8rement (plusieurs fois par mois)"
+          },
+          {
+            "id":5,
+            "title":"Fr\u00e9quemment (plusieurs fois par semaine)"
+          }
+        ]
+      }
+    },
+    {
+      "title":"educationLevel",
+      "elements":{
+        "element":[
+          {
+            "id":1,
+            "title":"Non pr\u00e9cis\u00e9"
+          },
+          {
+            "id":2,
+            "title":"Non dipl\u00f4m\u00e9"
+          },
+          {
+            "id":3,
+            "title":"Inf\u00e9rieur au BAC (CAP, BEP, etc.)"
+          },
+          {
+            "id":4,
+            "title":"Bac"
+          },
+          {
+            "id":5,
+            "title":"Bac +2\/3"
+          },
+          {
+            "id":6,
+            "title":"Bac +4\/5"
+          },
+          {
+            "id":7,
+            "title":"Sup\u00e9rieur \u00e0 Bac + 5"
+          }
+        ]
+      }
+    },
+    {
+      "title":"hoursNumber",
+      "elements":{
+        "element":[
+          {
+            "id":1,
+            "title":"Temps plein"
+          },
+          {
+            "id":2,
+            "title":"Temps partiel"
+          }
+        ]
+      }
+    },
+    {
+      "title":"grossSalary",
+      "elements":{
+        "element":[
+          {
+            "id":1,
+            "title":"-"
+          },
+          {
+            "id":2,
+            "title":"15K"
+          },
+          {
+            "id":3,
+            "title":"20K"
+          },
+          {
+            "id":4,
+            "title":"25K"
+          },
+          {
+            "id":5,
+            "title":"30K"
+          },
+          {
+            "id":6,
+            "title":"35K"
+          },
+          {
+            "id":7,
+            "title":"40K"
+          },
+          {
+            "id":8,
+            "title":"50K"
+          },
+          {
+            "id":9,
+            "title":"60K"
+          },
+          {
+            "id":10,
+            "title":"80K"
+          },
+          {
+            "id":11,
+            "title":"100K"
+          }
+        ]
+      }
+    },
+    {
+      "title":"nationality",
+      "elements":{
+        "element":[
+          {
+            "id":1,
+            "title":"Afghane"
+          },
+          {
+            "id":2,
+            "title":"Albanaise"
+          },
+          {
+            "id":3,
+            "title":"Algerienne"
+          },
+          {
+            "id":4,
+            "title":"Allemande"
+          },
+          {
+            "id":5,
+            "title":"Americaine"
+          },
+          {
+            "id":6,
+            "title":"Andorrane"
+          },
+          {
+            "id":7,
+            "title":"Angolaise"
+          },
+          {
+            "id":8,
+            "title":"Antiguaise et barbudienne"
+          },
+          {
+            "id":9,
+            "title":"Argentine"
+          },
+          {
+            "id":10,
+            "title":"Armenienne"
+          },
+          {
+            "id":11,
+            "title":"Australienne"
+          },
+          {
+            "id":12,
+            "title":"Autrichienne"
+          },
+          {
+            "id":13,
+            "title":"Azerba\u00efdjanaise"
+          },
+          {
+            "id":14,
+            "title":"Bahamienne"
+          },
+          {
+            "id":15,
+            "title":"Bahreinienne"
+          },
+          {
+            "id":16,
+            "title":"Bangladaise"
+          },
+          {
+            "id":17,
+            "title":"Barbadienne"
+          },
+          {
+            "id":18,
+            "title":"Belge"
+          },
+          {
+            "id":19,
+            "title":"Belizienne"
+          },
+          {
+            "id":20,
+            "title":"Beninoise"
+          },
+          {
+            "id":21,
+            "title":"Bhoutanaise"
+          },
+          {
+            "id":22,
+            "title":"Bielorusse"
+          },
+          {
+            "id":23,
+            "title":"Birmane"
+          },
+          {
+            "id":24,
+            "title":"Bissao-guineenne"
+          },
+          {
+            "id":25,
+            "title":"Bolivienne"
+          },
+          {
+            "id":26,
+            "title":"Bosnienne"
+          },
+          {
+            "id":27,
+            "title":"Botswanaise"
+          },
+          {
+            "id":28,
+            "title":"Bresilienne"
+          },
+          {
+            "id":29,
+            "title":"Britannique"
+          },
+          {
+            "id":30,
+            "title":"Bruneienne"
+          },
+          {
+            "id":31,
+            "title":"Bulgare"
+          },
+          {
+            "id":32,
+            "title":"Burkinabe"
+          },
+          {
+            "id":33,
+            "title":"Burundaise"
+          },
+          {
+            "id":35,
+            "title":"Cambodgienne"
+          },
+          {
+            "id":36,
+            "title":"Camerounaise"
+          },
+          {
+            "id":37,
+            "title":"Canadienne"
+          },
+          {
+            "id":38,
+            "title":"Cap-verdienne"
+          },
+          {
+            "id":39,
+            "title":"Centrafricaine"
+          },
+          {
+            "id":40,
+            "title":"Chilienne"
+          },
+          {
+            "id":41,
+            "title":"Chinoise"
+          },
+          {
+            "id":42,
+            "title":"Chypriote"
+          },
+          {
+            "id":43,
+            "title":"Colombienne"
+          },
+          {
+            "id":44,
+            "title":"Comorienne"
+          },
+          {
+            "id":45,
+            "title":"Congolaise"
+          },
+          {
+            "id":46,
+            "title":"Costaricaine"
+          },
+          {
+            "id":47,
+            "title":"Croate"
+          },
+          {
+            "id":48,
+            "title":"Cubaine"
+          },
+          {
+            "id":49,
+            "title":"Danoise"
+          },
+          {
+            "id":50,
+            "title":"Djiboutienne"
+          },
+          {
+            "id":51,
+            "title":"Dominicaine"
+          },
+          {
+            "id":52,
+            "title":"Dominiquaise"
+          },
+          {
+            "id":53,
+            "title":"Egyptienne"
+          },
+          {
+            "id":54,
+            "title":"Emirienne"
+          },
+          {
+            "id":55,
+            "title":"Equato-guineenne"
+          },
+          {
+            "id":56,
+            "title":"Equatorienne"
+          },
+          {
+            "id":57,
+            "title":"Erythreenne"
+          },
+          {
+            "id":58,
+            "title":"Espagnole"
+          },
+          {
+            "id":59,
+            "title":"Est-timoraise"
+          },
+          {
+            "id":60,
+            "title":"Estonienne"
+          },
+          {
+            "id":61,
+            "title":"Ethiopienne"
+          },
+          {
+            "id":62,
+            "title":"Fidjienne"
+          },
+          {
+            "id":63,
+            "title":"Finlandaise"
+          },
+          {
+            "id":64,
+            "title":"Fran\u00e7aise"
+          },
+          {
+            "id":65,
+            "title":"Gabonaise"
+          },
+          {
+            "id":66,
+            "title":"Gambienne"
+          },
+          {
+            "id":67,
+            "title":"Georgienne"
+          },
+          {
+            "id":68,
+            "title":"Ghaneenne"
+          },
+          {
+            "id":69,
+            "title":"Grenadienne"
+          },
+          {
+            "id":70,
+            "title":"Guatemalteque"
+          },
+          {
+            "id":71,
+            "title":"Guineenne"
+          },
+          {
+            "id":72,
+            "title":"Guyanienne"
+          },
+          {
+            "id":73,
+            "title":"Ha\u00eftienne"
+          },
+          {
+            "id":74,
+            "title":"Hellenique"
+          },
+          {
+            "id":75,
+            "title":"Hondurienne"
+          },
+          {
+            "id":76,
+            "title":"Hongroise"
+          },
+          {
+            "id":77,
+            "title":"Indienne"
+          },
+          {
+            "id":78,
+            "title":"Indonesienne"
+          },
+          {
+            "id":79,
+            "title":"Irakienne"
+          },
+          {
+            "id":80,
+            "title":"Irlandaise"
+          },
+          {
+            "id":81,
+            "title":"Islandaise"
+          },
+          {
+            "id":82,
+            "title":"Isra\u00e9lienne"
+          },
+          {
+            "id":83,
+            "title":"Italienne"
+          },
+          {
+            "id":84,
+            "title":"Ivoirienne"
+          },
+          {
+            "id":85,
+            "title":"Jama\u00efcaine"
+          },
+          {
+            "id":86,
+            "title":"Japonaise"
+          },
+          {
+            "id":87,
+            "title":"Jordanienne"
+          },
+          {
+            "id":88,
+            "title":"Kazakhstanaise"
+          },
+          {
+            "id":89,
+            "title":"Kenyane"
+          },
+          {
+            "id":90,
+            "title":"Kirghize"
+          },
+          {
+            "id":91,
+            "title":"Kiribatienne"
+          },
+          {
+            "id":92,
+            "title":"Kittitienne-et-nevicienne"
+          },
+          {
+            "id":93,
+            "title":"Kossovienne"
+          },
+          {
+            "id":94,
+            "title":"Koweitienne"
+          },
+          {
+            "id":95,
+            "title":"Laotienne"
+          },
+          {
+            "id":96,
+            "title":"Lesothane"
+          },
+          {
+            "id":97,
+            "title":"Lettone"
+          },
+          {
+            "id":98,
+            "title":"Libanaise"
+          },
+          {
+            "id":99,
+            "title":"Liberienne"
+          },
+          {
+            "id":100,
+            "title":"Libyenne"
+          },
+          {
+            "id":101,
+            "title":"Liechtensteinoise"
+          },
+          {
+            "id":102,
+            "title":"Lituanienne"
+          },
+          {
+            "id":103,
+            "title":"Luxembourgeoise"
+          },
+          {
+            "id":104,
+            "title":"Macedonienne"
+          },
+          {
+            "id":105,
+            "title":"Malaisienne"
+          },
+          {
+            "id":106,
+            "title":"Malawienne"
+          },
+          {
+            "id":107,
+            "title":"Maldivienne"
+          },
+          {
+            "id":108,
+            "title":"Malgache"
+          },
+          {
+            "id":109,
+            "title":"Malienne"
+          },
+          {
+            "id":110,
+            "title":"Maltaise"
+          },
+          {
+            "id":111,
+            "title":"Marocaine"
+          },
+          {
+            "id":112,
+            "title":"Marshallaise"
+          },
+          {
+            "id":113,
+            "title":"Mauricienne"
+          },
+          {
+            "id":114,
+            "title":"Mauritanienne"
+          },
+          {
+            "id":115,
+            "title":"Mexicaine"
+          },
+          {
+            "id":116,
+            "title":"Micronesienne"
+          },
+          {
+            "id":117,
+            "title":"Moldave"
+          },
+          {
+            "id":118,
+            "title":"Monegasque"
+          },
+          {
+            "id":119,
+            "title":"Mongole"
+          },
+          {
+            "id":120,
+            "title":"Montenegrine"
+          },
+          {
+            "id":121,
+            "title":"Mozambicaine"
+          },
+          {
+            "id":122,
+            "title":"Namibienne"
+          },
+          {
+            "id":123,
+            "title":"Nauruane"
+          },
+          {
+            "id":124,
+            "title":"Neerlandaise"
+          },
+          {
+            "id":125,
+            "title":"Neo-zelandaise"
+          },
+          {
+            "id":126,
+            "title":"Nepalaise"
+          },
+          {
+            "id":127,
+            "title":"Nicaraguayenne"
+          },
+          {
+            "id":128,
+            "title":"Nigeriane"
+          },
+          {
+            "id":129,
+            "title":"Nigerienne"
+          },
+          {
+            "id":130,
+            "title":"Nord-cor\u00e9enne"
+          },
+          {
+            "id":131,
+            "title":"Norvegienne"
+          },
+          {
+            "id":132,
+            "title":"Omanaise"
+          },
+          {
+            "id":133,
+            "title":"Ougandaise"
+          },
+          {
+            "id":134,
+            "title":"Ouzbeke"
+          },
+          {
+            "id":135,
+            "title":"Pakistanaise"
+          },
+          {
+            "id":136,
+            "title":"Palau"
+          },
+          {
+            "id":137,
+            "title":"Palestinienne"
+          },
+          {
+            "id":138,
+            "title":"Panameenne"
+          },
+          {
+            "id":139,
+            "title":"Papouane-neoguineenne"
+          },
+          {
+            "id":140,
+            "title":"Paraguayenne"
+          },
+          {
+            "id":141,
+            "title":"Peruvienne"
+          },
+          {
+            "id":142,
+            "title":"Philippine"
+          },
+          {
+            "id":143,
+            "title":"Polonaise"
+          },
+          {
+            "id":144,
+            "title":"Portoricaine"
+          },
+          {
+            "id":145,
+            "title":"Portugaise"
+          },
+          {
+            "id":146,
+            "title":"Qatarienne"
+          },
+          {
+            "id":147,
+            "title":"Roumaine"
+          },
+          {
+            "id":148,
+            "title":"Russe"
+          },
+          {
+            "id":149,
+            "title":"Rwandaise"
+          },
+          {
+            "id":150,
+            "title":"Saint-lucienne"
+          },
+          {
+            "id":151,
+            "title":"Saint-marinaise"
+          },
+          {
+            "id":152,
+            "title":"Saint-vincentaise-et-grenadine"
+          },
+          {
+            "id":153,
+            "title":"Salomonaise"
+          },
+          {
+            "id":154,
+            "title":"Salvadorienne"
+          },
+          {
+            "id":155,
+            "title":"Samoane"
+          },
+          {
+            "id":156,
+            "title":"Santomeenne"
+          },
+          {
+            "id":157,
+            "title":"Saoudienne"
+          },
+          {
+            "id":158,
+            "title":"Senegalaise"
+          },
+          {
+            "id":159,
+            "title":"Serbe"
+          },
+          {
+            "id":160,
+            "title":"Seychelloise"
+          },
+          {
+            "id":161,
+            "title":"Sierra-leonaise"
+          },
+          {
+            "id":162,
+            "title":"Singapourienne"
+          },
+          {
+            "id":163,
+            "title":"Slovaque"
+          },
+          {
+            "id":164,
+            "title":"Slovene"
+          },
+          {
+            "id":165,
+            "title":"Somalienne"
+          },
+          {
+            "id":166,
+            "title":"Soudanaise"
+          },
+          {
+            "id":167,
+            "title":"Sri-lankaise"
+          },
+          {
+            "id":168,
+            "title":"Sud-africaine"
+          },
+          {
+            "id":169,
+            "title":"Sud-cor\u00e9enne"
+          },
+          {
+            "id":170,
+            "title":"Suedoise"
+          },
+          {
+            "id":171,
+            "title":"Suisse"
+          },
+          {
+            "id":172,
+            "title":"Surinamaise"
+          },
+          {
+            "id":173,
+            "title":"Swazie"
+          },
+          {
+            "id":174,
+            "title":"Syrienne"
+          },
+          {
+            "id":175,
+            "title":"Tadjike"
+          },
+          {
+            "id":195,
+            "title":"Taiwanaise"
+          },
+          {
+            "id":176,
+            "title":"Tanzanienne"
+          },
+          {
+            "id":177,
+            "title":"Tchadienne"
+          },
+          {
+            "id":178,
+            "title":"Tcheque"
+          },
+          {
+            "id":179,
+            "title":"Tha\u00eflandaise"
+          },
+          {
+            "id":180,
+            "title":"Togolaise"
+          },
+          {
+            "id":181,
+            "title":"Tonguienne"
+          },
+          {
+            "id":182,
+            "title":"Trinidadienne"
+          },
+          {
+            "id":183,
+            "title":"Tunisienne"
+          },
+          {
+            "id":184,
+            "title":"Turkmene"
+          },
+          {
+            "id":185,
+            "title":"Turque"
+          },
+          {
+            "id":186,
+            "title":"Tuvaluane"
+          },
+          {
+            "id":187,
+            "title":"Ukrainienne"
+          },
+          {
+            "id":188,
+            "title":"Uruguayenne"
+          },
+          {
+            "id":189,
+            "title":"Vanuatuane"
+          },
+          {
+            "id":190,
+            "title":"Venezuelienne"
+          },
+          {
+            "id":191,
+            "title":"Vietnamienne"
+          },
+          {
+            "id":192,
+            "title":"Yemenite"
+          },
+          {
+            "id":193,
+            "title":"Zambienne"
+          },
+          {
+            "id":194,
+            "title":"Zimbabweenne"
+          }
+        ]
+      }
+    },
+    {
+      "title":"seniority",
+      "elements":{
+        "element":[
+          {
+            "id":1,
+            "title":"0 \u00e0 2 ans"
+          },
+          {
+            "id":2,
+            "title":"3 \u00e0 5 ans"
+          },
+          {
+            "id":3,
+            "title":"6 \u00e0 10 ans"
+          },
+          {
+            "id":4,
+            "title":"+ de 10 ans"
+          }
+        ]
+      }
+    }
+  ]
+}
+{% endset %}
+		
+{% include 'examples.twig' %}
+
+		
+{% endblock %}
+

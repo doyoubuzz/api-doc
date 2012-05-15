@@ -1,0 +1,199 @@
+{% extends "base.twig" %}
+
+{% block title %} User {% endblock %}
+{% block content %}
+
+<h1>Partner last update</h1>
+
+<p>Return all CV id update since a date</p>
+
+<h2>Access</h2>
+<span class="label label-info">GET</span> <code> http://api.doyoubuzz.com/partner/cvs/lastupdate/?since=:since&to=:to</code>
+
+<span class="label label-warning">Don't forget to append your API Key and API Secret parameters!</span>
+
+<p>&nbsp;</p>
+
+<h2>Parameters</h2>
+
+<table class="table .table-bordered .table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>since</td>
+		<td><span class="label label-warning">mandatory</span> Date or datetime since the last update</td>
+		<td>Date ('2012-05-05') or Datetime ('2012-05-05 18:03:36')</td>
+	</tr>
+	<tr>
+		<td>to</td>
+		<td><span class="label label-default">optional</span> Date or Datetime to the last update</td>	
+		<td>Date ('2012-05-05') or Datetime ('2012-05-05 18:03:36')</td>
+	</tr>
+</table>
+
+<p>&nbsp;</p>
+
+
+<h2>Attributes</h2>
+
+<table class="table .table-bordered .table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-user-resumes"><i class="icon-plus-sign"></i> resumes</a></td>
+		<td>Resume list</td>
+		<td>element</td>
+	</tr>
+		<tr class="js-expandable user-user-resumes">
+			<td><a class="js-expand" href="javascript:void()" data-show-element="user-user-resume"><i class="icon-plus-sign"></i> resume</a></td>
+			<td>Resume object</td>
+			<td>element</td>
+		</tr>	
+		<tr class="js-expandable user-user-resume level2">
+			<td>id</td>
+			<td>id of the resume</td>
+			<td>integer</td>
+		</tr>
+		<tr class="js-expandable user-user-resume level2">
+			<td><a class="js-expand" href="javascript:void()" data-show-element="resume-owner"><i class="icon-plus-sign"></i> owner</a></td>
+			<td>Resume's owner</td>
+			<td>element</td>
+		</tr>
+		<tr class="js-expandable resume-owner level3">
+			<td>id</td>
+			<td>User id of the resume's owner</td>
+			<td>integer</td>
+		</tr>
+		<tr class="js-expandable resume-owner level3">
+			<td>externalId</td>
+			<td>Id of the user (according to the partner Database, if the SSO has been used)</td>
+			<td>string</td>
+		</tr>
+</table>
+
+<p>&nbsp;</p>
+
+
+
+
+
+
+{% set xml %}
+
+
+<?xml version="1.0"?>
+<response>
+ <resumes>
+  <resume>
+   <id>4831</id>
+   <owner>
+    <id>5165</id>
+    <externalId>brossard</externalId>
+   </owner>
+  </resume>
+  <resume>
+   <id>8674</id>
+   <owner>
+    <id>9187</id>
+    <externalId>figenwald</externalId>
+   </owner>
+  </resume>
+  <resume>
+   <id>1604</id>
+   <owner>
+    <id>11067</id>
+    <externalId></externalId>
+   </owner>
+  </resume>
+  <resume>
+   <id>16489</id>
+   <owner>
+    <id>13718</id>
+    <externalId/>
+   </owner>
+  </resume>
+  <resume>
+   <id>16047</id>
+   <owner>
+    <id>13718</id>
+    <externalId></externalId>
+   </owner>
+  </resume>
+  <resume>
+   <id>2540</id>
+   <owner>
+    <id>29467</id>
+    <externalId>desbiens</externalId>
+   </owner>
+  </resume>
+ </resumes>
+</response>
+
+
+
+{%  endset %}
+
+{% set json %}
+
+
+{
+  "resumes":{
+    "resume":[
+      {
+        "id":"441",
+        "owner":{
+          "id":"5105",
+          "externalId":"brossard"
+        }
+      },
+      {
+        "id":"8674",
+        "owner":{
+          "id":"870",
+          "externalId":"figenwald"
+        }
+      },
+      {
+        "id":"1034",
+        "owner":{
+          "id":"11067",
+          "externalId":null
+        }
+      },
+      {
+        "id":"1689",
+        "owner":{
+          "id":"1398",
+          "externalId":null
+        }
+      },
+      {
+        "id":"1604",
+        "owner":{
+          "id":"1198",
+          "externalId":null
+        }
+      },
+      {
+        "id":"2560",
+        "owner":{
+          "id":"294687",
+          "externalId":"desbiens"
+        }
+      }
+    ]
+  }
+}
+
+{% endset %}
+		
+{% include 'examples.twig' %}
+		
+{% endblock %}
+

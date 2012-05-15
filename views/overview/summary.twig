@@ -1,0 +1,38 @@
+{% extends "base.twig" %}
+{% block title %} API Summary {% endblock %}
+
+{% block content %}
+<h2>API Summary</h2>
+
+<p><span class="label label-warning">Note</span> This API is in a beta state. Breaking changes may occur.</p>
+
+<h2>Schema</h2>
+
+All API access is over HTTP, and accessed from the api.doyoubuzz.com domain. All data is sent as XML and received as XML or JSON.
+
+<p>Unless otherwise specified, the following format are used:</p>
+<ul>
+	<li>Date : YYYY-MM-DD</li>
+	<li>Datetime : YYYY-MM-DDTHH:MM:SS</li>
+	<li>Boolean : 1 or null</li>
+</ul>
+
+<p>Blank fields are included as <code>null</code> instead of being omitted.</p>
+
+<h2>API Keys</h2>
+<p>To get your API Keys, send an email to <a href="mailto:api@doyoubuzz.com">api@doyoubuzz.com</a> with the following informations :</p>
+
+<ul>
+	<li>Editor name</li>
+	<li>Editor website</li>
+	<li>Application name</li>
+	<li>Application description</li>
+	<li>Application URL</li>
+	<li>Customer support email for your application</li>
+</ul>
+
+<h2>Support</h2>
+
+<p>If you have any questions, please use this forum : <a href="https://groups.google.com/forum/?fromgroups#!forum/doyoubuzz-developers" target="_blank">https://groups.google.com/forum/?fromgroups#!forum/doyoubuzz-developers</a></p>
+
+{% endblock %}	

@@ -1,0 +1,236 @@
+
+<h2>Attributes</h2>
+
+<p>&nbsp;</p>
+<table class="table .table-bordered .table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>seniority</td>
+		<td>User's seniority. Please refer to <a href="/baselist'">Baselist</a></td>
+		<td>integer</td>
+	</tr>
+	<tr>
+		<td>educationLevel</td>
+		<td>User's education level. Please refer to <a href="/baselist'">Baselist</a></td>
+		<td>string</td>
+	</tr>	
+	<tr>
+		<td>educationLevel</td>
+		<td>User's education level. Please refer to <a href="/baselist'">Baselist</a></td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>businessTrip</td>
+		<td>User's education level. Please refer to <a href="/baselist'">Baselist</a></td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>disabled</td>
+		<td>User's education level. Please refer to <a href="/baselist'">Baselist</a></td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>personalVehicle</td>
+		<td>User's education level. Please refer to <a href="/baselist'">Baselist</a></td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>grossSalaryMin</td>
+		<td>User's education level. Please refer to <a href="/baselist'">Baselist</a></td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>grossSalaryMax</td>
+		<td>User's education level. Please refer to <a href="/baselist'">Baselist</a></td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>updatedAt</td>
+		<td>User's education level. Please refer to <a href="/baselist'">Baselist</a></td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>nationality</td>
+		<td>User's education level. Please refer to <a href="/baselist'">Baselist</a></td>
+		<td>string</td>
+	</tr>
+	
+	
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-user-resume"><i class="icon-plus-sign"></i> resumes</a></td>
+		<td>Resume list</td>
+		<td>element</td>
+	</tr>	
+		<tr class="js-expandable user-user-resume">
+			<td>id</td>
+			<td>id of the resume</td>
+			<td>integer</td>
+		</tr>
+		<tr class="js-expandable user-user-resume">
+			<td>title</td>
+			<td>Resume's title</td>
+			<td>string</td>
+		</tr>
+		<tr class="js-expandable user-user-resume">
+			<td>main</td>
+			<td>Indicates if the resume if the user's main resume</td>
+			<td>boolean</td>
+		</tr>
+		<tr class="js-expandable user-user-resume">
+			<td>culture</td>
+			<td>Culture of the resume  (possible values: fr_FR, en_US, en_UK, it_IT, es_ES, de_DE)</td>
+			<td>string</td>
+		</tr>
+	</tr>
+</table>
+
+
+<p>&nbsp;</p>
+
+
+
+{% set xml %}
+
+<?xml version="1.0"?>
+<response>
+ <employmentPreferences>
+  <seniority>0</seniority>
+  <educationLevel>6</educationLevel>
+  <businessTrip>3</businessTrip>
+  <disabled></disabled>
+  <personalVehicle></personalVehicle>
+  <grossSalaryMin>4</grossSalaryMin>
+  <grossSalaryMax>7</grossSalaryMax>
+  <updatedAt>2012-05-02T16:40:19</updatedAt>
+  <nationality>64</nationality>
+  <positions>
+   <position>
+    <id>1208</id>
+   </position>
+   <position>
+    <id>1209</id>
+   </position>
+   <position>
+    <id>1211</id>
+   </position>
+  </positions>
+  <business>
+   <business>
+    <id>1001</id>
+   </business>
+  </business>
+  <mobilities>
+   <mobility>
+    <perimeter>15</perimeter>
+    <country>
+     <isoCode>FRA</isoCode>
+    </country>
+    <city>
+     <name>Nantes</name>
+     <zip>44000</zip>
+     <lat>47.21684</lat>
+     <lng>-1.55674</lng>
+    </city>
+   </mobility>
+   <mobility>
+    <perimeter/>
+    <country>
+     <isoCode>USA</isoCode>
+    </country>
+    <numeric-key key="0"></numeric-key>
+   </mobility>
+  </mobilities>
+  <contractTypes>
+   <contractType>
+    <id>1</id>
+   </contractType>
+  </contractTypes>
+  <hoursNumber>
+   <hoursNumber>
+    <id>1</id>
+   </hoursNumber>
+  </hoursNumber>
+ </employmentPreferences>
+</response>
+
+{%  endset %}
+
+{% set json %}
+
+{
+  "employmentPreferences":{
+    "seniority":0,
+    "educationLevel":6,
+    "businessTrip":3,
+    "disabled":false,
+    "personalVehicle":false,
+    "grossSalaryMin":4,
+    "grossSalaryMax":7,
+    "updatedAt":"2012-05-02T16:40:19",
+    "nationality":64,
+    "positions":{
+      "position":[
+        {
+          "id":1208
+        },
+        {
+          "id":1209
+        },
+        {
+          "id":1211
+        }
+      ]
+    },
+    "business":{
+      "business":[
+        {
+          "id":1001
+        }
+      ]
+    },
+    "mobilities":{
+      "mobility":[
+        {
+          "perimeter":15,
+          "country":{
+            "isoCode":"FRA"
+          },
+          "city":{
+            "name":"Nantes",
+            "zip":"44000",
+            "lat":47.21684,
+            "lng":-1.55674
+          }
+        },
+        {
+          "perimeter":null,
+          "country":{
+            "isoCode":"USA"
+          },
+          "0":null
+        }
+      ]
+    },
+    "contractTypes":{
+      "contractType":[
+        {
+          "id":1
+        }
+      ]
+    },
+    "hoursNumber":{
+      "hoursNumber":[
+        {
+          "id":1
+        }
+      ]
+    }
+  }
+}
+{% endset %}
+		
+{% include 'examples.twig' %}

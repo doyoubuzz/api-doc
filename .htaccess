@@ -1,0 +1,23 @@
+
+#   Empêche la visualisation de l'arborescence, n'a rien à voir avec le masquage du « index.php ».
+Options -Indexes
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+#   Active le module de réécriture d'URL.
+RewriteEngine on
+
+#
+#   Fixe les règles de réécriture d'URL. Ici, nous utilisons une liste blanche.
+#
+
+#   Toutes les URL qui ne correspondent pas à ces masques sont réécrites.
+RewriteCond $1 !^(index\.php|assets/|robots\.txt|google277e04a74fdd150d.html)
+
+#   Toutes les autres URL vont être redirigées vers le fichier index.php.
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
+#AddType x-mapp-php5 .php
+#AddHandler x-mapp-php5 .php

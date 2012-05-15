@@ -1,0 +1,1322 @@
+<h2>Attributes</h2>
+
+<p>&nbsp;</p>
+<table class="table .table-bordered .table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>id</td>
+		<td>id of the cv</td>
+		<td>integer</td>
+	</tr>
+	<tr>
+		<td>userId</td>
+		<td>Id of the user</td>
+		<td>integer</td>
+	</tr>
+	<tr>
+		<td>title</td>
+		<td>Title of the CV</td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>url</td>
+		<td>Absolute url of the CV</td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>culture</td>
+		<td>Culture of the cv (possible values: fr_FR, en_US, en_UK, it_IT, es_ES, de_DE)</td>
+		<td>string</td>
+	</tr>		
+	<tr>
+		<td>completion</td>
+		<td>Completion of the CV </td>
+		<td>Float (value between 0 and 1, 2 digits maximum)</td>
+	</tr>	
+	<tr>
+		<td>seniority</td>
+		<td>Seniority automatically computed by DoYouBuzz according to the user's work experience (excluding internships). We recommand to use this information only if the user has not filled in this information in his <a href="/user/employment-preferences">employment preferences</a>.</td>
+		<td>
+			<a class="js-expand" href="javascript:void()" data-show-element="user-cv-seniority"><i class="icon-plus-sign"></i> integer</a>			
+			<div class="js-expandable user-cv-seniority">
+			1 : from 0 to 2 years<br>
+			2 : from 3 to 5 years<br>
+			3 : from 6 to 10 years<br>
+			4 : more than 10 years<br>
+			</div>
+		</td>	
+	</tr>
+	<tr>
+		<td>updatedAt</td>
+		<td>Datetime of the last update on this CV</td>
+		<td>Datetime (format Y-m-d\TH:i:s)</td>
+	</tr>
+	<tr>
+		<td>professionalStatus</td>
+		<td>Professional status of the user, as described on the CV</td>
+		<td>
+			<a class="js-expand" href="javascript:void()" data-show-element="user-cv-professionalstatus"><i class="icon-plus-sign"></i> string</a>
+			<div class="js-expandable user-cv-professionalstatus">
+				Employed<br>		
+				Soon Available<br>
+				Unemployed<br>
+				Freelance<br>
+				Consultant<br>
+				CEO (The user has chosen "Entrepreneur")<br>
+				Entrepreneur (The user has chosen "Starting a new venture")<br>
+				Student<br>
+				Nearing Graduation<br>
+				Intern<br>
+				Apprentice<br>
+				COOP<br>
+			</div>
+		</td>		
+	</tr>
+	<tr>
+		<td>availability</td>
+		<td></td>
+		<td>
+		<a class="js-expand" href="javascript:void()" data-show-element="user-cv-availability"><i class="icon-plus-sign"></i> string</a>
+			<div class="js-expandable user-cv-availability">
+				Job Search<br>											
+				Internship Search<br>
+				Look (The user has chosen "Just looking around")<br>				
+				Open (The user has chosen "Open to opportunities")<br>				
+				Unavailable<br>
+			</div>	
+		</td>		
+	</tr>
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-blog"><i class="icon-plus-sign"></i> blog</a></td>
+		<td></td>
+		<td></td>		
+	</tr>
+	<tr class="js-expandable user-cv-blog">
+		<td>rss</td>
+		<td>Blog RSS URL</td>
+		<td>string</td>		
+	</tr>
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-userinformation"><i class="icon-plus-sign"></i> userInformation</a></td>
+		<td>Information about the user (these informations are specific to the current CV. A user can set different values on different CV)</td>
+		<td>element</td>		
+	</tr>
+	<tr class="js-expandable user-cv-userinformation">
+		<td>birthdate</td>
+		<td>Birthdate of the user, as described on the CV</td>
+		<td>String (yyyy-mm-dd)</td>		
+	</tr>
+	<tr class="js-expandable user-cv-userinformation">
+		<td>maritalStatus</td>
+		<td>Marital status of the user, as descrbed on the CV</td>
+		<td>string</td>		
+	</tr>
+	<tr class="js-expandable user-cv-userinformation">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-userinformationcountry"><i class="icon-plus-sign"></i> country</a></td>
+		<td>Country of the user, as described on the CV. If you wan more specific datas, please refer to <a href="user/employment-preferences">employment preferences</a></td>
+		<td>element</td>		
+	</tr>
+	<tr class="js-expandable user-cv-userinformationcountry level2">
+		<td>isoCode</td>
+		<td>ISO 3166 alpha 3 code of the user's country (<a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3" target="_blank">more information</a>)</td>
+		<td>string</td>		
+	</tr>
+	<tr class="js-expandable user-cv-userinformation">
+		<td>city</td>
+		<td>City of the user, as described on the CV.</td>
+		<td>string</td>		
+	</tr>
+	<tr class="js-expandable user-cv-userinformation">
+		<td>zipcode</td>
+		<td>Zipcode of the user's city, as set on the CV</td>
+		<td></td>		
+	</tr>
+	<tr class="js-expandable user-cv-userinformation">
+		<td>DriversLicence</td>
+		<td>Indicates if the user has a driver's licence, as describe on his CV.</td>
+		<td>1 or null</td>		
+	</tr>
+	<tr class="js-expandable user-cv-userinformation">
+		<td>state</td>
+		<td>If the user has chosen "USA" as a country, indicates his state as described on the CV.</td>
+		<td>integer</td>		
+	</tr>
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-experiences"><i class="icon-plus-sign"></i> experiences</a></td>
+		<td>List of experiences</td>
+		<td>element</td>
+	</tr>
+	<tr class="js-expandable user-cv-experiences">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-experience"><i class="icon-plus-sign"></i> experience</a></td>
+		<td>Experience</td>
+		<td>element</td>
+	</tr>
+
+	<tr class="js-expandable user-cv-experience level2">
+		<td>id</td>
+		<td>id of the experience</td>
+		<td>integer</td>
+	</tr>
+	<tr class="js-expandable user-cv-experience level2">
+		<td>title</td>
+		<td>Title of the experience</td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-experience level2">
+		<td>company</td>
+		<td>Company name</td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-experience level2">
+		<td>city</td>
+		<td>City name</td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-experience level2">
+		<td>start</td>
+		<td>Start date</td>
+		<td>Date (yyyy-mm-dd)</td>
+	</tr>
+	<tr class="js-expandable user-cv-experience level2">
+		<td>end</td>
+		<td>End date</td>
+		<td>Date (yyyy-mm-dd)</td>
+	</tr>
+	<tr class="js-expandable user-cv-experience level2">
+		<td>contractType</td>
+		<td></td>
+		<td>
+			<a class="js-expand" href="javascript:void()" data-show-element="user-cv-contract"><i class="icon-plus-sign"></i> string</a>
+			
+			<br>
+			
+			
+			
+			<table class="js-expandable user-cv-contract">
+				<tr>
+					<th>value</th>
+					<th>fr</th>
+					<th>en</th>
+				</tr> 
+				<tr>
+					<td>Full Time</td>
+					<td>CDI</td>
+					<td>Full time</td>
+				</tr>
+				<tr>
+					<td>Part Time</td>
+					<td>CDD</td>
+					<td>Part Time</td>
+				</tr>
+				<tr>
+					<td>Internship</td>
+					<td>Stage</td>
+					<td>Internship</td>
+				</tr>
+				<tr>
+					<td>Temporary Work</td>
+					<td>Intérim</td>
+					<td>Temporary Work</td>
+				</tr>
+				<tr>
+					<td>Apprenticeship</td>
+					<td>Contrat d'apprentissage</td>
+					<td>Apprenticeship</td>
+				</tr>
+				<tr>
+					<td>Cooperative Education Work</td>
+					<td>Contrat de professionnalisation</td>
+					<td>Cooperative Education Work</td>
+				</tr>
+				<tr>
+					<td>Consultant</td>
+					<td>Emploi-jeunes</td>
+					<td>Consultant</td>
+				</tr>
+				<tr>
+					<td>Student Project</td>
+					<td>Projet étudiant</td>
+					<td>Student Project</td>
+				</tr>
+				<tr>
+					<td>Volunteer</td>
+					<td>Bénévolat</td>
+					<td>Volunteer</td>
+				</tr>
+				<tr>
+					<td>Freelancer</td>
+					<td>Freelance</td>
+					<td>Freelancer</td>
+				</tr>
+				<tr>
+					<td>Temporary Remplacement</td>
+					<td>Vacataire</td>
+					<td>Temporary Remplacement</td>
+				</tr>
+				<tr>
+					<td>Other</td>
+					<td>Autre</td>
+					<td>Other</td>
+				</tr>
+			
+			</table>
+			
+			
+		</td>
+		
+	</tr>
+	<tr class="js-expandable user-cv-experience level2">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-experience-country-iso"><i class="icon-plus-sign"></i> country</a></td>
+		<td>country</td>
+		<td>element</td>
+	</tr>
+	<tr class="js-expandable user-cv-experience-country-iso level3">
+		<td>isoCode</td>
+		<td>ISO 3166 alpha 3 code of the user's country (<a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3" target="_blank">more information</a>)</td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-experience level2">
+		<td>state</td>
+		<td>State of the user (if the user has chosen USA as a country). Refer to <a href="/baselist'">Baselist</a> to get the state informations.</td>
+		<td>integer</td>
+	</tr>
+	<tr class="js-expandable user-cv-experience level2">
+		<td>logo</td>
+		<td>Path to the company's logo, as uploaded by the user. Prepend 'http://www.doyoubuzz.com' to this URL to get the absolute URL. JPG, PNG and GIF are allowed</td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-experience level2">
+		<td>description</td>
+		<td>Company's description</td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-experience level2">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-experience-mission"><i class="icon-plus-sign"></i> missions</a></td>
+		<td>List of missions</td>
+		<td>element</td>
+	</tr>	
+	<tr class="js-expandable user-cv-experience-mission level3">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-experience-mission-description"><i class="icon-plus-sign"></i> mission</a></td>
+		<td>Mission</td>
+		<td>element</td>
+	</tr>	
+	<tr class="js-expandable user-cv-experience-mission-description level4">
+		<td>description</td>
+		<td>Description of a mission in the current job</td>
+		<td>string</td>
+	</tr>	
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-education"><i class="icon-plus-sign"></i> educations</a></td>
+		<td>List of education items</td>
+		<td>element</td>
+	</tr>	
+	<tr class="js-expandable user-cv-education">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-education-item"><i class="icon-plus-sign"></i> education</a></td>
+		<td>Education item</td>
+		<td>element</td>
+	</tr>	
+	<tr class="js-expandable user-cv-education-item level2">
+		<td>id</td>
+		<td>Id of the education item</td>
+		<td>integer</td>
+	</tr>
+
+	<tr class="js-expandable user-cv-education-item level2">
+		<td>school</td>
+		<td>School name</td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-education-item level2">
+		<td>start</td>
+		<td>Start date of the education item</td>
+		<td>Date (yyyy-mm-dd)</td>
+	</tr>
+	<tr class="js-expandable user-cv-education-item level2">
+		<td>end</td>
+		<td>End date of the education item</td>
+		<td>Date (yyyy-mm-dd)</td>
+	</tr>
+	<tr class="js-expandable user-cv-education-item level2">
+		<td>degree</td>
+		<td>Degree obtained</td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-education-item level2">
+		<td>description</td>
+		<td>Description of the education item</td>
+		<td>string</td>
+	</tr>
+	
+	
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-portfolio"><i class="icon-plus-sign"></i> portfolios</a></td>
+		<td>List of portfolios items</td>
+		<td>element</td>
+	</tr>	
+	<tr class="js-expandable user-cv-portfolio">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-portfolio-item"><i class="icon-plus-sign"></i> portfolio</a></td>
+		<td>Portfolio item</td>
+		<td>element</td>
+	</tr>	
+	<tr class="js-expandable user-cv-portfolio-item level2">
+		<td>id</td>
+		<td>Id of the portfolio item</td>
+		<td>integer</td>
+	</tr>
+	<tr class="js-expandable user-cv-portfolio-item level2">
+		<td>mediaType</td>
+		<td>Type of media</td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-portfolio-item level2">
+		<td>title</td>
+		<td>Title of the portfolio</td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-portfolio-item level2">
+		<td>description</td>
+		<td>Description of the portfolio</td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-portfolio-item level2">
+		<td>createDate</td>
+		<td>Creation date of the portfolio item (if the user has uploader a painting, the createDate represents the date when the user made his painting, not the date when he added the painting on his DoYouBuzz resume)</td>
+		<td>Date (yyyy-mm-dd)</td>
+	</tr>
+	<tr class="js-expandable user-cv-portfolio-item level2">
+		<td>content</td>
+		<td>Content of the portfolio</td>
+		<td>&lt;depends on the value of mediaType&gt;</td>
+	</tr>
+	
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-link"><i class="icon-plus-sign"></i> links</a></td>
+		<td>List of links</td>
+		<td>element</td>
+	</tr>	
+	<tr class="js-expandable user-cv-link">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-link-item"><i class="icon-plus-sign"></i> link</a></td>
+		<td>Link item</td>
+		<td>element</td>
+	</tr>
+	<tr class="js-expandable user-cv-link-item level2">
+		<td>id</td>
+		<td>Id of the link</td>
+		<td>integer</td>
+	</tr>
+	<tr class="js-expandable user-cv-link-item level2">
+		<td>type</td>
+		<td>Type of the Link (Twitter / LinkedIn / Viadeo / Google+ / Delicious / Facebook / xing / plaxo / blog) </td>
+		<td>string</td>
+	</tr>
+	<tr class="js-expandable user-cv-link-item level2">
+		<td>url</td>
+		<td>URL pointing to the user's profil on the service</td>
+		<td>string</td>
+	</tr>
+	
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-contact"><i class="icon-plus-sign"></i> contacts</a></td>
+		<td>List of contacts</td>
+		<td>element</td>
+	</tr>
+	
+	<tr class="js-expandable user-cv-contact">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-contact-item"><i class="icon-plus-sign"></i> contact</a></td>
+		<td>Contact item</td>
+		<td>element</td>
+	</tr>
+	<tr class="js-expandable user-cv-contact-item level2">
+		<td>type</td>
+		<td>Type of the contact channel (form, skype, phone, mobile, msn)</td>
+		<td>string</td>	
+	</tr>
+	<tr class="js-expandable user-cv-contact-item level2">
+		<td>value</td>
+		<td>Value of the contact channel (phone number for phones, emails address for emails, skype id for skype, etc.)</td>
+		<td>string</td>	
+	</tr>
+	
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-skill"><i class="icon-plus-sign"></i> skills</a></td>
+		<td>List of skills</td>
+		<td>element</td>
+	</tr>	
+	<tr class="js-expandable user-cv-skill">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-skill-item"><i class="icon-plus-sign"></i> skill</a></td>
+		<td>Skill item</td>
+		<td>element</td>
+	</tr>
+	<tr class="js-expandable user-cv-skill-item level2">
+		<td>title</td>
+		<td>Skill name</td>
+		<td>string</td>	
+	</tr>
+	<tr class="js-expandable user-cv-skill-item level2">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-skill-children"><i class="icon-plus-sign"></i> children</a></td>
+		<td>Children skills of the current skill</td>
+		<td>element</td>	
+	</tr>
+	
+	<tr class="js-expandable user-cv-skill-children level3">
+		<td>skill</a></td>
+		<td>Skill item -- this is the same item as the parent skill item</td>
+		<td>element</td>	
+	</tr>
+	
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-interest"><i class="icon-plus-sign"></i> interests</a></td>
+		<td>List of interests</td>
+		<td>element</td>
+	</tr>	
+	<tr class="js-expandable user-cv-interest">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-interest-item"><i class="icon-plus-sign"></i> interest</a></td>
+		<td>Interest item</td>
+		<td>element</td>
+	</tr>
+	<tr class="js-expandable user-cv-interest-item level2">
+		<td>title</td>
+		<td>Interest name</td>
+		<td>string</td>	
+	</tr>
+	<tr class="js-expandable user-cv-interest-item level2">
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-interest-children"><i class="icon-plus-sign"></i> children</a></td>
+		<td>Children interests of the current interest</td>
+		<td>element</td>	
+	</tr>
+	
+	<tr class="js-expandable user-cv-interest-children level3">
+		<td>interest</a></td>
+		<td>Interest item -- this is the same item as the parent interest item</td>
+		<td>element</td>	
+	</tr>
+
+	
+	
+</table>
+
+
+<p>&nbsp;</p>
+
+
+
+{% set xml %}
+
+
+<?xml version="1.0"?>
+<response>
+ <resume>
+  <id>18078</id>
+  <userId>2</userId>
+  <title>COO @ DoYouBuzz</title>
+  <url>http://www.jeremie-pottier.com/coo-doyoubuzz</url>
+  <culture>en_US</culture>
+  <completion>1</completion>
+  <seniority>3</seniority>
+  <updatedAt>2012-03-16T17:33:25</updatedAt>
+  <professionalStatus>Employed</professionalStatus>
+  <availability>Unavailable</availability>
+  <blog>
+   <rss>http://blog.doyoubuzz.com/fr</rss>
+  </blog>
+  <userInformation>
+   <birthdate></birthdate>
+   <maritalStatus></maritalStatus>
+   <country>
+    <isoCode>FRA</isoCode>
+   </country>
+   <city>Nantes</city>
+   <zipcode>44</zipcode>
+   <DriversLicence></DriversLicence>
+   <state/>
+  </userInformation>
+  <numeric-key key="0"></numeric-key>
+  <experiences>
+   <experience>
+    <id>67276</id>
+    <title>Chief Operating Officer</title>
+    <company>DoYouBuzz</company>
+    <city>Nantes</city>
+    <start>2007-12-01</start>
+    <end></end>
+    <contractType>Full Time</contractType>
+    <country>
+     <isoCode>FRA</isoCode>
+    </country>
+    <state/>
+    <logo>/var/users/2/logos/job_2724_tn.jpg?1216827685</logo>
+    <description></description>
+    <missions>
+     <mission>
+      <description>Conception, definition of product development directions</description>
+     </mission>
+     <mission>
+      <description>Technology and sectoral scanning</description>
+     </mission>
+     <mission>
+      <description>Research and Development</description>
+     </mission>
+     <mission>
+      <description>Project and personnel managment</description>
+     </mission>
+     <mission>
+      <description>Web marketing</description>
+     </mission>
+    </missions>
+   </experience>
+   <experience>
+    <id>67277</id>
+    <title>Project Manager</title>
+    <company>Benchmark Group (L'Internaute / Journal du Net)</company>
+    <city>Nantes</city>
+    <start>2005-08-01</start>
+    <end>2007-11-01</end>
+    <contractType>Full Time</contractType>
+    <country>
+     <isoCode>FRA</isoCode>
+    </country>
+    <state/>
+    <logo>/var/users/2/logos/job_1994_tn.jpg?1247847962</logo>
+    <description>Benchmark Group, a Web publisher, has one of the largest audiences in France. The group publishes several magazines and Web services, including:
+
+- L'Internaute Magazine (http://www.linternaute.com) - Hobbies and discovery magazine
+- Le Journal du Net (http://www.journaldunet.com), - Daily e-business news
+- Copains d'Avant (http://www.copainsdavant.com) - Social community with 6.5 million members
+- Le Journal des Femmes (http://www.journaldesfemmes.com) - Womens' interest Web site, 2nd highest audience in France. 
+
+Benchmark Group reaches 11.8 million readers each moth. (Source: MÃ©diamÃ©trie Netratings - January 2008)</description>
+    <missions>
+     <mission>
+      <description>Service design and management (applications and editorial)</description>
+     </mission>
+     <mission>
+      <description>SEO strategy for the Web sites: L'Internaute, Journal du Net, Copains d'avant</description>
+     </mission>
+     <mission>
+      <description>Internal, AdSense and affiliation advertising: creative briefs, optimizations, reporting, ROI</description>
+     </mission>
+     <mission>
+      <description>www.linternaute.com - www.journaldunet.com</description>
+     </mission>
+    </missions>
+   </experience>
+   <experience>
+    <id>67278</id>
+    <title>Vice President</title>
+    <company>RÃ©flexiences (non-profit)</company>
+    <city>Paris</city>
+    <start>2005-01-31</start>
+    <end></end>
+    <contractType>Other</contractType>
+    <country>
+     <isoCode>FRA</isoCode>
+    </country>
+    <state/>
+    <logo>/var/users/2/logos/job_67278_tn.jpg?1327590448</logo>
+    <description></description>
+    <missions>
+     <mission>
+      <description>Scientific magazine (print and web) for the general public distributed in high schools through out the greater Paris area until 2007.</description>
+     </mission>
+     <mission>
+      <description>Co-built project and the non-profit organization</description>
+     </mission>
+     <mission>
+      <description>Led fund-raising activities, technical and editorial conception and recruitment efforts</description>
+     </mission>
+    </missions>
+   </experience>
+   <experience>
+    <id>67279</id>
+    <title>Vice President</title>
+    <company>Albumrock (non-profit)</company>
+    <city>Paris</city>
+    <start>2002-01-01</start>
+    <end>2007-01-31</end>
+    <contractType>Other</contractType>
+    <numeric-key key="0"></numeric-key>
+    <state/>
+    <logo>/var/users/2/logos/job_16_tn.jpg?1214004537</logo>
+    <description></description>
+    <missions>
+     <mission>
+      <description>Co-creation of webzine on rock</description>
+     </mission>
+     <mission>
+      <description>Developed numerous projects</description>
+     </mission>
+     <mission>
+      <description>Produced text and image content</description>
+     </mission>
+     <mission>
+      <description>Web site design and development</description>
+     </mission>
+     <mission>
+      <description>Recruitment, organizational structuring (20 people in 2007), internal processes (editorial and logistical planning)</description>
+     </mission>
+    </missions>
+   </experience>
+  </experiences>
+  <educations>
+   <education>
+    <id>34765</id>
+    <school>Versailles University</school>
+    <start>2003-01-31</start>
+    <end>2005-01-31</end>
+    <degree>IUP ASCM</degree>
+    <description>Science and Technologies: Project Management. Graduated Valedictorian.</description>
+   </education>
+   <education>
+    <id>34766</id>
+    <school>INSSET de St Quentin</school>
+    <start>2001-09-01</start>
+    <end>2002-06-01</end>
+    <degree>Web Develoment Licence Pro</degree>
+    <description>Equivalent to B.S. Graduated with honors.</description>
+   </education>
+   <education>
+    <id>34767</id>
+    <school>IUT de Laval</school>
+    <start>1999-01-31</start>
+    <end>2001-01-31</end>
+    <degree>Information Technology DUT</degree>
+    <description>Multimedia (Web, Video, Development) and communications.</description>
+   </education>
+   <education>
+    <id>34768</id>
+    <school>High school Pays de Retz (Pornic)</school>
+    <start>1999-06-01</start>
+    <end>1999-01-01</end>
+    <degree>Scientific  Baccalaureate</degree>
+    <description>Physics. Graduated with Honors.</description>
+   </education>
+  </educations>
+  <portfolios>
+   <portfolio>
+    <id>94189</id>
+    <mediaType>video</mediaType>
+    <title>Video</title>
+    <description></description>
+    <createDate></createDate>
+    <content>
+     <url>http://vimeo.com/moogaloop.swf?clip_id=17563162&amp;server=vimeo.com&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1&amp;autoplay=0&amp;loop=0</url>
+     <flashvar>&amp;showsearch=0&amp;showsearch=0</flashvar>
+     <ratio>0.75</ratio>
+    </content>
+    <url></url>
+   </portfolio>
+  </portfolios>
+  <contacts>
+   <contact>
+    <type>public_email</type>
+    <value>j.pottier@doyoubuzz.com</value>
+   </contact>
+   <contact>
+    <type>form</type>
+    <value>on</value>
+   </contact>
+   <contact>
+    <type>skype</type>
+    <value>jeremie.pottier</value>
+   </contact>
+  </contacts>
+  <skills>
+   <skill>
+    <title>Web Marketing</title>
+    <children>
+     <skill>
+      <title>SEO  / SEM</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Advertising</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Advertising media analytics</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Social media marketing</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Strategy and training</title>
+      <children/>
+     </skill>
+    </children>
+   </skill>
+   <skill>
+    <title>Research &amp;amp; Development</title>
+    <children>
+     <skill>
+      <title>R&amp;amp;D process management</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Project engineering</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Technology and scientific scanning</title>
+      <children/>
+     </skill>
+    </children>
+   </skill>
+   <skill>
+    <title>Editorial Web</title>
+    <children>
+     <skill>
+      <title>Preferred subjects: science and society, technology, Internet</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Technical: writing, editing, newsletter, photography, mock-ups</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Organization: documentary research, editorial planningl</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Strategy: strong understanding of Internet journalism</title>
+      <children/>
+     </skill>
+    </children>
+   </skill>
+   <skill>
+    <title>Project Management</title>
+    <children>
+     <skill>
+      <title>Team management</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Planning / Budgeting / Sourcing / Client Relations</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Conception / Ergonomic Design</title>
+      <children/>
+     </skill>
+    </children>
+   </skill>
+   <skill>
+    <title>Computer Technology</title>
+    <children>
+     <skill>
+      <title>CMS : Wordpress, Drupal</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Languages : PHP, .NET, Javascript, xHTML, CSS, SQL</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Databases : MySQL, SQLServer</title>
+      <children/>
+     </skill>
+    </children>
+   </skill>
+   <skill>
+    <title>Software and Applications</title>
+    <children>
+     <skill>
+      <title>Web : Gmail, Google Reader / Agenda / Docs, Delicious</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Audience analysis: Analytics, XiTi</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Graphic Design: Photoshop, Quark XPress</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>MindMapping: Mindjet Mind Manager</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Conception: Axure, OmniGraffle</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Bug tracking: Trac, BaseCamp, Mantis</title>
+      <children/>
+     </skill>
+     <skill>
+      <title>Web advertising: OpenAdStream, Google Ad Manager, AdSense, Adwords</title>
+      <children/>
+     </skill>
+    </children>
+   </skill>
+  </skills>
+  <interests>
+   <interest>
+    <title>Sport</title>
+    <children>
+     <interest>
+      <title>Tennis, badminton, squash, golf, scuba diving</title>
+      <children/>
+     </interest>
+    </children>
+   </interest>
+   <interest>
+    <title>In short:</title>
+    <children>
+     <interest>
+      <title>Cinema</title>
+      <children/>
+     </interest>
+     <interest>
+      <title>Sports : tennis, scuba diving, golf</title>
+      <children/>
+     </interest>
+     <interest>
+      <title>Literature : Paul Auster, Stephen King, Philip Roth...</title>
+      <children/>
+     </interest>
+     <interest>
+      <title>Traveling</title>
+      <children/>
+     </interest>
+    </children>
+   </interest>
+  </interests>
+  <printable>
+   <pdf>http://www.doyoubuzz.com/jeremie-pottier/coo-doyoubuzz/export?format=pdf</pdf>
+   <odt>http://www.doyoubuzz.com/jeremie-pottier/coo-doyoubuzz/export?format=odt</odt>
+   <doc>http://www.doyoubuzz.com/jeremie-pottier/coo-doyoubuzz/export?format=doc</doc>
+  </printable>
+ </resume>
+</response>
+
+{%  endset %}
+
+{% set json %}
+
+{
+  "resume":{
+    "id":18078,
+    "userId":2,
+    "title":"COO @ DoYouBuzz",
+    "url":"http:\/\/www.jeremie-pottier.com\/coo-doyoubuzz",
+    "culture":"en_US",
+    "completion":1,
+    "seniority":3,
+    "updatedAt":"2012-03-16T17:33:25",
+    "professionalStatus":"Employed",
+    "availability":"Unavailable",
+    "blog":{
+      "rss":"http:\/\/blog.doyoubuzz.com\/fr"
+    },
+    "userInformation":{
+      "birthdate":"",
+      "maritalStatus":"",
+      "country":{
+        "isoCode":"FRA"
+      },
+      "city":"Nantes",
+      "zipcode":"44",
+      "DriversLicence":false,
+      "state":null
+    },
+    "0":null,
+    "experiences":{
+      "experience":[
+        {
+          "id":67276,
+          "title":"Chief Operating Officer",
+          "company":"DoYouBuzz",
+          "city":"Nantes",
+          "start":"2007-12-01",
+          "end":"",
+          "contractType":"Full Time",
+          "country":{
+            "isoCode":"FRA"
+          },
+          "state":null,
+          "logo":"\/var\/users\/2\/logos\/job_2724_tn.jpg?1216827685",
+          "description":"",
+          "missions":{
+            "mission":[
+              {
+                "description":"Conception, definition of product development directions"
+              },
+              {
+                "description":"Technology and sectoral scanning"
+              },
+              {
+                "description":"Research and Development"
+              },
+              {
+                "description":"Project and personnel managment"
+              },
+              {
+                "description":"Web marketing"
+              }
+            ]
+          }
+        },
+        {
+          "id":67277,
+          "title":"Project Manager",
+          "company":"Benchmark Group (L'Internaute \/ Journal du Net)",
+          "city":"Nantes",
+          "start":"2005-08-01",
+          "end":"2007-11-01",
+          "contractType":"Full Time",
+          "country":{
+            "isoCode":"FRA"
+          },
+          "state":null,
+          "logo":"\/var\/users\/2\/logos\/job_1994_tn.jpg?1247847962",
+          "description":"Benchmark Group, a Web publisher, has one of the largest audiences in France. The group publishes several magazines and Web services, including:\n\n- L'Internaute Magazine (http:\/\/www.linternaute.com) - Hobbies and discovery magazine\n- Le Journal du Net (http:\/\/www.journaldunet.com), - Daily e-business news\n- Copains d'Avant (http:\/\/www.copainsdavant.com) - Social community with 6.5 million members\n- Le Journal des Femmes (http:\/\/www.journaldesfemmes.com) - Womens' interest Web site, 2nd highest audience in France. \n\nBenchmark Group reaches 11.8 million readers each moth. (Source: M\u00e9diam\u00e9trie Netratings - January 2008)",
+          "missions":{
+            "mission":[
+              {
+                "description":"Service design and management (applications and editorial)"
+              },
+              {
+                "description":"SEO strategy for the Web sites: L'Internaute, Journal du Net, Copains d'avant"
+              },
+              {
+                "description":"Internal, AdSense and affiliation advertising: creative briefs, optimizations, reporting, ROI"
+              },
+              {
+                "description":"www.linternaute.com - www.journaldunet.com"
+              }
+            ]
+          }
+        },
+        {
+          "id":67278,
+          "title":"Vice President",
+          "company":"R\u00e9flexiences (non-profit)",
+          "city":"Paris",
+          "start":"2005-01-31",
+          "end":"",
+          "contractType":"Other",
+          "country":{
+            "isoCode":"FRA"
+          },
+          "state":null,
+          "logo":"\/var\/users\/2\/logos\/job_67278_tn.jpg?1327590448",
+          "description":"",
+          "missions":{
+            "mission":[
+              {
+                "description":"Scientific magazine (print and web) for the general public distributed in high schools through out the greater Paris area until 2007."
+              },
+              {
+                "description":"Co-built project and the non-profit organization"
+              },
+              {
+                "description":"Led fund-raising activities, technical and editorial conception and recruitment efforts"
+              }
+            ]
+          }
+        },
+        {
+          "id":67279,
+          "title":"Vice President",
+          "company":"Albumrock (non-profit)",
+          "city":"Paris",
+          "start":"2002-01-01",
+          "end":"2007-01-31",
+          "contractType":"Other",
+          "0":null,
+          "state":null,
+          "logo":"\/var\/users\/2\/logos\/job_16_tn.jpg?1214004537",
+          "description":"",
+          "missions":{
+            "mission":[
+              {
+                "description":"Co-creation of webzine on rock"
+              },
+              {
+                "description":"Developed numerous projects"
+              },
+              {
+                "description":"Produced text and image content"
+              },
+              {
+                "description":"Web site design and development"
+              },
+              {
+                "description":"Recruitment, organizational structuring (20 people in 2007), internal processes (editorial and logistical planning)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "educations":{
+      "education":[
+        {
+          "id":34765,
+          "school":"Versailles University",
+          "start":"2003-01-31",
+          "end":"2005-01-31",
+          "degree":"IUP ASCM",
+          "description":"Science and Technologies: Project Management. Graduated Valedictorian."
+        },
+        {
+          "id":34766,
+          "school":"INSSET de St Quentin",
+          "start":"2001-09-01",
+          "end":"2002-06-01",
+          "degree":"Web Develoment Licence Pro",
+          "description":"Equivalent to B.S. Graduated with honors."
+        },
+        {
+          "id":34767,
+          "school":"IUT de Laval",
+          "start":"1999-01-31",
+          "end":"2001-01-31",
+          "degree":"Information Technology DUT",
+          "description":"Multimedia (Web, Video, Development) and communications."
+        },
+        {
+          "id":34768,
+          "school":"High school Pays de Retz (Pornic)",
+          "start":"1999-06-01",
+          "end":"1999-01-01",
+          "degree":"Scientific  Baccalaureate",
+          "description":"Physics. Graduated with Honors."
+        }
+      ]
+    },
+    "portfolios":{
+      "portfolio":[
+        {
+          "id":94189,
+          "mediaType":"video",
+          "title":"Video",
+          "description":"",
+          "createDate":"",
+          "content":{
+            "url":"http:\/\/vimeo.com\/moogaloop.swf?clip_id=17563162&server=vimeo.com&show_title=0&show_byline=0&show_portrait=0&color=00adef&fullscreen=1&autoplay=0&loop=0",
+            "flashvar":"&showsearch=0&showsearch=0",
+            "ratio":"0.75"
+          },
+          "url":""
+        }
+      ]
+    },
+    "contacts":{
+      "contact":[
+        {
+          "type":"public_email",
+          "value":"j.pottier@doyoubuzz.com"
+        },
+        {
+          "type":"form",
+          "value":"on"
+        },
+        {
+          "type":"skype",
+          "value":"jeremie.pottier"
+        }
+      ]
+    },
+    "skills":{
+      "skill":[
+        {
+          "title":"Web Marketing",
+          "children":{
+            "skill":[
+              {
+                "title":"SEO  \/ SEM",
+                "children":null
+              },
+              {
+                "title":"Advertising",
+                "children":null
+              },
+              {
+                "title":"Advertising media analytics",
+                "children":null
+              },
+              {
+                "title":"Social media marketing",
+                "children":null
+              },
+              {
+                "title":"Strategy and training",
+                "children":null
+              }
+            ]
+          }
+        },
+        {
+          "title":"Research &amp; Development",
+          "children":{
+            "skill":[
+              {
+                "title":"R&amp;D process management",
+                "children":null
+              },
+              {
+                "title":"Project engineering",
+                "children":null
+              },
+              {
+                "title":"Technology and scientific scanning",
+                "children":null
+              }
+            ]
+          }
+        },
+        {
+          "title":"Editorial Web",
+          "children":{
+            "skill":[
+              {
+                "title":"Preferred subjects: science and society, technology, Internet",
+                "children":null
+              },
+              {
+                "title":"Technical: writing, editing, newsletter, photography, mock-ups",
+                "children":null
+              },
+              {
+                "title":"Organization: documentary research, editorial planningl",
+                "children":null
+              },
+              {
+                "title":"Strategy: strong understanding of Internet journalism",
+                "children":null
+              }
+            ]
+          }
+        },
+        {
+          "title":"Project Management",
+          "children":{
+            "skill":[
+              {
+                "title":"Team management",
+                "children":null
+              },
+              {
+                "title":"Planning \/ Budgeting \/ Sourcing \/ Client Relations",
+                "children":null
+              },
+              {
+                "title":"Conception \/ Ergonomic Design",
+                "children":null
+              }
+            ]
+          }
+        },
+        {
+          "title":"Computer Technology",
+          "children":{
+            "skill":[
+              {
+                "title":"CMS : Wordpress, Drupal",
+                "children":null
+              },
+              {
+                "title":"Languages : PHP, .NET, Javascript, xHTML, CSS, SQL",
+                "children":null
+              },
+              {
+                "title":"Databases : MySQL, SQLServer",
+                "children":null
+              }
+            ]
+          }
+        },
+        {
+          "title":"Software and Applications",
+          "children":{
+            "skill":[
+              {
+                "title":"Web : Gmail, Google Reader \/ Agenda \/ Docs, Delicious",
+                "children":null
+              },
+              {
+                "title":"Audience analysis: Analytics, XiTi",
+                "children":null
+              },
+              {
+                "title":"Graphic Design: Photoshop, Quark XPress",
+                "children":null
+              },
+              {
+                "title":"MindMapping: Mindjet Mind Manager",
+                "children":null
+              },
+              {
+                "title":"Conception: Axure, OmniGraffle",
+                "children":null
+              },
+              {
+                "title":"Bug tracking: Trac, BaseCamp, Mantis",
+                "children":null
+              },
+              {
+                "title":"Web advertising: OpenAdStream, Google Ad Manager, AdSense, Adwords",
+                "children":null
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "interests":{
+      "interest":[
+        {
+          "title":"Sport",
+          "children":{
+            "interest":[
+              {
+                "title":"Tennis, badminton, squash, golf, scuba diving",
+                "children":null
+              }
+            ]
+          }
+        },
+        {
+          "title":"In short:",
+          "children":{
+            "interest":[
+              {
+                "title":"Cinema",
+                "children":null
+              },
+              {
+                "title":"Sports : tennis, scuba diving, golf",
+                "children":null
+              },
+              {
+                "title":"Literature : Paul Auster, Stephen King, Philip Roth...",
+                "children":null
+              },
+              {
+                "title":"Traveling",
+                "children":null
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "printable":{
+      "pdf":"http:\/\/www.doyoubuzz.com\/jeremie-pottier\/coo-doyoubuzz\/export?format=pdf",
+      "odt":"http:\/\/www.doyoubuzz.com\/jeremie-pottier\/coo-doyoubuzz\/export?format=odt",
+      "doc":"http:\/\/www.doyoubuzz.com\/jeremie-pottier\/coo-doyoubuzz\/export?format=doc"
+    }
+  }
+}
+{% endset %}
+		
+{% include 'examples.twig' %}
+

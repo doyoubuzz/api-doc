@@ -1,0 +1,146 @@
+<h2>Attributes</h2>
+
+<p>&nbsp;</p>
+<table class="table .table-bordered .table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>id</td>
+		<td>id of the user</td>
+		<td>integer</td>
+	</tr>
+	<tr>
+		<td>lastname</td>
+		<td>Last name of the user</td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>firstname</td>
+		<td>First name of the user</td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>slug</td>
+		<td>slug of the user's profile (append this slug to http://www.doyoubuzz.com/ to get the user's main resume url) </td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>registeredAt</td>
+		<td>Datetime of registration on DoYouBuzz.com</td>
+		<td>Datetime (format Y-m-d\TH:i:s)</td>
+	</tr>		
+	<tr>
+		<td>premium</td>
+		<td>Wether or not the user is a Premium DoYouBuzz user</td>
+		<td>boolean</td>
+	</tr>	
+	<tr>
+		<td>email</td>
+		<td>Email of the user. The email has been verified by DoYouBuzz. Character "+" on the left part is allowed</td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td><a class="js-expand" href="javascript:void()" data-show-element="user-user-resumes"><i class="icon-plus-sign"></i> resumes</a></td>
+		<td>Resume list</td>
+		<td>element</td>
+	</tr>
+		<tr class="js-expandable user-user-resumes">
+			<td><a class="js-expand" href="javascript:void()" data-show-element="user-user-resume"><i class="icon-plus-sign"></i> resume</a></td>
+			<td>Resume object</td>
+			<td>element</td>
+		</tr>	
+		<tr class="js-expandable user-user-resume level2">
+			<td>id</td>
+			<td>id of the resume</td>
+			<td>integer</td>
+		</tr>
+		<tr class="js-expandable user-user-resume level2">
+			<td>title</td>
+			<td>Resume's title</td>
+			<td>string</td>
+		</tr>
+		<tr class="js-expandable user-user-resume level2">
+			<td>main</td>
+			<td>Wether or nos this is the user's main resume</td>
+			<td>boolean</td>
+		</tr>
+		<tr class="js-expandable user-user-resume level2">
+			<td>culture</td>
+			<td>Culture of the resume  (possible values: fr_FR, en_US, en_UK, it_IT, es_ES, de_DE)</td>
+			<td>string</td>
+		</tr>
+	</tr>
+</table>
+
+
+<p>&nbsp;</p>
+
+
+
+{% set xml %}
+
+<?xml version="1.0"?>
+<response>
+ <user>
+  <id>2</id>
+  <lastname>Pottier</lastname>
+  <firstname>Jérémie</firstname>
+  <slug>jeremie-pottier</slug>
+  <registeredAt>2008-05-19T03:20:31</registeredAt>
+  <email>j.pottier@doyoubuzz.com</email>
+  <premium>1</premium>
+  <resumes>
+   <resume>
+    <id>2</id>
+    <title>Directeur projet web</title>
+    <main>1</main>
+    <culture>fr_FR</culture>
+   </resume>
+   <resume>
+    <id>18078</id>
+    <title>COO @ DoYouBuzz</title>
+    <main></main>
+    <culture>en_US</culture>
+   </resume>
+  </resumes>
+ </user>
+</response>
+
+{%  endset %}
+
+{% set json %}
+
+{
+  "user":{
+    "id":2,
+    "lastname":"Pottier",
+    "firstname":"J\u00e9r\u00e9mie",
+    "slug":"jeremie-pottier",
+    "registeredAt":"2008-05-19T03:20:31",
+    "email":"j.pottier@doyoubuzz.com",
+    "premium":true,
+    "resumes":{
+      "resume":[
+        {
+          "id":2,
+          "title":"Directeur projet web",
+          "main":true,
+          "culture":"fr_FR"
+        },
+        {
+          "id":18078,
+          "title":"COO @ DoYouBuzz",
+          "main":false,
+          "culture":"en_US"
+        }
+      ]
+    }
+  }
+}
+
+{% endset %}
+		
+{% include 'examples.twig' %}

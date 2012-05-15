@@ -1,0 +1,27 @@
+
+.js-expand, .js-expand:hover {
+	color: #333;
+	text-decoration: none;
+}
+
+.js-expandable
+{
+	display: none;	
+}
+
+.js-expandable td
+{
+	padding-left: 25px;
+}
+
+.level2 td {
+	padding-left: 35px;
+}
+
+.level3 td {
+	padding-left: 45px;
+}
+
+.level4 td {
+	padding-left: 55px;
+}

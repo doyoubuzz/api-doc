@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{%  block title %}Partner authentication{% endblock %}
+
+{% block content %}
+
+<h1>Partner authentication</h1>
+<p>If you are a DoYouBuzz Partner with a private CV database, you can access the Partner API.</p>
+
+<h2>Access protected resources</h2>
+<p>To access a protected ressource, send a <span class="label label-info">GET</span> request to the resource (full list avaiable on the left-menu, under Partner API) with your your apiKey and apiSecret. You can get your apiKey and apiSecret by contacting DoYouBuzz.
+
+<h2>Example</h2>
+<span class="label label-info">GET</span> <code> http://api.doyoubuzz.com/user/?userId=:id&apiKey:apiKey&apiSecret:apiSecret</code>
+
+<p>&nbsp;</p>
+
+<h2>User authorization</h2>
+<p>When a user joins a private CV database, the user's authorization is handled directy by DoYouBuzz so you don't need to request his authorization. Please note : as in a oAuth process, the user can remove his authorization when he wants.</p> 
+  
+
+
+
+
+{% endblock %}
