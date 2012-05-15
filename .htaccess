@@ -19,5 +19,5 @@ RewriteCond $1 !^(index\.php|assets/|robots\.txt|google277e04a74fdd150d.html)
 #   Toutes les autres URL vont être redirigées vers le fichier index.php.
 RewriteRule ^(.*)$ index.php?/$1 [L]
 
-#AddType x-mapp-php5 .php
-#AddHandler x-mapp-php5 .php
+AddType x-mapp-php5 .php
+AddHandler x-mapp-php5 .php
