@@ -125,7 +125,10 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
 		<td>“hello world”</td>
 	</tr>
 	<tr>
-		<td>Proximity search operator</td>
+		<td><strong>Proximity search operator</strong>.<br>
+		Proximity distance is specified in words, adjusted for word count, and applies to all words within quotes. For instance, "cat dog mouse"~5 query means that there must be less than 8-word span which contains all 3 words, ie. "CAT aaa bbb ccc DOG eee fff MOUSE" document will not match this query, because this span is exactly 8 words long.
+
+		</td>
 		<td>"term"~number</td>
 		<td>“hello world”~10</td>
 	</tr>
