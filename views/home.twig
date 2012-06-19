@@ -1,19 +1,23 @@
 {% extends "base.twig" %}
 
 {% block title %}Welcome {% endblock %}
-{% block content %}
-<h2>Welcome on the DoYouBuzz API Documentation</h2>
+{% block container %}
+	<div id="home">
+		<div id="topPart">
+			<img id="dyblogo" src="/assets/img/dyb_fatLogo.png">
+			<h2>Developers Documentation</h2>
+			<br/>
+			<img id="illus" src="/assets/img/dybApi.png">
+		</div>
+		<div id="bottomPart">
+			<p>The DoYouBuzz API gives you access to all the data used on DoYouBuzz.</p>
+			<a href="overview/summary">Get started</a>
+		</div>
 
-The DoYouBuzz API gives you access to all the data used on DoYouBuzz.
-
-<br><br>
-<a class="btn btn-submit btn-primary">Get started</a>
-
-
-
-
-
-
+      <footer>
+        <p>&copy; DoYouBuzz 2012 - If you find a typo or an error, <a href="https://github.com/doyoubuzz/api-doc/issues">open a ticket</a>.</p>
+      </footer>
+	</div>
 
 {% endblock %}	
 

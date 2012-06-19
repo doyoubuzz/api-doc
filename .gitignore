@@ -1,2 +1,6 @@
 *.sublime-project
 *.sublime-workspace
+.buildpath
+.settings
+cache/*
+.htaccess
