@@ -41,6 +41,9 @@ body{
 	padding-bottom:0px;
 	background:#2d2d2d;
 }
+.navbar .navbar-inner {
+	background-image:none;
+}
 .navbar #dybLogo{
 	padding-left:100px;
 	background:url(/assets/img/dyb_tinyLogo.png) no-repeat left 1px;
