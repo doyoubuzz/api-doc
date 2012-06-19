@@ -3,4 +3,5 @@
 .buildpath
 .settings
 cache/*
+.DS_Store
 .htaccess
