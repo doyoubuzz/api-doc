@@ -39,17 +39,13 @@
 	</tr>	
 	<tr>
 		<td>seniority</td>
-		<td>Seniority automatically computed by DoYouBuzz according to the user's work experience (excluding internships). We recommand to use this information only if the user has not filled in this information in his <a href="/user/employment-preferences">employment preferences</a>.</td>
+		<td>Seniority automatically computed by DoYouBuzz according to the user's work experience (excluding internships). We recommand to use this information only if the user has not filled in this information in his <a href="/user/employment-preferences">employment preferences</a>. Please refer to <a href="/baseslist">Baseslist</a> to get the meaning of the value.</td>
 		<td>
-			<a class="js-expand" href="javascript:void()" data-show-element="user-cv-seniority"><i class="icon-plus-sign"></i> integer</a>			
-			<div class="js-expandable user-cv-seniority">
-			1 : from 0 to 2 years<br>
-			2 : from 3 to 5 years<br>
-			3 : from 6 to 10 years<br>
-			4 : more than 10 years<br>
-			</div>
+			integer
 		</td>	
 	</tr>
+
+			
 	<tr>
 		<td>updatedAt</td>
 		<td>Datetime of the last update on this CV</td>
@@ -57,38 +53,15 @@
 	</tr>
 	<tr>
 		<td>professionalStatus</td>
-		<td>Professional status of the user, as described on the CV</td>
+		<td>User's professional status (as described on the CV). This information is specific to each CV (a user can have different values on each CV). Please refer to <a href="/baseslist">Baseslist</a> to get the meaning of the value.</td>
 		<td>
-			<a class="js-expand" href="javascript:void()" data-show-element="user-cv-professionalstatus"><i class="icon-plus-sign"></i> string</a>
-			<div class="js-expandable user-cv-professionalstatus">
-				Employed<br>		
-				Soon Available<br>
-				Unemployed<br>
-				Freelance<br>
-				Consultant<br>
-				CEO (The user has chosen "Entrepreneur")<br>
-				Entrepreneur (The user has chosen "Starting a new venture")<br>
-				Student<br>
-				Nearing Graduation<br>
-				Intern<br>
-				Apprentice<br>
-				COOP<br>
-			</div>
+			integer		
 		</td>		
 	</tr>
 	<tr>
 		<td>availability</td>
-		<td></td>
-		<td>
-		<a class="js-expand" href="javascript:void()" data-show-element="user-cv-availability"><i class="icon-plus-sign"></i> string</a>
-			<div class="js-expandable user-cv-availability">
-				Job Search<br>											
-				Internship Search<br>
-				Look (The user has chosen "Just looking around")<br>				
-				Open (The user has chosen "Open to opportunities")<br>				
-				Unavailable<br>
-			</div>	
-		</td>		
+		<td>User's availability (as described on the CV). This information is specific to each CV (a user can have different values on each CV). Please refer to <a href="/baseslist">Baseslist</a> to get the meaning of the value.</td>
+		<td>integer</td>		
 	</tr>
 	<tr>
 		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-blog"><i class="icon-plus-sign"></i> blog</a></td>
@@ -188,86 +161,8 @@
 	</tr>
 	<tr class="js-expandable user-cv-experience level2">
 		<td>contractType</td>
-		<td></td>
-		<td>
-			<a class="js-expand" href="javascript:void()" data-show-element="user-cv-contract"><i class="icon-plus-sign"></i> string</a>
-			
-			<br>
-			
-			
-			
-			<table class="js-expandable user-cv-contract">
-				<tr>
-					<th>value</th>
-					<th>fr</th>
-					<th>en</th>
-				</tr> 
-				<tr>
-					<td>Full Time</td>
-					<td>CDI</td>
-					<td>Full time</td>
-				</tr>
-				<tr>
-					<td>Part Time</td>
-					<td>CDD</td>
-					<td>Part Time</td>
-				</tr>
-				<tr>
-					<td>Internship</td>
-					<td>Stage</td>
-					<td>Internship</td>
-				</tr>
-				<tr>
-					<td>Temporary Work</td>
-					<td>Intérim</td>
-					<td>Temporary Work</td>
-				</tr>
-				<tr>
-					<td>Apprenticeship</td>
-					<td>Contrat d'apprentissage</td>
-					<td>Apprenticeship</td>
-				</tr>
-				<tr>
-					<td>Cooperative Education Work</td>
-					<td>Contrat de professionnalisation</td>
-					<td>Cooperative Education Work</td>
-				</tr>
-				<tr>
-					<td>Consultant</td>
-					<td>Emploi-jeunes</td>
-					<td>Consultant</td>
-				</tr>
-				<tr>
-					<td>Student Project</td>
-					<td>Projet étudiant</td>
-					<td>Student Project</td>
-				</tr>
-				<tr>
-					<td>Volunteer</td>
-					<td>Bénévolat</td>
-					<td>Volunteer</td>
-				</tr>
-				<tr>
-					<td>Freelancer</td>
-					<td>Freelance</td>
-					<td>Freelancer</td>
-				</tr>
-				<tr>
-					<td>Temporary Remplacement</td>
-					<td>Vacataire</td>
-					<td>Temporary Remplacement</td>
-				</tr>
-				<tr>
-					<td>Other</td>
-					<td>Autre</td>
-					<td>Other</td>
-				</tr>
-			
-			</table>
-			
-			
-		</td>
-		
+		<td>Experience's contract type. Please refer to <a href="/baseslist">Baseslist</a> to get the meaning of the value.</td>
+		<td>integer</td>		
 	</tr>
 	<tr class="js-expandable user-cv-experience level2">
 		<td><a class="js-expand" href="javascript:void()" data-show-element="user-cv-experience-country-iso"><i class="icon-plus-sign"></i> country</a></td>
