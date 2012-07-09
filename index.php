@@ -20,34 +20,4 @@ echo $twig->render($path.'.twig', array(
 	'template' => $path,
 ));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+?>
