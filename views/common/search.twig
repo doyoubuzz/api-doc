@@ -57,6 +57,55 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
 			<td>value</a></td>	
 			<td>Value for the exact match filter (integer)</td>	
 		</tr>
+
+	<tr>
+		<td style="width:120px;"><a class="js-expand" href="javascript:void()" data-show-element="search-geo"><i class="icon-plus-sign"></i> geo</a></td>	
+		<td>Limit the search on the users who agree to work in a specific location. On DoYouBuzz the user can select one or several countries and / or one or several cities with a perimeter for each city. For example if the user chooses Paris with a perimeter of 50 kilometers, then he will match a search on Versailles or any other city or GPS location in a 50km perimeter of Paris.</td>	
+	</tr>
+		<!-- CITIES -->
+		<tr class="js-expandable search-geo">
+			<td><a class="js-expand" href="javascript:void()" data-show-element="search-cities"><i class="icon-plus-sign"></i> cities</a></td>
+			<td>Limit the search with cities criteria (if you send several cities, the operator applied will be AND, meaning the user matching both cities will be returned by the search)</td>	
+		</tr>
+			<!-- CITY -->
+			<tr class="js-expandable search-cities level2">
+				<td><a class="js-expand" href="javascript:void()" data-show-element="search-city"><i class="icon-plus-sign"></i> city</a></td>	
+				<td>City criteria</td>	
+			</tr>
+				<!-- COUNTRY -->
+				<tr class="js-expandable search-city level3">
+					<td>country</td>
+					<td>Country ISO 3166 code</td>
+				</tr>
+				<!-- ZIPCODE -->
+				<tr class="js-expandable search-city level3">
+					<td>zipcode</td>
+					<td>City zipcode (only FR cities works for now)</td>
+				</tr>
+
+		<!-- COORDINATES -->
+		<tr class="js-expandable search-geo">
+			<td><a class="js-expand" href="javascript:void()" data-show-element="search-coordinates"><i class="icon-plus-sign"></i> coordinates</a></td>	
+			<td>GPS coordinates criteria</td>	
+		</tr>
+			<!-- COORDINATE -->
+			<tr class="js-expandable search-coordinates level2">
+				<td><a class="js-expand" href="javascript:void()" data-show-element="search-coordinate"><i class="icon-plus-sign"></i> coordinate</a></td>
+				<td>GPS coordinates </td>
+			</tr>
+				<!-- LATITUDE -->
+				<tr class="js-expandable search-coordinate level3">
+					<td>latitude</td>
+					<td>Coordinate latitude</td>
+				</tr>
+				<!-- LONGITUDE -->
+				<!-- LATITUDE -->
+				<tr class="js-expandable search-coordinate level3">
+					<td>longitude</td>
+					<td>Coordinate longitude</td>
+				</tr>
+				<!-- LONGITUDE -->
+
 	<tr>
 		<td><a class="js-expand" href="javascript:void()" data-show-element="search-limits"><i class="icon-plus-sign"></i> limits</a></td>	
 		<td>Limits to apply on the request.</td>	
@@ -229,6 +278,20 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
 				</values>
 			</filter>
 		</filters>
+		<geo>
+			<cities>
+                <city>
+                    <country>FR</country>
+                    <zipcode>44000</zipcode>
+                </city>
+			</cities>
+			<coordinates>
+                <coordinate>
+                    <latitude>47.213520</latitude>
+                    <longitude>-1.561381</longitude>
+                </coordinate>
+			</coordinates>
+		</geo>		
 		<limits>
 			<offset>0</offset>
 			<limit>10</limit>
