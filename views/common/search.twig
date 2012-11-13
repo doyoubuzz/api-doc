@@ -58,6 +58,7 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
 			<td>Value for the exact match filter (integer)</td>	
 		</tr>
 
+	<!-- GEOLOCATION -->
 	<tr>
 		<td style="width:120px;"><a class="js-expand" href="javascript:void()" data-show-element="search-geo"><i class="icon-plus-sign"></i> geo</a></td>	
 		<td>Limit the search on the users who agree to work in a specific location. On DoYouBuzz the user can select one or several countries and / or one or several cities with a perimeter for each city. For example if the user chooses Paris with a perimeter of 50 kilometers, then he will match a search on Versailles or any other city or GPS location in a 50km perimeter of Paris.</td>	
@@ -106,6 +107,22 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
 				</tr>
 				<!-- LONGITUDE -->
 
+
+	<!-- METADATAS -->
+	<tr>
+		<td style="width:120px;"><a class="js-expand" href="javascript:void()" data-show-element="search-metadatas" name="metadatas"><i class="icon-plus-sign"></i> metadatas</a></td>	
+		<td>Filter the search on a metadata (you need to have previsouly assigned metadatas to your users. Please see <a href="/app/metadatas">the metadatas documentation</a>.</td>	
+	</tr>
+		<!-- CITIES -->
+		<tr class="js-expandable search-metadatas">
+			<td><a class="js-expand" href="javascript:void()" data-show-element="search-metadata"><i class="icon-plus-sign"></i> metadata</a></td>
+			<td>One metadata to filter the result on.</td>	
+		</tr>
+			<!-- CITY -->
+			<tr class="js-expandable search-metadata level2">
+				<td><a class="js-expand" href="javascript:void()">Key</a></td>	
+				<td>Value of your key</td>	
+			</tr>
 	<tr>
 		<td><a class="js-expand" href="javascript:void()" data-show-element="search-limits"><i class="icon-plus-sign"></i> limits</a></td>	
 		<td>Limits to apply on the request.</td>	
@@ -251,6 +268,8 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
 	</tr>
 </table>
 
+
+
 <a name="requestExample"></a>
 <h2>Request example</h2>
 <pre name="code" class="xml">
@@ -291,7 +310,10 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
                     <longitude>-1.561381</longitude>
                 </coordinate>
 			</coordinates>
-		</geo>		
+		</geo>	
+		<metadatas>
+    		<metadata>tag:12</metadata>
+		</metadatas>	
 		<limits>
 			<offset>0</offset>
 			<limit>10</limit>
