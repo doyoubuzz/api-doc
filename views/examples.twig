@@ -1,33 +1,37 @@
 
 <h2>Examples</h2>
 
-				<div class="tabbable">
-					<ul class="nav nav-tabs">
-						{%  if json %}
-							<li class="active">
-								<a href="#tab1" data-toggle="tab">Json</a>		
-							</li>
-						{% endif %}
-						{% if xml %}						
-							<li>
-								<a href="#tab2" data-toggle="tab">XML</a>		
-							</li>
-						{% endif %}
-						
-					</ul>
-				</div>
-				
-				<div class="tab-content">
-					{% if json %}
-					<div class="tab-pane active" id="tab1">
-						<pre name="code" class="javascript">{{ json }}</pre>
-					</div>
-					{%  endif %}
-					
-					{% if xml %}
-					<div class="tab-pane" id="tab2">
-						<pre name="code" class="xml">{{ xml }}</pre>
-					</div>
-					{%  endif %}
-					
-				</div>
+	{% if url %}
+		{{ url}}
+	{% endif %}
+
+	<div class="tabbable">
+		<ul class="nav nav-tabs">
+			{%  if json %}
+				<li class="active">
+					<a href="#tab1" data-toggle="tab">Json</a>		
+				</li>
+			{% endif %}
+			{% if xml %}						
+				<li>
+					<a href="#tab2" data-toggle="tab">XML</a>		
+				</li>
+			{% endif %}
+			
+		</ul>
+	</div>
+	
+	<div class="tab-content">
+		{% if json %}
+		<div class="tab-pane active" id="tab1">
+			<pre name="code" class="javascript">{{ json }}</pre>
+		</div>
+		{%  endif %}
+		
+		{% if xml %}
+		<div class="tab-pane" id="tab2">
+			<pre name="code" class="xml">{{ xml }}</pre>
+		</div>
+		{%  endif %}
+		
+	</div>
