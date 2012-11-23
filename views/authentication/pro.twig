@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{%  block title %}Showcase authentication{% endblock %}
+
+{% block content %}
+
+<h1>Showcase / Campus authentication</h1>
+
+<p>If you use DoYouBuzz Showcase or DoYouBuzz Campus, you can access the datas of your application and users thanks to this API.</p>
+
+<h2>Access protected resources from your Showcase account</h2>
+
+<p><span class="label label-info">GET | PUT | POST | DELETE</span> <code>http://showcase.doyoubuzz.com/api/v1/&lt;method&gt;?apiKey=:apiKey</code></p>
+
+<p>You can get your apiKey by loggin as an admin on your DoYouBuzz Showcase account, under "Settings", then "API".</p>
+
+<p>&nbsp;</p>
+
+<h2>Relationship between the Showcase API and the Application API</h2>
+
+<p>With the Showcase API you can get each user's oAuth tokens (use <span class="label label-info">GET</span> <code> /users/:id/token</code>).</p>
+
+<p>Once you get these tokens for a user, you can use the Application API to access the user's <a href="/app/cv">resumes</a> and <a href="/app/employment">employment preferences</a> -- please note that for this API the authentication type is different : you need to use the oAuth authentication.</a></p>
+	
+{% endblock %}

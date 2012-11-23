@@ -1,0 +1,282 @@
+{% extends "base.twig" %}
+
+{% block title %} Users {% endblock %}
+{% block content %}
+
+<h1>Users</h1>
+
+<p></p>
+
+<h2>Get all users for your company</h2>
+<p><span class="label label-info">GET</span> <code> /users</code> 
+
+
+<h3>URL parameters</h3>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>filter</td>
+		<td>Specify the kind of users you want to retrieve (user, candidate, admin of manager)</td>
+		<td>u | c | a |m</td>
+	</tr>
+	<tr>
+		<td>page</td>
+		<td>Page number (results are paginated)</td>
+		<td>Integer</td>
+	</tr>
+</table>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="users-example">Example</a>
+
+
+<div class="js-expandable users-example">
+<p><span class="label label-info">GET</span> <code> /users</code>	
+<pre name="code" class="javascript">
+{
+   "users": [
+      {
+         "id": 1,
+         "username": "will.adama@bg.com",
+         "email": "will.adama@bg.com",
+         "firstname": "Will",
+         "lastname": "Adama"
+      },
+      {
+         "id": 2,
+         "username": "laura.roslin@bg.com",
+         "email": "laura.roslin@bg.com",
+         "firstname": "Laura",
+         "lastname": "Roslin"
+      },
+      {
+         "id": 3,
+         "username": "brendan.constanza@bg.com",
+         "email": "brendan.constanza@bg.com",
+         "firstname": "Brendan",
+         "lastname": "Constanza",
+         "kind": "user"
+      },
+      {
+         "id": 4,
+         "username": "alex.quartararo@bg.com",
+         "email": "alex.quartararo@bg.com",
+         "firstname": "Alex",
+         "lastname": "Quartararo",
+         "kind": "candidate"
+      },
+      {
+         "id": 5,
+         "username": "margaret.edmonson@bg.com",
+         "email": "margaret.edmonson@bg.com",
+         "firstname": "Margaret",
+         "lastname": "Edmonson",
+         "kind": "user"
+      },
+      {
+         "id": 6,
+         "username": "kara.thrace@bg.com",
+         "email": "kara.thrace@bg.com",
+         "firstname": "Kara",
+         "lastname": "Thrace",
+         "kind": "user"
+      },
+      {
+         "id": 7,
+         "username": "galen.tyrol@bg.com",
+         "email": "galen.tyrol@bg.com",
+         "firstname": "Galen",
+         "lastname": "Tyrol",
+         "kind": "user"
+      },
+      {
+         "id": 8,
+         "username": "samuel.anders@bg.com",
+         "email": "samuel.anders@bg.com",
+         "firstname": "Samuel",
+         "lastname": "Anders",
+         "kind": "candidate"
+      },
+      {
+         "id": 9,
+         "username": "billy.keikeya@bg.com",
+         "email": "billy.keikeya@bg.com",
+         "firstname": "Billy",
+         "lastname": "Keikeya",
+         "kind": "user"
+      },
+      {
+         "id": 10,
+         "username": "gaius.baltar@bg.com",
+         "email": "gaius.baltar@bg.com",
+         "firstname": "Gaïus ",
+         "lastname": "Baltar",
+         "kind": "user"
+      },
+      {
+         "id": 11,
+         "username": "tom.zarek@bg.com",
+         "email": "tom.zarek@bg.com",
+         "firstname": "Tom ",
+         "lastname": "Zarek",
+         "kind": "candidate"
+      },
+      {
+         "id": 18,
+         "username": "lee.adama@bg.com",
+         "email": "lee.adama@bg.com",
+         "firstname": "Lee",
+         "lastname": "Adama",
+         "kind": "candidate"
+      }
+   ],
+   "total": 12
+}
+</pre>
+</div>
+
+
+
+<h2>Get a single user information</h2>
+<p><span class="label label-info">GET</span> <code> /users/:id</code>
+
+<h3>URL parameters</h3>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>isOriginId (optional). Default to 0.</td>
+		<td>Set this parameter to "1" if the id your are sending is the ID on your system. It works only if you have setup a SSO in your Showcase account</td>
+		<td>boolean</td>
+	</tr>
+</table>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-example">Example</a>
+<div class="js-expandable user-example">
+
+<p><span class="label label-info">GET</span> <code> /users/6</code>	
+<pre name="code" class="javascript">
+{
+    "id": 6,
+    "username": "kara.thrace@bg.com",
+    "email": "kara.thrace@bg.com",
+    "firstname": "Kara",
+    "lastname": "Thrace",
+    "kind": "user"
+}
+</pre>
+</div>
+
+<h2>Get a user's token </h2>
+<p><span class="label label-info">GET</span> <code> /users/:id/token</code>
+
+<p>Once you get the user token you can send oAuth requests on the DoYouBuzz API on behalf of this user so you can get his resume(s) and employment preferences.</p>
+
+<h2>Get a user's tags </h2>
+<p><span class="label label-info">GET</span> <code> /users/:id/tags</code>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-tags">Example</a>
+
+<div class="js-expandable user-tags">
+
+<p><span class="label label-info">GET</span> <code> /users/6/tags</code>
+
+<pre name="code" class="javascript">
+[
+    {
+        "id": 16,
+        "title": "Pilot"
+    },
+    {
+        "id": 267,
+        "title": "Available"
+    },
+    {
+        "id": 272,
+        "title": "Pegasus"
+    }
+]
+</pre>
+</div>
+
+<h2>Associate tags on a user</h2>
+<p><span class="label label-info">PUT</span> <code> /users/:id/associateTags</code>
+
+<h3>Body parameters</h3>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>tags</td>
+		<td>Id of the tag to associate on the current user or array of ids</td>
+		<td>integer | Array</td>
+	</tr>
+	<tr>
+		<td>reset (optional)</td>
+		<td>You can use this option to indicates you want to reset all the current tags associated to the user before applying the one sent in the request</td>
+		<td>Boolean</td>
+	</tr>
+</table>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-associateTags">Example</a>
+
+<div class="js-expandable user-associateTags">
+
+<h3>Request</h3>
+<p><span class="label label-info">PUT</span> <code> /users/1/associateTags</code>
+
+<pre>
+tags[]=16&tags[]=266&tags=271&reset=1
+</pre>
+
+<h3>Response</h3>
+<p>You get a 204 response code (request successful) if the association succeeded</p>
+
+</div>
+
+<h2>Disassociate tags on a user</h2>
+<p><span class="label label-info">GET</span> <code> /users/:id/tags</code>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>tags</td>
+		<td>Id of the tag to disassociate on the current user</td>
+		<td>integer | Array</td>
+	</tr>
+</table>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-associateTags">Example</a>
+
+<div class="js-expandable user-associateTags">
+
+<h3>Request</h3>
+<p><span class="label label-info">PUT</span> <code> /users/6/disassociateTags</code>
+
+<pre>
+tags[]=16&tags[]=266&tags=271
+</pre>
+
+<h3>Response</h3>
+<p>You get a 204 response code (request successful) if the disassociation succeeded</p>
+
+</div>
+
+{% endblock %}
+

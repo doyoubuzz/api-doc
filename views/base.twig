@@ -65,17 +65,21 @@
               
               <li class="nav-header">Authentication</li>
               <li{% if template == 'authentication/oauth' %} class="active"{% endif %}><a href="/authentication/oauth">Application (oAuth)</a></li>              
+              <li{% if template == 'authentication/pro' %} class="active"{% endif %}><a href="/authentication/pro">Showcase</a></li>              
               <li{% if template == 'authentication/partner' %} class="active"{% endif %}><a href="/authentication/partner">Partner</a></li>
 
               <li class="nav-header">Application API</li>
-
               
               <li{% if template == 'app/user' %} class="active"{% endif %}><a href="/app/user">User</a></li>
               <li{% if template == 'app/cv' %} class="active"{% endif %}><a href="/app/cv">CV</a></li>
               <li{% if template == 'app/employment-preferences' %} class="active"{% endif %}><a href="/app/employment-preferences">Employment preferences</a></li>              
               <li{% if template == 'app/search' %} class="active"{% endif %}><a href="/app/search">Search <span class="label label-warning">New location criteria</span></a></li>
-
               <li{% if template == 'app/metadatas' %} class="active"{% endif %}><a href="/app/metadatas">Metadatas <span class="label label-warning">New</span></a> </li>
+
+              <li class="nav-header">Showcase API</li>
+
+              <li{% if template == 'pro/users' %} class="active"{% endif %}><a href="/pro/users">Users</a></li>
+              <li{% if template == 'pro/tags' %} class="active"{% endif %}><a href="/pro/tags">Tags</a></li>
 
               <li class="nav-header">Search API</li>
               <li{% if template == 'search/search' %} class="active"{% endif %}><a href="/search/search">Search <span class="label label-warning">New location criteria</span></a></li>
