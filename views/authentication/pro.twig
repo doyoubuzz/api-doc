@@ -6,20 +6,115 @@
 
 <h1>Showcase / Campus authentication</h1>
 
-<p>If you use DoYouBuzz Showcase or DoYouBuzz Campus, you can access the datas of your application and users thanks to this API.</p>
+<div class="alert alert-success">Hey ! A nice PHP library with examples is available on <a href="https://github.com/doyoubuzz/dyb-api-connexion-php/tree/master/Showcase">Github</a>!</div>
 
-<h2>Access protected resources from your Showcase account</h2>
+<p>If you use DoYouBuzz Showcase or DoYouBuzz Campus, you can access the datas of your application, users and CV with this this API.</p>
 
-<p><span class="label label-info">GET | PUT | POST | DELETE</span> <code>http://showcase.doyoubuzz.com/api/v1/&lt;method&gt;?apiKey=:apiKey</code></p>
+<h2>How to access protected resources</h2>
 
-<p>You can get your apiKey by loggin as an admin on your DoYouBuzz Showcase account, under "Settings", then "API".</p>
+<p>Every method needs 
+<p><span class="label label-info">GET | PUT | POST | DELETE</span> <code>http://showcase.doyoubuzz.com/api/v1/&lt;method&gt;?apiKey=:apiKey&timestamp=:timestamp&hash=:hash</code></p>
+
+<h3>Mandatory parameters</h3>
+
+<p>There are a few mandatory parameters for each request made to the Showcase API :</p>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Parameter</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>apiKey (mandatory) </td>
+		<td>
+			The API key of your application. You can get your apiKey by login as an admin on your DoYouBuzz Showcase account, under "Settings", then "API".
+		</td>
+	</tr>
+	<tr>
+		<td>timestamp (mandatory)</td>
+		<td>The timestamp of your request</td>
+	</tr>
+	<tr>
+		<td>hash (mandatory)</td>
+		<td>
+			The hash is a security parameter you must compute and send for each request. An detailed explanation with code example is given below.
+		</td>
+	</tr>
+</table>
+
+
+<h4>How to compute the hash parameter?</h4>
+
+<h5>In plain english function</h5>
+<ol>
+	  <li>Take all the parameters sent in the URL (both mandatory and optionals), order them by alphabetical order (according to their name), then concatenate their value.</li>
+	  <li>Add the apiSecret at the end of the resulting string</li>
+	  <li>MD5 the result: this is your hash</li>
+</ol>
+
+<h5>PHP Function</h5>
+
+
+<p>This function takes two parameters : an associative arrays of the parameters to send, and the apiSecret :</p>
+
+<pre name="code" class="php">
+function computeHash($params, $apiSecret)
+{
+    $paramsStr = "";
+    ksort($params);
+    foreach ($params as $paramKey => $paramVal) {
+        $paramsStr .= $paramVal;
+    }
+    $hash = md5($paramsStr . $apiSecret);
+    return array_merge($params, array('hash' => $hash));
+}
+</pre> 
+
+
+<h5>Example</h5>
+
+<p>Let's say you want to get the CV with the id 16546 (you have previously verified you can access this ressource). To do so, according to the documentation you need to send a <span class="label label-info">GET</span> to <code>http://showcase.doyoubuzz.com/api/v1/dyb/cv/16546</code> with these parameters :</p>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Parameter name</th>
+		<th>Parameter value</th>
+	</tr>
+	<tr>
+		<td>timestamp</td>
+		<td>1359021513</td>
+	</tr>	
+	<tr>
+		<td>apiKey</td>
+		<td>
+			IuQSDLKQLSDK344590Li987
+		</td>
+	</tr>
+	<tr>
+		<td>hash</td>
+		<td>
+			???
+		</td>
+	</tr>
+</table>
+
+<p>So, let's compute the hash!</p>
+
+<ol>
+	<li>First, order the parameters according to their name, then concatenate their value. You will have the following string : <code>IuQSDLKQLSDK344590Li9871359021513</code>.</li>
+	<li>Then, append your apiSecret at the end of this string (here the apiSecret is <code>IuJyt42BnUiOlPM8FvB67tG</code>. You will have the resulting string : <code>IuQSDLKQLSDK344590Li9871359021513IuJyt42BnUiOlPM8FvB67tG</code>.</li>
+	<li>Use this string to create a MD5, and you will have your hash parameter : <code>44f36e1dd04a10c0be21b2d8e880f22b</code></li>	
+</ol>
+
+<p>Now, you can send the request to the API : </p>
+
+<p><span class="label label-info">GET</span> <code>http://showcase.doyoubuzz.com/api/v1/dyb/cv/16546?apiKey=IuQSDLKQLSDK344590Li987&timestamp=1359021513&hash=44f36e1dd04a10c0be21b2d8e880f22b</code></p>
 
 <p>&nbsp;</p>
 
-<h2>Relationship between the Showcase API and the Application API</h2>
 
-<p>With the Showcase API you can get each user's oAuth tokens (use <span class="label label-info">GET</span> <code> /users/:id/token</code>).</p>
 
-<p>Once you get these tokens for a user, you can use the Application API to access the user's <a href="/app/cv">resumes</a> and <a href="/app/employment">employment preferences</a> -- please note that for this API the authentication type is different : you need to use the oAuth authentication.</a></p>
+
+
 	
 {% endblock %}

@@ -56,7 +56,7 @@
 	{% block container %}
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
+        <div class="span2">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Overwiew</li>
@@ -64,25 +64,26 @@
               <li{% if template == 'baseslist' %} class="active"{% endif %}><a href="/baseslist">Baseslist</a></li>
               
               <li class="nav-header">Authentication</li>
-              <li{% if template == 'authentication/oauth' %} class="active"{% endif %}><a href="/authentication/oauth">Application (oAuth)</a></li>              
-              <li{% if template == 'authentication/pro' %} class="active"{% endif %}><a href="/authentication/pro">Showcase</a></li>              
-              <li{% if template == 'authentication/partner' %} class="active"{% endif %}><a href="/authentication/partner">Partner</a></li>
+              <li{% if template == 'authentication/oauth' %} class="active"{% endif %}><a href="/authentication/oauth">DoYouBuzz API</a></li>              
+              <li{% if template == 'authentication/pro' %} class="active"{% endif %}><a href="/authentication/pro">Showcase API</a></li>              
+              <li{% if template == 'authentication/partner' %} class="active"{% endif %}><a href="/authentication/partner">Partner (deprecated)</a></li>
 
-              <li class="nav-header">Application API</li>
+              <li class="nav-header">DoYouBuzz API</li>
               
-              <li{% if template == 'app/user' %} class="active"{% endif %}><a href="/app/user">User</a></li>
-              <li{% if template == 'app/cv' %} class="active"{% endif %}><a href="/app/cv">CV</a></li>
-              <li{% if template == 'app/employment-preferences' %} class="active"{% endif %}><a href="/app/employment-preferences">Employment preferences</a></li>              
-              <li{% if template == 'app/search' %} class="active"{% endif %}><a href="/app/search">Search <span class="label label-warning">New location criteria</span></a></li>
-              <li{% if template == 'app/metadatas' %} class="active"{% endif %}><a href="/app/metadatas">Metadatas <span class="label label-warning">New</span></a> </li>
+              <li{% if template == 'dyb/user' %} class="active"{% endif %}><a href="/dyb/user">User</a></li>
+              <li{% if template == 'dyb/cv' %} class="active"{% endif %}><a href="/dyb/cv">CV</a></li>
+              <li{% if template == 'dyb/employment-preferences' %} class="active"{% endif %}><a href="/dyb/employment-preferences">Employment preferences</a></li>              
+              <li{% if template == 'dyb/search' %} class="active"{% endif %}><a href="/dyb/search">Search</a></li>
+              <li{% if template == 'dyb/metadatas' %} class="active"{% endif %}><a href="/dyb/metadatas">Metadatas</a> </li>
 
-              <li class="nav-header">Showcase API</li>
+              <li class="nav-header">Showcase API <span class="label label-warning">New</span></li>
 
+              <li{% if template == 'pro/proxy' %} class="active"{% endif %}><a href="/pro/proxy">Proxy to the DoYouBuzz API</a></li>
               <li{% if template == 'pro/users' %} class="active"{% endif %}><a href="/pro/users">Users</a></li>
               <li{% if template == 'pro/tags' %} class="active"{% endif %}><a href="/pro/tags">Tags</a></li>
 
               <li class="nav-header">Search API</li>
-              <li{% if template == 'search/search' %} class="active"{% endif %}><a href="/search/search">Search <span class="label label-warning">New location criteria</span></a></li>
+              <li{% if template == 'search/search' %} class="active"{% endif %}><a href="/search/search">Search</a></li>
 
               <li class="nav-header">Partner API (deprecated)</li>
               <li{% if template == 'partner/user' %} class="active"{% endif %}><a href="/partner/user">User</a></li>
@@ -100,7 +101,7 @@
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
-        <div class="span9">
+        <div class="span7">
         
             
           {% block content %}

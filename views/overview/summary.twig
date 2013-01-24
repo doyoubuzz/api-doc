@@ -6,13 +6,18 @@
 
 <p><span class="label label-warning">Note</span> Our APIs are in a beta state. Breaking changes may occur (see <a href="#transition">transition from beta to V1</a>).</p>
 
-<h2>Application API</h2>
-<p>With the Application API you can access all the data of the users who have authorized your application. As an independant developers wanting to leverage DoYouBuzz datas, this is the API you want to use.</p>
+<h2>DoYouBuzz API</h2>
+<p>With the DoYouBuzz API you can access all the data of the users who have authorized your application. As an independant developers wanting to leverage DoYouBuzz datas, this is the API you want to use.</p>
 
-<h2>Partner API</h2>
-<p>If you are a corporate DoYouBuzz partner using one of our professional product, you can use the Partner API to access your private CV database and account informations.</p>
+<h2>Showcase API</h2>
 
+<p>If you are a corporate DoYouBuzz partner using one of our professional product (DoYouBuzz Showcase or DoYouBuzz Campus), you can use the Showcase API to access your CV database and account informations.</p>
+
+<h2>Partner API (deprecated) </h2>
 <p><strong>Please note this API is deprecated and will be removed soon. If you rely on this API to access your data, please contact us.</strong></p>
+
+
+
 
 <h2>Schema</h2>
 
@@ -28,7 +33,10 @@ All API access is over HTTP, and accessed from the api.doyoubuzz.com domain. All
 <p>Blank fields are included as <code>null</code> instead of being omitted.</p>
 
 <h2>API Keys</h2>
-<p>To get your API Keys, send an email to <a href="mailto:api@doyoubuzz.com">api@doyoubuzz.com</a> with the following informations :</p>
+
+<h3>DoYouBuzz API or Search API</h3>
+
+<p>To get your DoYouBuzz API or Search API Keys, send an email to <a href="mailto:api@doyoubuzz.com">api@doyoubuzz.com</a> with the following informations :</p>
 
 <ul>
 	<li>Editor name</li>
@@ -38,6 +46,10 @@ All API access is over HTTP, and accessed from the api.doyoubuzz.com domain. All
 	<li>Application URL</li>
 	<li>Customer support email for your application</li>
 </ul>
+
+<h3>DoYouBuzz Showcase API</h3>
+
+<p>You can get your apiKey by login as an admin on your DoYouBuzz Showcase account, under "Settings", then "API".</p>
 
 <a name="transition"></a>
 <h2>Transition from the beta API to the V1 API</h2>
