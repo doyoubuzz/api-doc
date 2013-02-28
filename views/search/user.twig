@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block title %} User {% endblock %}
+{% block content %}
+
+<h1>User</h1>
+
+<p>Return a user's basic informations.</p>
+
+<p><span class="label label-warning">Note</span> Each call to this method for a different user id will count as one view on your account (if you call several times the same user id, the view will only be counted once).</p>
+
+<h2>Access</h2>
+<span class="label label-info">GET</span> <code> http://api.doyoubuzz.com/user?userId=:id</code>
+
+<p>&nbsp;</p>
+
+{% include 'common/user.twig' %}	
+		
+{% endblock %}
+

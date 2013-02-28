@@ -1,0 +1,76 @@
+{% extends "base.twig" %}
+
+{% block title %} Metadatas {% endblock %}
+{% block content %}
+
+<h1>Metadatas</h1>
+
+<p>Metadatas are a convenient way to add a layer of data on top of DoYouBuzz datas (for each of your user). You can for example use metadatas to assign your own skillset to your users or wathever you want. Then, you can later use the <a href="/dyb/search">search</a> to get the users who have been assigned this metadata.</p> 
+
+<h2>Metadatadata storage</h2>
+
+<p>Datas are stored as a unique key for each user. You can also can add several keys for each user.</p>
+
+<p>Of course, you can use this key as a key/value storing system: a key can be "key:value" or "key->value" or "key_value".</p>
+
+<h2>Request attributes</h2>
+
+<p>The attributes are given in XML in the POST body.</p>
+
+<h2>Assign a metadata</h2>
+<p><span class="label label-info">POST</span> <code> http://api.doyoubuzz.com/metadata/assign?apiKey=:apiKey</code></p>
+
+<p>This request will assign the metadata tid:456 to the user 1979.</p>
+
+<pre name="code" class="xml">
+<metadatas>
+  <metadata>
+      <key>tid:456</key>
+      <users>
+          <user>1979</user>
+      </users>
+  </metadata>
+ </metadatas>
+</pre>
+
+<h2>Reset the metadatas for a user</h2>
+
+<p><span class="label label-info">POST</span> <code> http://api.doyoubuzz.com/metadata/assign?apiKey=:apiKey</code></p>
+
+<p>You can also remove all the metatadas assigner to a user. If you send a reset and a metadata assignment in the same request (as shown below), the reset will be applied before the assignment. After sending this request, the user will have one key assigned: "tag:221".</p>
+
+<pre name="code" class="xml">
+</metadatas>
+  	<metadata>
+    	<key>tag:221</key>
+        <users>
+        	<user>361551</user>
+        </users>
+	</metadata>
+    
+    <reset>
+    	<users>
+        	<user>361551</user>
+		</users>
+	</reset>
+</metadatas>
+</pre>
+
+
+<h2>Remove a metadata</h2>
+<p><span class="label label-info">POST</span> <code> http://api.doyoubuzz.com/metadata/unassign?apiKey=:apiKey</code></p>
+
+<pre name="code" class="xml">
+<metadatas>
+	<metadata>
+	      <key>tid:456</key>
+	      <users>
+	          <user>1979</user>
+	      </users>
+	</metadata>
+</metadatas>
+</pre>
+
+
+{% endblock %}
+

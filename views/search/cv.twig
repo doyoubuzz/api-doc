@@ -1,0 +1,20 @@
+{% extends "base.twig" %}
+
+{% block title %} CV {% endblock %}
+{% block content %}
+
+<h1>CV</h1>
+
+<p>Return the CV data</p>
+
+<p><span class="label label-warning">Note</span> Each call to this method for a different user will count as one view on your account (if you call several times the same CV or a CV of a user already requested, the view will be counted once).</p>
+
+<h2>Access</h2>
+<p><span class="label label-info">GET</span> <code> http://api.doyoubuzz.com/cv/:id?apiKey=:apiKey</code> 
+
+<p>&nbsp;</p>
+
+{% include 'common/cv.twig' %}		
+
+{% endblock %}
+
