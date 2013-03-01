@@ -12,7 +12,7 @@
 
 <h2>How to access protected resources</h2>
 
-<p><span class="label label-info">GET | PUT | POST | DELETE</span> <code>http://showcase.doyoubuzz.com/api/v1/&lt;method&gt;?apiKey=:apiKey&amp;timestamp=:timestamp&hash=:hash</code></p>
+<p><span class="label label-info">GET | PUT | POST | DELETE</span> <code>http://showcase.doyoubuzz.com/api/v1/&lt;method&gt;?apikey=:apikey&amp;timestamp=:timestamp&hash=:hash</code></p>
 
 <h3>Mandatory parameters</h3>
 
@@ -24,9 +24,9 @@
 		<th>Description</th>
 	</tr>
 	<tr>
-		<td>apiKey (mandatory) </td>
+		<td>apikey (mandatory) </td>
 		<td>
-			The API key of your application. You can get your apiKey by login as an admin on your DoYouBuzz Showcase account, under "Settings", then "API".
+			The API key of your application. You can get your apikey by login as an admin on your DoYouBuzz Showcase account, under "Settings", then "API".
 		</td>
 	</tr>
 	<tr>
@@ -84,7 +84,7 @@ function computeHash($params, $apiSecret)
 		<td>1359021513</td>
 	</tr>	
 	<tr>
-		<td>apiKey</td>
+		<td>apikey</td>
 		<td>
 			IuQSDLKQLSDK344590Li987
 		</td>
@@ -107,7 +107,7 @@ function computeHash($params, $apiSecret)
 
 <p>Now, you can send the request to the API : </p>
 
-<p><span class="label label-info">GET</span> <code>http://showcase.doyoubuzz.com/api/v1/dyb/cv/16546?apiKey=IuQSDLKQLSDK344590Li987&amp;timestamp=1359021513&hash=44f36e1dd04a10c0be21b2d8e880f22b</code></p>
+<p><span class="label label-info">GET</span> <code>http://showcase.doyoubuzz.com/api/v1/dyb/cv/16546?apikey=IuQSDLKQLSDK344590Li987&amp;timestamp=1359021513&hash=44f36e1dd04a10c0be21b2d8e880f22b</code></p>
 
 <p>&nbsp;</p>
 
