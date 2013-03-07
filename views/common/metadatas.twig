@@ -7,11 +7,12 @@
 
 <p>Metadatas are a convenient way to add a layer of data on top of DoYouBuzz datas (for each of your user). You can for example use metadatas to assign your own skillset to your users or wathever you want. Then, you can later use the <a href="/dyb/search">search</a> to get the users who have been assigned this metadata.</p> 
 
-<h2>Metadatadata storage</h2>
+<h2>Metadata storage</h2>
 
 <p>Datas are stored as a unique key for each user. You can also can add several keys for each user.</p>
-
 <p>Of course, you can use this key as a key/value storing system: a key can be "key:value" or "key->value" or "key_value".</p>
+
+<p>A same user can have a lot of different metadatas, posted by you or by other applications. To avoid name collision, you sould use a namespace mechanism to be certain your key is unique. For example a company called "Acme, Inc." wanting to add the skillset of ID 178 to a user could store the following key: <code>com.acmeinc.skillset:178</code></p>
 
 <h2>Request attributes</h2>
 
@@ -25,7 +26,7 @@
 <pre name="code" class="xml">
 <metadatas>
   <metadata>
-      <key>tid:456</key>
+      <key>com.acmeinc.skillset:178</key>
       <users>
           <user>1979</user>
       </users>
@@ -37,12 +38,12 @@
 
 <p><span class="label label-info">POST</span> <code> http://api.doyoubuzz.com/metadata/assign?apiKey=:apiKey</code></p>
 
-<p>You can also remove all the metatadas assigner to a user. If you send a reset and a metadata assignment in the same request (as shown below), the reset will be applied before the assignment. After sending this request, the user will have one key assigned: "tag:221".</p>
+<p>You can also remove all the metatadas assigner to a user. If you send a reset and a metadata assignment in the same request (as shown below), the reset will be applied before the assignment. After sending this request, the user will have one key assigned: "com.acmeinc.skillset:178".</p>
 
 <pre name="code" class="xml">
 </metadatas>
   	<metadata>
-    	<key>tag:221</key>
+    	<key>com.acmeinc.skillset:178</key>
         <users>
         	<user>361551</user>
         </users>
@@ -63,7 +64,7 @@
 <pre name="code" class="xml">
 <metadatas>
 	<metadata>
-	      <key>tid:456</key>
+	      <key>com.acmeinc.skillset:178</key>
 	      <users>
 	          <user>1979</user>
 	      </users>
