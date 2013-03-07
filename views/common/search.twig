@@ -276,7 +276,8 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
 
 <a name="requestExample"></a>
 <h2>Request example</h2>
-<pre name="code" class="xml">
+
+<pre name="code" class="xml" class=>
 	<search>
 		<queries>
 			<query>
@@ -325,7 +326,61 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
 	</search>
 </pre>
 
-<h2>Response example</h2>
+<a name="light-response"></a>
+<h2>Response example (for the light request)</h2>
+
+<div class="alert alert-success">
+	This is the new, lighter and more optimized response, returned if you add the "light?=1" parameter on your request.
+</div>
+
+
+<pre name="code" class="xml">
+<response>
+   <results>
+       <result>
+           <score>270627</score>
+           <resume>
+               <id>678</id>
+               <userId>680</userId>
+               <title>Développeur PHP</title>
+               <culture>fr_FR</culture>
+               <main>1</main>
+               <completion>0.85</completion>
+               <updatedAt>2013-02-06T14:53:59</updatedAt>
+               <availability>4</availability>
+               <professionalStatus>1</professionalStatus>
+               <published>1</published>
+               <indexed>1</indexed>
+               <protected></protected>
+               <experience> <!-- this is the last professional experience of the user -->
+                   <id>2570</id>
+                   <title>Développeur PHP</title>
+                   <company>Onlineformapro</company>
+                   <city>Vesoul</city>
+                   <start>2005-01-31</start>
+                   <end></end>
+                   <contractType>1</contractType>
+               </experience>
+           </resume>
+           <seen>1</seen>
+       </result>
+   </results>
+   <total>1</total>
+   <returned>1</returned>
+   <offset>0</offset>
+   <limit>10</limit>
+   <time>0.805s</time>
+</response>
+</pre>
+
+
+<h2>Response example (for the full request)</h2>
+
+<div class="alert alert-error">
+	Hey Yo! We kindly remind you that this response is deprecated, you may go the wrong way if you are about to use this response format.
+</div>
+
+
 <pre name="code" class="xml">
 <response>
 	<results>

@@ -7,7 +7,7 @@
 
 <p>Return a user's basic informations.</p>
 
-<p><span class="label label-warning">Note</span> Each call to this method for a different user id will count as one view on your account (if you call several times the same user id, the view will only be counted once).</p>
+<p><span class="label label-warning">Note</span> Each call to this method for a different user will decrease your quota. See <a href="/search/capping"> our capping mechanism</a> for more information.</p>
 
 <h2>Access</h2>
 <span class="label label-info">GET</span> <code> http://api.doyoubuzz.com/user?userId=:id</code>

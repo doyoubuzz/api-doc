@@ -2,62 +2,95 @@
 {% block title %} API Summary {% endblock %}
 
 {% block content %}
-<h1>API Summary</h1>
 
-<p><span class="label label-warning">Note</span> Our APIs are in a beta state. Breaking changes may occur (see <a href="#transition">transition from beta to V1</a>).</p>
+<h1>APIs Summary</h1>
 
-<h2>DoYouBuzz API</h2>
-<p>With the DoYouBuzz API you can access all the data of the users who have authorized your application. As an independant developers wanting to leverage DoYouBuzz datas, this is the API you want to use.</p>
+<div class="alert alert-success">If you have any technical questions, please use this forum : <a href="https://groups.google.com/forum/?fromgroups#!forum/doyoubuzz-developers" target="_blank">https://groups.google.com/forum/?fromgroups#!forum/doyoubuzz-developers</a></div>
 
-<h2>Showcase API</h2>
+<div class="row">
 
-<p>If you are a corporate DoYouBuzz partner using one of our professional product (DoYouBuzz Showcase or DoYouBuzz Campus), you can use the Showcase API to access your CV database and account informations.</p>
+	<div style="margin-left:30px;">
+		<div class="span4 mini-layout">
+			<h2>DoYouBuzz API</h2>
 
-<h2>Partner API (deprecated) </h2>
-<p><strong>Please note this API is deprecated and will be removed soon. If you rely on this API to access your data, please contact us.</strong></p>
+			<p>With the DoYouBuzz API you can access all the data of the users who have authorized your application.</p>
+			<p>As an independant developers wanting to leverage DoYouBuzz datas, this is the API you want to use.</p>
+
+			<h3>API Keys</h3>
+
+			<p>To get your DoYouBuzz API, drop us an email (<a href="mailto:api@doyoubuzz.com">api@doyoubuzz.com</a>) and explain your project! :)</p>
+
+			<h3>Schema</h3>
+
+			<h4>Access</h4>
+			<p><code>http://api.doyoubuzz.com</code></p>
+
+			<h4>Format</h4>
+			<p>Datas are sent as XML and received as XML or JSON (append ?format=json or ?format=xml at the end of your request)</p>
+
+			<h4>Get started</h4>
+
+			<p>Once you have your API Keys, check our <a href="/authentication/auth">authentication mecanism</a> (we use oAuth 1.0) and the methods available on the left-side menu).</p> 
+
+			<p>You can also check our <a href="https://github.com/doyoubuzz/dyb-api-connexion-php">examples on Github</a>.</p>
+			
+
+		</div>
+
+		<div class="span4 mini-layout">
+			<h2>Showcase API</h3>
+
+			<p>The Showcase API allows you to access your private CV database.</p>
+			<p>If you are a company, school or university using either DoYouBuzz Showcase or DoYouBuzz Campus, this is your API.</p>
+
+			<h3>API Keys</h3>
+			<p>You can get your apikey by login as an admin on your DoYouBuzz Showcase account, under "Settings", then "API".</p>
+
+			<h3>Schema</h3>
+			
+			<h4>Access</h4>
+			<p><code>http://showcase.doyoubuzz.com/api/v1/</code></p>
+
+			<h4>Format</h4>
+			<p>Datas are send as XML and returned as JSON.</p>
+
+			<h4>Get started</h4>
+			<p>Get your API Keys in the admin section of your Showcase / Campus app, check our <a href="/authentication/pro">authentication mecanism</a> and the methods available (on the left-side menu).<p>
+			
+			<p>You can also check our <a href="https://github.com/doyoubuzz/dyb-api-connexion-php">PHP Library and examples on Github</a>.</p>
+		</div>
+
+		<div class="span4 mini-layout">
+			<h2>Search API</h2>
+
+			<p>The Search API allows you to search the DoYouBuzz CV database programmatically.</p>
+			<p>As a software editor wanting to give access to the DoYouBuzz Search to his clients, this is your API.</p>
+
+			<h3>API Keys</h3>
+			<p><a href="http://search.doyoubuzz.com">Get in touch</a> with us to explain your project, and your account manager at DoYouBuzz will send your API keys.</p>
+
+			<h3>Schema</h3>
+
+			<h4>Access</h4>
+			<p><code>http://api.doyoubuzz.com/search/</code></p>
+
+			<h4>Format</h4>
+			<p>Datas are send as XML and returned as JSON.</p>
+
+			<h4>Get started</h4>
+			<p>One you have your API Keys, test a <a href="/search/search">basic search request</a> and display a user CV with both the <a href="/search/user">user</a> and the <a href="/search/cv">CV</a> method.</p>
+
+		</div>
+	</div>
+</div>
 
 
 
 
-<h2>Schema</h2>
 
-All API access is over HTTP, and accessed from the api.doyoubuzz.com domain. All data is sent as XML and received as XML or JSON. If you want JSON or XML returned, just append ?format=json or ?format=xml at the end of your request.
 
-<p>Unless otherwise specified, the following format are used:</p>
-<ul>
-	<li>Date : YYYY-MM-DD</li>
-	<li>Datetime : YYYY-MM-DDTHH:MM:SS</li>
-	<li>Boolean : 1 or null</li>
-</ul>
 
-<p>Blank fields are included as <code>null</code> instead of being omitted.</p>
 
-<h2>API Keys</h2>
 
-<h3>DoYouBuzz API or Search API</h3>
-
-<p>To get your DoYouBuzz API or Search API Keys, send an email to <a href="mailto:api@doyoubuzz.com">api@doyoubuzz.com</a> with the following informations :</p>
-
-<ul>
-	<li>Editor name</li>
-	<li>Editor website</li>
-	<li>Application name</li>
-	<li>Application description</li>
-	<li>Application URL</li>
-	<li>Customer support email for your application</li>
-</ul>
-
-<h3>DoYouBuzz Showcase API</h3>
-
-<p>You can get your apiKey by login as an admin on your DoYouBuzz Showcase account, under "Settings", then "API".</p>
-
-<a name="transition"></a>
-<h2>Transition from the beta API to the V1 API</h2>
-
-<p>A V1 using a new access point (such as http://api.doyoubuzz.com/v1/) is currently under development. Most of the current methods will remain the same on the V1 API. A transition period will be observed where both APIs will be enabled, but we may need to break some of the beta methods. </p> 
-
-<h2>Support</h2>
-
-<p>If you have any questions, please use this forum : <a href="https://groups.google.com/forum/?fromgroups#!forum/doyoubuzz-developers" target="_blank">https://groups.google.com/forum/?fromgroups#!forum/doyoubuzz-developers</a></p>
 
 {% endblock %}	

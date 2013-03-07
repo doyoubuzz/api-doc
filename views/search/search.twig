@@ -4,10 +4,16 @@
 {% block content %}
 
 <h1>Search</h1>
+
 <p>Search CV by keywords and filters</p>
 
+{% include 'common/search-warning.twig' %}
+
 <h2>Access</h2>
+
 <span class="label label-info">POST</span> <code> http://api.doyoubuzz.com/search/?apiKey=:apiKey</code>
+
+<span class="label label-warning">During the transition period, add the following parameter to get </span>
 
 <p>&nbsp;</p>
 

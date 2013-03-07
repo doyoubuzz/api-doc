@@ -62,14 +62,9 @@
               <li class="nav-header">Overwiew</li>
               <li{% if template == 'overview/summary' %} class="active"{% endif %}><a href="/overview/summary">Summary</a></li>
               <li{% if template == 'baseslist' %} class="active"{% endif %}><a href="/baseslist">Baseslist</a></li>
-              
-              <li class="nav-header">Authentication</li>
-              <li{% if template == 'authentication/oauth' %} class="active"{% endif %}><a href="/authentication/oauth">DoYouBuzz API</a></li>              
-              <li{% if template == 'authentication/pro' %} class="active"{% endif %}><a href="/authentication/pro">Showcase API</a></li>              
-              <li{% if template == 'authentication/partner' %} class="active"{% endif %}><a href="/authentication/partner">Partner (deprecated)</a></li>
 
               <li class="nav-header">DoYouBuzz API</li>
-              
+              <li{% if template == 'authentication/oauth' %} class="active"{% endif %}><a href="/authentication/oauth">Authentication</a></li>              
               <li{% if template == 'dyb/user' %} class="active"{% endif %}><a href="/dyb/user">User</a></li>
               <li{% if template == 'dyb/cv' %} class="active"{% endif %}><a href="/dyb/cv">CV</a></li>
               <li{% if template == 'dyb/employment-preferences' %} class="active"{% endif %}><a href="/dyb/employment-preferences">Employment preferences</a></li>              
@@ -77,12 +72,13 @@
               <li{% if template == 'dyb/metadatas' %} class="active"{% endif %}><a href="/dyb/metadatas">Metadatas</a> </li>
 
               <li class="nav-header">Showcase API <span class="label label-warning">New</span></li>
-
+              <li{% if template == 'authentication/pro' %} class="active"{% endif %}><a href="/authentication/pro">Authentication</a></li>              
               <li{% if template == 'pro/proxy' %} class="active"{% endif %}><a href="/pro/proxy">Proxy to the DoYouBuzz API</a></li>
               <li{% if template == 'pro/users' %} class="active"{% endif %}><a href="/pro/users">Users</a></li>
               <li{% if template == 'pro/tags' %} class="active"{% endif %}><a href="/pro/tags">Tags</a></li>
 
               <li class="nav-header">Search API</li>
+              <li{% if template == 'search/capping' %} class="active"{% endif %}><a href="/search/capping">Capping</a></li>
               <li{% if template == 'search/search' %} class="active"{% endif %}><a href="/search/search">Search</a></li>
               <li{% if template == 'search/user' %} class="active"{% endif %}><a href="/search/user">User</a></li>
               <li{% if template == 'search/cv' %} class="active"{% endif %}><a href="/search/cv">CV</a></li>
@@ -90,6 +86,7 @@
               <li{% if template == 'search/metadatas' %} class="active"{% endif %}><a href="/search/metadatas">Metadatas</a></li>
 
               <li class="nav-header">Partner API (deprecated)</li>
+              <li{% if template == 'authentication/partner' %} class="active"{% endif %}><a href="/authentication/partner">Authentication</a></li>
               <li{% if template == 'partner/user' %} class="active"{% endif %}><a href="/partner/user">User</a></li>
               <li{% if template == 'partner/employment' %} class="active"{% endif %}><a href="/partner/employment">Employment preferences</a></li>
               <li{% if template == 'partner/cv' %} class="active"{% endif %}><a href="/partner/cv">CV</a></li>
@@ -105,10 +102,12 @@
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
-        <div class="span7">
+        <div class="span8">
         
-            
+          
           {% block content %}
+
+
           
           {% endblock %}
           
