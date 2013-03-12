@@ -70,9 +70,12 @@
               <li{% if template == 'dyb/employment-preferences' %} class="active"{% endif %}><a href="/dyb/employment-preferences">Employment preferences</a></li>              
               <li{% if template == 'dyb/search' %} class="active"{% endif %}><a href="/dyb/search">Search</a></li>
               <li{% if template == 'dyb/metadatas' %} class="active"{% endif %}><a href="/dyb/metadatas">Metadatas</a> </li>
-              <li{% if template == 'dyb/lastupdate' %} class="active"{% endif %}><a href="/dyb/lastupdate">Last updates</a> </li>
+              <li{% if template == 'dyb/lastupdate' %} class="active"{% endif %}><a href="/dyb/lastupdate">Last update <span class="label label-warning">New</span></a>  </li>
+              <li{% if template == 'dyb/created' %} class="active"{% endif %}><a href="/dyb/created">Created <span class="label label-warning">New</span></a> </li>
+              <li{% if template == 'dyb/lastdelete' %} class="active"{% endif %}><a href="/dyb/lastdelete">Last delete <span class="label label-warning">New</span></a></li>
+              
 
-              <li class="nav-header">Showcase API <span class="label label-warning">New</span></li>
+              <li class="nav-header">Showcase API</li>
               <li{% if template == 'authentication/pro' %} class="active"{% endif %}><a href="/authentication/pro">Authentication</a></li>              
               <li{% if template == 'pro/proxy' %} class="active"{% endif %}><a href="/pro/proxy">Proxy to the DoYouBuzz API</a></li>
               <li{% if template == 'pro/users' %} class="active"{% endif %}><a href="/pro/users">Users</a></li>

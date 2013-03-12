@@ -1,0 +1,90 @@
+{% extends "base.twig" %}
+
+{% block title %} Last Update {% endblock %}
+{% block content %}
+
+<h1>Created</h1>
+
+<p>Return informations about the last created users since a given time</p>
+
+<h2>Access</h2>
+<span class="label label-info">GET</span> <code> http://api.doyoubuzz.com/app/created/?since=:since&amp;apiKey=:apiKey</code>
+
+<h2>Parameters</h2>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>since</td>
+		<td><span class="label label-warning">mandatory</span> Datetime since the last update</td>
+		<td>See <a href="http://www.php.net/manual/en/datetime.formats.php">accepted formats</a>. For example '2012-05-05 18:03:36' or @946684800</td>
+	</tr>
+</table>
+
+
+{% set xml %}
+
+
+<?xml version="1.0"?>
+
+
+<?xml version="1.0"?>
+<response>
+    <since>1970-01-01 00:00:01</since>
+    <users>
+        <user>
+            <id>2697</id>
+            <token>6a8c2f72d5c320d302ff44a7594b11390790e324</token>
+            <tokenSecret>f600fefa0eed5c744791de3fc919776d0257527b</tokenSecret>
+        </user>
+        <user>
+            <id>2698</id>
+            <token>0597b4091acf622ef195b2393abf21c8ce59ab47</token>
+            <tokenSecret>31ed81351fddaee04c9f1c5d20e598d42ca7d0cd</tokenSecret>
+        </user>
+        <user>
+            <id>2699</id>
+            <token>r4u2Jgs9jZSf1yvNKbO-</token>
+            <tokenSecret>SzZuw8B0Mlre_kKqVOF</tokenSecret>
+        </user>
+    </users>
+</response>
+
+
+{%  endset %}
+
+{% set json %}
+
+{
+   "since":"1970-01-01 00:00:01",
+   "users":{
+      "user":[
+         {
+            "id":"2697",
+            "token":"6a8c2f72d5c322d302ff44a7594b11190790e324",
+            "tokenSecret":"f600fefa04ed5c74c791de3fc919776d0257527b"
+         },
+         {
+            "id":"2698",
+            "token":"0597b4091acf633ef195b2393abe21c8ce59ab47",
+            "tokenSecret":"31ed81351fddaee12c9f1c5d20e598d42ca7d0cd"
+         },
+         {
+            "id":"2699",
+            "token":"r4u2Jgs9jZSf1yvNKbO-",
+            "tokenSecret":"SzZuw8B0Mlre_kKqVOF"
+         }
+      ]
+   }
+}
+
+{% endset %}
+		
+{% include 'examples.twig' %}
+		
+{% endblock %}
+

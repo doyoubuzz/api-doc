@@ -1,0 +1,77 @@
+{% extends "base.twig" %}
+
+{% block title %} Last Update {% endblock %}
+{% block content %}
+
+<h1>Last update</h1>
+
+<p>Return the id of the CV updated since a given time</p>
+
+<h2>Access</h2>
+<span class="label label-info">GET</span> <code> http://api.doyoubuzz.com/app/lastupdate/?since=:since&amp;apiKey=:apiKey</code>
+
+<h2>Parameters</h2>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>since</td>
+		<td><span class="label label-warning">mandatory</span> Datetime since the last update</td>
+		<td>See <a href="http://www.php.net/manual/en/datetime.formats.php">accepted formats</a>. For example '2012-05-05 18:03:36' or @946684800</td>
+	</tr>
+</table>
+
+
+{% set xml %}
+
+<?xml version="1.0"?>
+
+<response>
+    <since>1970-01-01 00:00:01</since>
+    <users>
+        <user>
+            <id>2697</id>
+        </user>
+        <user>
+            <id>2698</id>
+        </user>
+        <user>
+            <id>2699</id>
+        </user>
+    </users>
+</response>
+
+{%  endset %}
+
+{% set json %}
+
+
+{
+   "since":"1970-01-01 00:00:01",
+   "users":{
+      "user":[
+         {
+            "id":"2697"
+         },
+         {
+            "id":"2698"
+         },
+         {
+            "id":"2699"
+         }
+      ]
+   }
+}
+
+
+
+{% endset %}
+		
+{% include 'examples.twig' %}
+		
+{% endblock %}
+
