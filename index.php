@@ -13,7 +13,7 @@ $loader = new Twig_Loader_Filesystem('views');
 ));
 
 $env_url = getenv('DOC_URL');
-$path = (!empty($env_url)) ? $env_url : 'http://api-doc.local/';
+$path = (isset($env_url)) ? $env_url : 'http://api-doc.local/';
 $template = str_replace($path, '', 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 
 if (!$template) {
