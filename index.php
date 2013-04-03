@@ -7,22 +7,23 @@ Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem('views');
 
+$twig = new Twig_Environment(
+    $loader, 
+    array(
+        //'cache' => 'cache',
+    )
+);
 
- $twig = new Twig_Environment($loader, array(
-  //'cache' => 'cache',
-));
+$path = trim($_SERVER['REQUEST_URI'], '/');
 
-$env_url = getenv('DOC_URL');
-$path = (isset($env_url)) ? $env_url : 'http://api-doc.local/';
-$template = str_replace($path, '', 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-
-if (!$template) {
-    $template = 'home';
+if (!$path) {
+    $path = 'home';
 }
 
-echo $twig->render($template.'.twig', array(
-	'template' => $template,
-));
-
+echo $twig->render(
+    $path.'.twig', array(
+    'template' => $path,
+    )
+);
 
 ?>
