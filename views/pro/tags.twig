@@ -19,63 +19,78 @@
 [
     {
         "id": 16,
-        "title": "Pilote"
+        "title": "Pilote",
+        "color": 0
     },
     {
         "id": 17,
-        "title": "Mécanicien"
+        "title": "Mécanicien",
+        "color": 1
     },
     {
         "id": 18,
-        "title": "Scientifique"
+        "title": "Scientifique",
+        "color": 2
     },
     {
         "id": 19,
-        "title": "Politicien"
+        "title": "Politicien",
+        "color": 3
     },
     {
         "id": 20,
-        "title": "Viper"
+        "title": "Viper",
+        "color": 0
     },
     {
         "id": 21,
-        "title": "Co-Pilote"
+        "title": "Co-Pilote",
+        "color": 0
     },
     {
         "id": 265,
-        "title": "Statut"
+        "title": "Statut",
+        "color": 0
     },
     {
         "id": 266,
-        "title": "En mission"
+        "title": "En mission",
+        "color": 0
     },
     {
         "id": 267,
-        "title": "Disponible"
+        "title": "Disponible",
+        "color": 0
     },
     {
         "id": 269,
-        "title": "Localisation"
+        "title": "Localisation",
+        "color": 0
     },
     {
         "id": 270,
-        "title": "Caprica"
+        "title": "Caprica",
+        "color": 0
     },
     {
         "id": 271,
-        "title": "Battlestar"
+        "title": "Battlestar",
+        "color": 0
     },
     {
         "id": 272,
-        "title": "Pegasus"
+        "title": "Pegasus",
+        "color": 0
     },
     {
         "id": 273,
-        "title": "Basestar"
+        "title": "Basestar",
+        "color": 0
     },
     {
         "id": 274,
-        "title": "Colonial one"
+        "title": "Colonial one",
+        "color": 0
     }
 ]
 </pre>
@@ -94,7 +109,8 @@
 <pre name="code" class="javascript">
 {
     "id": 271,
-    "title": "Battlestar"
+    "title": "Battlestar",
+    "color": 1
 }
 </pre>
 </div>
@@ -145,6 +161,71 @@
 </pre>
 </div>
 
+<h2>Return the tags colors</h2>
+<ul class="color-box">    
+    <li style="background-color:#7A7A7A">0</li>
+    <li style="background-color:#c82e1e">1</li>
+    <li style="background-color:#ffa800">2</li>
+    <li style="background-color:#61ac00">3</li>
+    <li style="background-color:#50a3d9">4</li>
+    <li style="background-color:#738DA8">5</li>
+    <li style="background-color:#b900db">6</li>
+    <li style="background-color:#956200">7</li>
+</ul>
+
+<p><span class="label label-info">GET</span> <code> /tags/colors</code>
+
+
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="tag-colors">Example</a>
+
+<div class="js-expandable tag-colors">
+
+<p><span class="label label-info">GET</span> <code> /tags/colors</code>
+
+
+
+<pre name="code" class="javascript">
+[
+    {
+        "type": 0,
+        "color": "7A7A7A"
+    },
+    {
+        "type": 1,
+        "color": "c82e1e"
+    },
+    {
+        "type": 2,
+        "color": "ffa800"
+    },
+    {
+        "type": 3,
+        "color": "61ac00"
+    },
+    {
+        "type": 4,
+        "color": "50a3d9"
+    },
+    {
+        "type": 5,
+        "color": "738DA8"
+    },
+    {
+        "type": 6,
+        "color": "b900db"
+    },
+    {
+        "type": 7,
+        "color": "956200"
+    },
+
+]
+</pre>
+</div>
+
 
 {% endblock %}
+
+
 
