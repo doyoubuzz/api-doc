@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+{% block title %} CV {% endblock %}
+{% block content %}
+
+<h1>CV</h1>
+
+<h2>Get the PDF URL of the CV</h2>
+
+<p>This method return the URL of the PDF version of a CV.</p>
+
+<p><span class="label label-info">GET</span> <code> /cv/:id/pdf</code> 
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="pdf-cv-example">Example</a>
+
+
+<div class="js-expandable pdf-cv-example">
+<p><span class="label label-info">GET</span> <code> /cv/6/pdf</code>   
+<pre name="code" class="javascript">
+{
+    pdf: "http://showroom.doyoubuzz.com/g1fs6d54gfd/export?format=pdf-print";
+}
+</pre>
+</div>
+
+
+{% endblock %}
+
