@@ -190,6 +190,7 @@
 </pre>
 </div>
 
+
 <h2>Get a user's CV </h2>
 <p><span class="label label-info">GET</span> <code> /users/:id/cv</code>
 
@@ -230,6 +231,38 @@
 ]
 </pre>
 </div>
+
+<h2>Logout a user</h2>
+<p><span class="label label-info">DELETE</span> <code> /users/:id/logout</code>
+
+<p>If a user is connected on DoYouBuzz Showcase, this method will logout the user.</p>
+
+<h3>URL parameters</h3>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>isIdOrigin (optional). Default to 0.</td>
+		<td>Set this parameter to "1" if the id your are sending is the ID on your system. It works only if you have setup a SSO in your Showcase account</td>
+		<td>boolean</td>
+	</tr>
+</table>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-logout">Example</a>
+
+<div class="js-expandable user-logout">
+
+<p><span class="label label-info">DELETE</span> <code> /users/6/logout</code>
+
+<pre name="code" class="javascript">
+	{ success: true }
+</pre>
+</div>
+
 
 <h2>Associate tags on a user</h2>
 <p><span class="label label-info">PUT</span> <code> /users/:id/associateTags</code>
