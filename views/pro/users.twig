@@ -12,8 +12,6 @@
 <h2>Get all users for your company</h2>
 <p><span class="label label-info">GET</span> <code> /users</code> 
 
-
-
 <h3>URL parameters</h3>
 
 <table class="table table-bordered table-striped">
@@ -227,6 +225,47 @@
 		"created": "2013-03-07T11:24:17+0100", 
 		"updated": "2013-03-07T14:48:35+0100", 
 		"language": "fr_FR" 
+	}
+]
+</pre>
+</div>
+
+<h2>Get a user's tags</h2>
+<p><span class="label label-info">GET</span> <code> /users/:id/tags</code>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-tags">Example</a>
+<div class="js-expandable user-tags">
+
+<p><span class="label label-info">GET</span> <code> /users/6/tags/</code>	
+<pre name="code" class="javascript">
+[
+	{
+		id: 31,
+		id_origin: 0,
+		title: "Commercial",
+		type: 0,
+		translations: [
+			{
+				id: 102,
+				locale: "en",
+				field: "title",
+				content: "Business Development"
+			}
+		]
+	},
+	{
+		id: 214,
+		id_origin: 0,
+		title: "Développement",
+		type: 0,
+		translations: [
+			{
+				id: 103,
+				locale: "en",
+				field: "title",
+				content: "Development"
+			}
+		]
 	}
 ]
 </pre>
