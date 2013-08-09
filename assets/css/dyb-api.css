@@ -7,6 +7,9 @@
 .js-expandable
 {
 	display: none;	
+	margin-left: 20px;
+	border-left: 1px solid #ccc;
+	padding-left: 10px;
 }
 
 .js-expandable td
