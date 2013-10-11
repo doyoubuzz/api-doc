@@ -19,7 +19,7 @@
 <p>The attributes are given in XML in the POST body.</p>
 
 <h2>Assign a metadata</h2>
-<p><span class="label label-info">POST</span> <code> http://api.doyoubuzz.com/metadata/assign?apiKey=:apiKey</code></p>
+<p><span class="label label-info">POST</span> <code> https://api.doyoubuzz.com/metadata/assign?apiKey=:apiKey</code></p>
 
 <p>This request will assign the metadata tid:456 to the user 1979.</p>
 
@@ -36,7 +36,7 @@
 
 <h2>Reset the metadatas for a user</h2>
 
-<p><span class="label label-info">POST</span> <code> http://api.doyoubuzz.com/metadata/assign?apiKey=:apiKey</code></p>
+<p><span class="label label-info">POST</span> <code> https://api.doyoubuzz.com/metadata/assign?apiKey=:apiKey</code></p>
 
 <p>You can also remove all the metatadas assigner to a user. If you send a reset and a metadata assignment in the same request (as shown below), the reset will be applied before the assignment. After sending this request, the user will have one key assigned: "com.acmeinc.skillset:178".</p>
 
@@ -59,7 +59,7 @@
 
 
 <h2>Remove a metadata</h2>
-<p><span class="label label-info">POST</span> <code> http://api.doyoubuzz.com/metadata/unassign?apiKey=:apiKey</code></p>
+<p><span class="label label-info">POST</span> <code> https://api.doyoubuzz.com/metadata/unassign?apiKey=:apiKey</code></p>
 
 <pre name="code" class="xml">
 <metadatas>

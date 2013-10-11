@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block title %} CV {% endblock %}
+{% block content %}
+
+
+<h1>DoYouBuzz API</h1>
+
+            <p>With the DoYouBuzz API you can access all the data of the users who have authorized your application. As an independant developers wanting to use DoYouBuzz datas, this is the API you want to use.</p>
+
+            <h3>API Keys</h3>
+
+            <p>To get your API keys, you need to <a href="http://www.doyoubuzz.com/us/user/application">activate a developer account</a> on your DoYouBuzz account.</p>
+
+            <h3>Schema</h3>
+
+            <h4>Access</h4>
+            <p><code>https://api.doyoubuzz.com</code></p>
+
+            <h4>Format</h4>
+            <p>Datas are sent as XML and received as XML or JSON (append ?format=json or ?format=xml at the end of your request to get the desired format)</p>
+
+            <h2>Get started</h2>
+
+            <p>Once you have your API Keys, check our <a href="/doyoubuzz/authentication">authentication mecanism</a> (we use oAuth 1.0) and the methods available on the left-side menu).</p> 
+
+            <h3>Working examples</h3>
+
+            <p>You can also check our <a href="https://github.com/doyoubuzz/dyb-api-connexion-php">examples on Github</a> and our <a href="http://api-demo.doyoubuzz.com/">demo site</a></p>
+
+
+{% endblock %}
+
