@@ -36,7 +36,7 @@
 
 
 <div class="js-expandable users-example">
-<p><span class="label label-info">GET</span> <code> /users</code>	
+<p><span class="label label-info">GET</span> <code> /users</code></p>
 <pre name="code" class="javascript">
 {
    "users": [
@@ -151,6 +151,54 @@
 </pre>
 </div>
 
+<h2>Search for a user</h2>
+<p><span class="label label-info">GET</span> <code> /users/search</code></p>
+
+<p>The user search will search all the user's first name, last name and email address matching the given search term.</p>
+
+<h3>URL parameters</h3>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>term</td>
+		<td>Search term</td>
+		<td></td>
+	</tr>
+</table>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="users-search-example">Example</a>
+
+
+<div class="js-expandable users-search-example">
+<p><span class="label label-info">GET</span> <code> /users/search?term=will</code>	
+<pre name="code" class="javascript">
+{
+	[
+		{
+			"username":"will.adama@bg.com",
+			"email":"will.adama@bg.com",
+			"id_origin":"124",
+			"firstname":"Will",
+			"lastname":"Adama",
+			"id":2
+		},
+		{
+			"username":"other@bg.com",
+			"email":"other@bg.com",
+			"id_origin":"147",
+			"firstname":"William",
+			"lastname":"Roslin",
+			"id":18
+		},
+	]
+}
+</pre>
+</div>
 
 
 <h2>Get a single user information</h2>
