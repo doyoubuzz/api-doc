@@ -124,6 +124,14 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
 				<td>Value of your key</td>	
 			</tr>
 	<tr>
+		<td>index</td>	
+		<td>
+			<p>Resumes data are stored on 3 different kind of indexes: one per language (general_fr_FR and general_en_US), and one for private resume database (general_private). The index general_fr_FR is used by default.</p>
+
+			<p>If you use DoYouBuzz Showcase as a private resume database, you will need to use specifically this index.</p>
+		</td>	
+	</tr>
+	<tr>
 		<td><a class="js-expand" href="javascript:void()" data-show-element="search-limits"><i class="icon-plus-sign"></i> limits</a></td>	
 		<td>Limits to apply on the request.</td>	
 	</tr>
@@ -302,6 +310,7 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
 				</values>
 			</filter>
 		</filters>
+		<index>general_en_US</index>
 		<geo>
 			<cities>
                 <city>
