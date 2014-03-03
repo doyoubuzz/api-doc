@@ -116,13 +116,23 @@ The attributes are given in XML in the POST body. The attributes below are wrapp
 		<!-- CITIES -->
 		<tr class="js-expandable search-metadatas">
 			<td><a class="js-expand" href="javascript:void()" data-show-element="search-metadata"><i class="icon-plus-sign"></i> metadata</a></td>
-			<td>One metadata to filter the result on.</td>	
+			<td>
+				<p>One metadata to filter the result on.</p>
+				<p>Prefix with "!" to get the users who have not the given key.</p>
+				<p>
+					A soft-delete system is used on the users. To get users who have deleted their account, filter with the key : status:user_deleted. To get the user whose account have been deleted by the company, filter with the key: !status:company_deleted.						
+				</p>
+				<p>The following filter will return undeleted users :</p> 
+				<pre name="code" class="xml">
+					<metadatas>
+				    	<metadata>!status:user_deleted</metadata>
+				    	<metadata>!status:company_deleted</metadata>
+					</metadatas>
+				</pre>
+					
+
+			</td>	
 		</tr>
-			<!-- CITY -->
-			<tr class="js-expandable search-metadata level2">
-				<td><a class="js-expand" href="javascript:void()">Key</a></td>	
-				<td>Value of your key</td>	
-			</tr>
 	<tr>
 		<td>index</td>	
 		<td>
