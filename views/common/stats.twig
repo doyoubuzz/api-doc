@@ -1,0 +1,149 @@
+<h2>Attributes</h2>
+
+<p>&nbsp;</p>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Type</th>
+    </tr>
+    <tr>
+        <td>offer</td>
+        <td>Number of days covered by the stats</td>
+        <td>integer</td>
+    </tr>
+    <tr>
+        <td>last_update</td>
+        <td>Last time the user has been updated</td>
+        <td>timestamp</td>
+    </tr>
+    <tr>
+        <td><a class="js-expand" href="javascript:void()" data-show-element="cv-visits"><i class="icon-plus-sign"></i> visits</a></td>
+        <td>List of the visits grouped per day</td>
+        <td>element</td>        
+    </tr>
+    <tr class="js-expandable cv-visits">
+        <td><a class="js-expand" href="javascript:void()" data-show-element="cv-visit-element"><i class="icon-plus-sign"></i> visit</a></td>
+        <td>Unique visiters</td>
+        <td>element</td>        
+    </tr>
+    <tr class="js-expandable cv-visit-element level2">
+        <td>date</td>
+        <td>Day of the statistic</td>
+        <td>String (dd/mm/yyyy)</td>     
+    </tr>
+    <tr class="js-expandable cv-visit-element level2">
+        <td>value</td>
+        <td>Number of unique visiters for the day</td>
+        <td>integer</td>     
+    </tr>
+    
+</table>
+
+
+<p>&nbsp;</p>
+
+
+{% set url %}
+<p><p><span class="label label-info">GET</span> <code> https://api.doyoubuzz.com/user/stats&userId=2</code><p>
+    {% endset %}
+
+    {% set xml %}
+
+
+    <?xml version="1.0"?>
+    <response>
+        <offer>10</offer>
+        <last_update>1398697182</last_update>
+        <visits>
+            <visit>
+                <date>05/05/2014</date>
+                <value>15</value>
+            </visit>
+            <visit>
+                <date>04/05/2014</date>
+                <value>29</value>
+            </visit>
+            <visit>
+                <date>03/05/2014</date>
+                <value>18</value>
+            </visit>
+            <visit>
+                <date>02/05/2014</date>
+                <value>37</value>
+            </visit>
+            <visit>
+                <date>01/05/2014</date>
+                <value>22</value>
+            </visit>
+            <visit>
+                <date>30/04/2014</date>
+                <value>12</value>
+            </visit>
+            <visit>
+                <date>29/04/2014</date>
+                <value>7</value>
+            </visit>
+            <visit>
+                <date>28/04/2014</date>
+                <value>48</value>
+            </visit>
+            <visit>
+                <date>27/04/2014</date>
+                <value>57</value>
+            </visit>
+            <visit>
+                <date>26/04/2014</date>
+                <value>9</value>
+            </visit>
+        </visits>
+    </response>
+
+    {%  endset %}
+
+    {% set json %}
+
+    {
+    "offer": 10,
+    "last_update": 1398697182,
+    "visits": {
+        "visit": [{
+            "date": "05\/05\/2014",
+            "value": "15"
+        }, {
+            "date": "04\/05\/2014",
+            "value": "29"
+        }, {
+            "date": "03\/05\/2014",
+            "value": "18"
+        }, {
+            "date": "02\/05\/2014",
+            "value": "37"
+        }, {
+            "date": "01\/05\/2014",
+            "value": "22"
+        }, {
+            "date": "30\/04\/2014",
+            "value": "12"
+        }, {
+            "date": "29\/04\/2014",
+            "value": "7"
+        }, {
+            "date": "28\/04\/2014",
+            "value": "48"
+        }, {
+            "date": "27\/04\/2014",
+            "value": "57"
+        }, {
+            "date": "26\/04\/2014",
+            "value": "9"
+        }]
+    }
+}
+{% endset %}
+
+
+
+
+{% include 'examples.twig' %}
+

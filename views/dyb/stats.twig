@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+{% block title %} Statistics {% endblock %}
+
+{% block content %}
+
+
+<h1>Statistics</h1>
+
+<p>Return statistics for the given user.</p>
+
+<h2>Access</h2>
+<span class="label label-info">GET</span> <code> https://api.doyoubuzz.com/user/stats?userId=:userId</code>
+
+<p>&nbsp;</p>
+
+{% include 'common/stats.twig' %}    
+        
+{% endblock %}
