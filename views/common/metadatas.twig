@@ -18,7 +18,39 @@
 
 <p>The attributes are given in XML in the POST body.</p>
 
+<h2>Update metadatas</h2>
+<p><span class="label label-info">POST</span> <code> https://api.doyoubuzz.com/metadata/update?apiKey=:apiKey</code></p>
+
+<p>This is the general purpose method that handles all the different operations you might want to do on metadatas (assign, unassign) </p>
+
+<p>You can use wildcard '*' for unassigning metadatas (eg. <code>com.acmeinc.user.kind:*</code>)</p>
+
+<pre name="code" class="xml">
+    <metadatas>
+        <users>
+            <user>777</user>
+        </users>
+
+        <unassign>
+            <metadatas>
+                <metadata>
+                    <key>com.acmeinc.user.kind:*</key>
+                </metadata>
+            </metadatas>
+        </unassign>
+
+        <assign>
+            <metadatas>
+                <metadata>
+                    <key>com.acmeinc.user.kind:awesome-user</key>
+                </metadata>
+            </metadatas>
+        </assign>
+    </metadatas>
+</pre>
+
 <h2>Assign a metadata</h2>
+<p class="alert alert-danger" role="alert">deprecated : use the 'update' method instead</p>
 <p><span class="label label-info">POST</span> <code> https://api.doyoubuzz.com/metadata/assign?apiKey=:apiKey</code></p>
 
 <p>This request will assign the metadata tid:456 to the user 1979.</p>
@@ -35,6 +67,7 @@
 </pre>
 
 <h2>Reset the metadatas for a user</h2>
+<p class="alert alert-danger" role="alert">deprecated : use the 'update' method instead</p>
 
 <p><span class="label label-info">POST</span> <code> https://api.doyoubuzz.com/metadata/assign?apiKey=:apiKey</code></p>
 
@@ -58,7 +91,8 @@
 </pre>
 
 
-<h2>Remove a metadata</h2>
+<h2>Unassign a metadata</h2>
+<p class="alert alert-danger" role="alert">deprecated : use the 'update' method instead</p>
 <p><span class="label label-info">POST</span> <code> https://api.doyoubuzz.com/metadata/unassign?apiKey=:apiKey</code></p>
 
 <pre name="code" class="xml">
