@@ -358,9 +358,21 @@
 	</tr>
 	
 	<tr class="js-expandable user-cv-skill-children level3">
-		<td>skill</a></td>
-		<td>Skill item -- this is the same item as the parent skill item</td>
-		<td>element</td>	
+		<td>title</a></td>
+		<td>Title of the skill</td>
+		<td>string</td>	
+	</tr>
+
+	<tr class="js-expandable user-cv-skill-children level3">
+		<td>level</a></td>
+		<td>Skill level, as defined by the user (see <a href="http://doyoubuzz-en.helpscoutdocs.com/article/176-how-should-i-complete-my-skills-level">the user guide</a>)</td>
+		<td>integer [0-100]</td>	
+	</tr>
+	
+	<tr class="js-expandable user-cv-skill-children level3">
+		<td>details</a></td>
+		<td>Details about the skill given by the user</td>
+		<td>string</td>	
 	</tr>
 	
 	<tr>
@@ -822,420 +834,615 @@ Benchmark Group reaches 11.8 million readers each moth. (Source: MÃ©diamÃ©tr
 {% set json %}
 
 {
-  "resume":{
-    "id":2,
-    "userId":2,
-    "title":"COO @ DoYouBuzz",
-    "url":"http:\/\/www.jeremie-pottier.com\/coo-doyoubuzz",
-    "culture":"en_US",
-    "completion":1,
-    "seniority":3,
-    "updatedAt":"2012-03-16T17:33:25",
-    "professionalStatus":"Employed",
-    "availability":"Unavailable",
-    "blog":{
-      "rss":"http:\/\/blog.doyoubuzz.com\/fr"
-    },
-    "userInformation":{
-      "birthdate":"",
-      "maritalStatus":"",
-      "country":{
-        "isoCode":"FRA"
-      },
-      "city":"Nantes",
-      "zipcode":"44",
-      "DriversLicence":false,
-      "state":null
-    },
-    "0":null,
-    "experiences":{
-      "experience":[
-        {
-          "id":67276,
-          "title":"Chief Operating Officer",
-          "company":"DoYouBuzz",
-          "city":"Nantes",
-          "start":"2007-12-01",
-          "end":"",
-          "contractType":"Full Time",
-          "country":{
-            "isoCode":"FRA"
-          },
-          "state":null,
-          "logo":"\/var\/users\/2\/logos\/job_2724_tn.jpg?1216827685",
-          "description":"",
-          "missions":{
-            "mission":[
-              {
-                "description":"Conception, definition of product development directions"
-              },
-              {
-                "description":"Technology and sectoral scanning"
-              },
-              {
-                "description":"Research and Development"
-              },
-              {
-                "description":"Project and personnel managment"
-              },
-              {
-                "description":"Web marketing"
-              }
-            ]
-          }
-        },
-        {
-          "id":67277,
-          "title":"Project Manager",
-          "company":"Benchmark Group (L'Internaute \/ Journal du Net)",
-          "city":"Nantes",
-          "start":"2005-08-01",
-          "end":"2007-11-01",
-          "contractType":"Full Time",
-          "country":{
-            "isoCode":"FRA"
-          },
-          "state":null,
-          "logo":"\/var\/users\/2\/logos\/job_1994_tn.jpg?1247847962",
-          "description":"Benchmark Group, a Web publisher, has one of the largest audiences in France. The group publishes several magazines and Web services, including:\n\n- L'Internaute Magazine (http:\/\/www.linternaute.com) - Hobbies and discovery magazine\n- Le Journal du Net (http:\/\/www.journaldunet.com), - Daily e-business news\n- Copains d'Avant (http:\/\/www.copainsdavant.com) - Social community with 6.5 million members\n- Le Journal des Femmes (http:\/\/www.journaldesfemmes.com) - Womens' interest Web site, 2nd highest audience in France. \n\nBenchmark Group reaches 11.8 million readers each moth. (Source: M\u00e9diam\u00e9trie Netratings - January 2008)",
-          "missions":{
-            "mission":[
-              {
-                "description":"Service design and management (applications and editorial)"
-              },
-              {
-                "description":"SEO strategy for the Web sites: L'Internaute, Journal du Net, Copains d'avant"
-              },
-              {
-                "description":"Internal, AdSense and affiliation advertising: creative briefs, optimizations, reporting, ROI"
-              },
-              {
-                "description":"www.linternaute.com - www.journaldunet.com"
-              }
-            ]
-          }
-        },
-        {
-          "id":67278,
-          "title":"Vice President",
-          "company":"R\u00e9flexiences (non-profit)",
-          "city":"Paris",
-          "start":"2005-01-31",
-          "end":"",
-          "contractType":"Other",
-          "country":{
-            "isoCode":"FRA"
-          },
-          "state":null,
-          "logo":"\/var\/users\/2\/logos\/job_67278_tn.jpg?1327590448",
-          "description":"",
-          "missions":{
-            "mission":[
-              {
-                "description":"Scientific magazine (print and web) for the general public distributed in high schools through out the greater Paris area until 2007."
-              },
-              {
-                "description":"Co-built project and the non-profit organization"
-              },
-              {
-                "description":"Led fund-raising activities, technical and editorial conception and recruitment efforts"
-              }
-            ]
-          }
-        },
-        {
-          "id":67279,
-          "title":"Vice President",
-          "company":"Albumrock (non-profit)",
-          "city":"Paris",
-          "start":"2002-01-01",
-          "end":"2007-01-31",
-          "contractType":"Other",
-          "0":null,
-          "state":null,
-          "logo":"\/var\/users\/2\/logos\/job_16_tn.jpg?1214004537",
-          "description":"",
-          "missions":{
-            "mission":[
-              {
-                "description":"Co-creation of webzine on rock"
-              },
-              {
-                "description":"Developed numerous projects"
-              },
-              {
-                "description":"Produced text and image content"
-              },
-              {
-                "description":"Web site design and development"
-              },
-              {
-                "description":"Recruitment, organizational structuring (20 people in 2007), internal processes (editorial and logistical planning)"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "educations":{
-      "education":[
-        {
-          "id":34765,
-          "school":"Versailles University",
-          "start":"2003-01-31",
-          "end":"2005-01-31",
-          "degree":"IUP ASCM",
-          "description":"Science and Technologies: Project Management. Graduated Valedictorian."
-        },
-        {
-          "id":34766,
-          "school":"INSSET de St Quentin",
-          "start":"2001-09-01",
-          "end":"2002-06-01",
-          "degree":"Web Develoment Licence Pro",
-          "description":"Equivalent to B.S. Graduated with honors."
-        },
-        {
-          "id":34767,
-          "school":"IUT de Laval",
-          "start":"1999-01-31",
-          "end":"2001-01-31",
-          "degree":"Information Technology DUT",
-          "description":"Multimedia (Web, Video, Development) and communications."
-        },
-        {
-          "id":34768,
-          "school":"High school Pays de Retz (Pornic)",
-          "start":"1999-06-01",
-          "end":"1999-01-01",
-          "degree":"Scientific  Baccalaureate",
-          "description":"Physics. Graduated with Honors."
-        }
-      ]
-    },
-    "portfolios":{
-      "portfolio":[
-        {
-          "id":94189,
-          "mediaType":"video",
-          "title":"Video",
-          "description":"",
-          "createDate":"",
-          "content":{
-            "url":"http:\/\/vimeo.com\/moogaloop.swf?clip_id=17563162&server=vimeo.com&show_title=0&show_byline=0&show_portrait=0&color=00adef&fullscreen=1&autoplay=0&loop=0",
-            "flashvar":"&showsearch=0&showsearch=0",
-            "ratio":"0.75"
-          },
-          "url":""
-        }
-      ]
-    },
-    "contacts":{
-      "contact":[
-        {
-          "type":"public_email",
-          "value":"j.pottier@doyoubuzz.com"
-        },
-        {
-          "type":"form",
-          "value":"on"
-        },
-        {
-          "type":"skype",
-          "value":"jeremie.pottier"
-        }
-      ]
-    },
-    "skills":{
-      "skill":[
-        {
-          "title":"Web Marketing",
-          "children":{
-            "skill":[
-              {
-                "title":"SEO  \/ SEM",
-                "children":null
-              },
-              {
-                "title":"Advertising",
-                "children":null
-              },
-              {
-                "title":"Advertising media analytics",
-                "children":null
-              },
-              {
-                "title":"Social media marketing",
-                "children":null
-              },
-              {
-                "title":"Strategy and training",
-                "children":null
-              }
-            ]
-          }
-        },
-        {
-          "title":"Research &amp; Development",
-          "children":{
-            "skill":[
-              {
-                "title":"R&amp;D process management",
-                "children":null
-              },
-              {
-                "title":"Project engineering",
-                "children":null
-              },
-              {
-                "title":"Technology and scientific scanning",
-                "children":null
-              }
-            ]
-          }
-        },
-        {
-          "title":"Editorial Web",
-          "children":{
-            "skill":[
-              {
-                "title":"Preferred subjects: science and society, technology, Internet",
-                "children":null
-              },
-              {
-                "title":"Technical: writing, editing, newsletter, photography, mock-ups",
-                "children":null
-              },
-              {
-                "title":"Organization: documentary research, editorial planningl",
-                "children":null
-              },
-              {
-                "title":"Strategy: strong understanding of Internet journalism",
-                "children":null
-              }
-            ]
-          }
-        },
-        {
-          "title":"Project Management",
-          "children":{
-            "skill":[
-              {
-                "title":"Team management",
-                "children":null
-              },
-              {
-                "title":"Planning \/ Budgeting \/ Sourcing \/ Client Relations",
-                "children":null
-              },
-              {
-                "title":"Conception \/ Ergonomic Design",
-                "children":null
-              }
-            ]
-          }
-        },
-        {
-          "title":"Computer Technology",
-          "children":{
-            "skill":[
-              {
-                "title":"CMS : Wordpress, Drupal",
-                "children":null
-              },
-              {
-                "title":"Languages : PHP, .NET, Javascript, xHTML, CSS, SQL",
-                "children":null
-              },
-              {
-                "title":"Databases : MySQL, SQLServer",
-                "children":null
-              }
-            ]
-          }
-        },
-        {
-          "title":"Software and Applications",
-          "children":{
-            "skill":[
-              {
-                "title":"Web : Gmail, Google Reader \/ Agenda \/ Docs, Delicious",
-                "children":null
-              },
-              {
-                "title":"Audience analysis: Analytics, XiTi",
-                "children":null
-              },
-              {
-                "title":"Graphic Design: Photoshop, Quark XPress",
-                "children":null
-              },
-              {
-                "title":"MindMapping: Mindjet Mind Manager",
-                "children":null
-              },
-              {
-                "title":"Conception: Axure, OmniGraffle",
-                "children":null
-              },
-              {
-                "title":"Bug tracking: Trac, BaseCamp, Mantis",
-                "children":null
-              },
-              {
-                "title":"Web advertising: OpenAdStream, Google Ad Manager, AdSense, Adwords",
-                "children":null
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "interests":{
-      "interest":[
-        {
-          "title":"Sport",
-          "children":{
-            "interest":[
-              {
-                "title":"Tennis, badminton, squash, golf, scuba diving",
-                "children":null
-              }
-            ]
-          }
-        },
-        {
-          "title":"In short:",
-          "children":{
-            "interest":[
-              {
-                "title":"Cinema",
-                "children":null
-              },
-              {
-                "title":"Sports : tennis, scuba diving, golf",
-                "children":null
-              },
-              {
-                "title":"Literature : Paul Auster, Stephen King, Philip Roth...",
-                "children":null
-              },
-              {
-                "title":"Traveling",
-                "children":null
-              }
-            ]
-          }
-        }
-      ]
-    },
-    "printable":{
-      "pdf":"http:\/\/www.doyoubuzz.com\/jeremie-pottier\/coo-doyoubuzz\/export?format=pdf",
-      "odt":"http:\/\/www.doyoubuzz.com\/jeremie-pottier\/coo-doyoubuzz\/export?format=odt",
-      "doc":"http:\/\/www.doyoubuzz.com\/jeremie-pottier\/coo-doyoubuzz\/export?format=doc"
-    }
-  }
+   "id": 2,
+   "userId": 2,
+   "title": "Product Manager",
+   "url": "https://doyoubuzz.adecco.fr/g9ipA3Gd9_CuCjQ77e_qNw/QGSpdN8igxUN3EUuIrKK",
+   "culture": "fr_FR",
+   "completion": 1,
+   "seniority": 3,
+   "updatedAt": "2015-02-06T06:51:07",
+   "professionalStatus": 1,
+   "availability": 5,
+   "blog": {
+      "rss": ""
+   },
+   "userInformation": {
+      "birthdate": "",
+      "maritalStatus": null,
+      "0": null,
+      "city": null,
+      "zipcode": null,
+      "DriversLicence": false,
+      "state": null
+   },
+   "presentation": {
+      "title": null,
+      "text": "Mon métier est de concevoir avec d'autres des produits web — bien souvent à l’aide de la technologie, mais si on peut y mettre de l’humain, c’est encore mieux ! \n\nJ'aime les choses qui avancent, les arguments rationnels, les stats, développer pour le fun, et tester tous les produits qui me passent sous les mains. Ce qui me motive : la liberté d'action, le travail en équipe, travailler intelligemment, progresser.\n\nA côté de ça, je suis un papa heureux, j’aime la SF, cuisiner, lire, courir, voyager..."
+   },
+   "experiences": {
+      "experience": [
+         {
+            "id": 2724,
+            "title": "COO & Co-fondateur",
+            "company": "DoYouBuzz",
+            "city": "Nantes",
+            "start": "2007-12-01",
+            "end": "",
+            "contractType": 1,
+            "country": {
+               "isoCode": "FRA"
+            },
+            "state": null,
+            "logo": "/var/f/qg/sp/qgspb_8VaYWhAGQi7F0Pf9EoRDL1vSt6ZlzwXgcOHrTnKs-Bep.jpg",
+            "description": null,
+            "missions": {
+               "mission": [
+                  {
+                     "description": "Gestion de produit : stratégie, conception et évolution des fonctionnalités sur DoYouBuzz"
+                  },
+                  {
+                     "description": "Gestion de projet : organisation interne (méthodes agiles) et priorisation"
+                  },
+                  {
+                     "description": "Communauté : relation utilisateur, rédaction d'articles"
+                  },
+                  {
+                     "description": "Stratégie : stratégie et organisation d'entreprise"
+                  }
+               ]
+            }
+         },
+         {
+            "id": 2390000,
+            "title": "Intervenant \"Technologies du web et gestion de projet\"",
+            "company": "ESSCA - School of Management",
+            "city": "Boulogne-Billancourt",
+            "start": "2012-01-31",
+            "end": "",
+            "contractType": 12,
+            "country": {
+               "isoCode": "FRA"
+            },
+            "state": null,
+            "logo": "/var/f/qg/sp/qgsp3WE8synhPU4mvi7JVLa5tq0CjTgkrHwGoNR619Ixf2B_tn.jpg",
+            "description": null,
+            "missions": {
+               "mission": [
+                  {
+                     "description": "En charge de 18h d'enseignement sur les technologies du web et la gestion de projet web"
+                  },
+                  {
+                     "description": "Public : Master 2 spécialité webmarketing"
+                  }
+               ]
+            }
+         },
+         {
+            "id": 947182,
+            "title": "Co-fondateur + dév.",
+            "company": "Factwatchers",
+            "city": "Nantes",
+            "start": "2012-01-31",
+            "end": "",
+            "contractType": 12,
+            "country": {
+               "isoCode": "FRA"
+            },
+            "state": null,
+            "logo": "/var/f/qg/sp/qgsp7PQ3D6OEpubfZ8_VrmWG45gBNXiYFvh9k2J-sqUweoxaLl.jpg",
+            "description": "Factwatchers.com est une plateforme de fact-checking collaborative et ouverte, permettant à chaque internaute de rapporter les propos de personnalités politiques afin d'établir leur véracité via l’étude des faits, de par leur propre expertise ou via un appel à la communauté.",
+            "missions": {
+               "mission": [
+                  {
+                     "description": "Création, définition et mise en oeuvre du projet (plate-forme collaborative de fact-checking politique)"
+                  },
+                  {
+                     "description": "Conception et développement back-end (CodeIgniter + Doctrine2)"
+                  }
+               ]
+            }
+         },
+         {
+            "id": 1994,
+            "title": "Chef de projet",
+            "company": "Benchmark Group (L'Internaute / Journal du Net)",
+            "city": "Nantes",
+            "start": "2005-08-01",
+            "end": "2007-11-01",
+            "contractType": 1,
+            "country": {
+               "isoCode": "FRA"
+            },
+            "state": null,
+            "logo": "/var/f/qg/sp/qgsppr0cPMq-8hLf_3XYxlOzN4yZTGuAatjBDsH72b1R5on9kv.jpg",
+            "description": "Avant d'être racheté par Comment Ça Marche et de former le groupe CCMBenchmark, Benchmark Group était l'un des éditeurs web les plus importants en France en terme d'audience. La société éditait plusieurs magazines et services web, parmi lesquels :\n\n- L'Internaute Magazine (http://www.linternaute.com) - magazine de loisirs et de découvertes\n- Le Journal du Net (http://www.journaldunet.com), - quotidien en ligne de l'actualité e-business\n- Copains d'Avant (http://www.copainsdavant.com) - service communautaire de 6,5 millions de membres\n- Le Journal des Femmes (http://www.journaldesfemmes.com) - site éditorial féminin, 2è en terme d'audience derrière AuFeminin.Com\n\nEn Janvier 2008 (après mon départ), l'audience des sites de Benchmark Group atteignait 11,8 millions de lecteurs chaque mois (Source audience : Médiamétrie Netratings - Janvier 2008)",
+            "missions": {
+               "mission": [
+                  {
+                     "description": "Conception, gestion de projet et communication sur de nouveaux services et applications de L'Internaute Magazine."
+                  },
+                  {
+                     "description": "Responsable du référencement naturel des site du groupe (L'Internaute, Journal du Net, Copains d'avant) : recommandations et suivi des optimisations, veille, formation des équipes internes (techniques et éditoriales)."
+                  },
+                  {
+                     "description": "Responsable publicité autopromo (plusieurs millions de PAP / mois), AdSense et affiliation"
+                  },
+                  {
+                     "description": "www.linternaute.com - www.journaldunet.com"
+                  }
+               ]
+            }
+         },
+         {
+            "id": 16,
+            "title": "Co-fondateur + vice-président",
+            "company": "Albumrock.net",
+            "city": "Paris",
+            "start": "2002-01-31",
+            "end": "2007-01-31",
+            "contractType": 9,
+            "0": null,
+            "state": null,
+            "logo": "/var/f/qg/sp/qgspyF4l9pOec70btqRsE3gwnGMzTNvKLViPafUxrX5jYW86kZ.jpg",
+            "description": null,
+            "missions": {
+               "mission": [
+                  {
+                     "description": "Création, définition et mise en oeuvre du projet (webzine sur le rock + tremplin rock)"
+                  },
+                  {
+                     "description": "Conception du site (V1, V2 et V3 -- encore actuellement en production) et développement (PHP) du backoffice de la V1."
+                  },
+                  {
+                     "description": "Recrutement, structuration de l'association (20 personnes en 2007), mise en oeuvre de process internes (planning édito, logistique)"
+                  },
+                  {
+                     "description": "A voir sur www.albumrock.net"
+                  }
+               ]
+            }
+         },
+         {
+            "id": 265057,
+            "title": "Vice-président",
+            "company": "Réflexiences (association)",
+            "city": "Paris",
+            "start": "2005-01-31",
+            "end": "2010-01-31",
+            "contractType": 12,
+            "country": {
+               "isoCode": "FRA"
+            },
+            "state": null,
+            "logo": null,
+            "description": "",
+            "missions": {
+               "mission": [
+                  {
+                     "description": "Mise en place d'un magazine (papier et web) de vulgarisation scientifique"
+                  },
+                  {
+                     "description": "Conception éditoriale et technique (print / web)"
+                  },
+                  {
+                     "description": "Mise en place de l'association"
+                  }
+               ]
+            }
+         },
+         {
+            "id": 13,
+            "title": "Assistant de recherche en histoire des sciences",
+            "company": "Institut national de recherche pédagogique",
+            "city": "Paris",
+            "start": "2005-05-01",
+            "end": "2005-07-01",
+            "contractType": 3,
+            "country": {
+               "isoCode": "FRA"
+            },
+            "state": null,
+            "logo": null,
+            "description": "",
+            "missions": {
+               "mission": [
+                  {
+                     "description": "Recherche de sources d'informations primaires sur l'enseignement de l'astronomie au XIXème siècle en France."
+                  },
+                  {
+                     "description": "Sources : BNF, Archives Nationales, Bibliothèque de la Sorbonne, Institut National de Recherche Pédagogique (manuscrits, ouvrages, livres de comptes, etc.)"
+                  }
+               ]
+            }
+         },
+         {
+            "id": 11,
+            "title": "Stagiaire en communication scientifique",
+            "company": "Observatoire de Paris",
+            "city": "Meudon",
+            "start": "2004-01-01",
+            "end": "2004-07-01",
+            "contractType": 3,
+            "country": {
+               "isoCode": "FRA"
+            },
+            "state": null,
+            "logo": "/var/f/qg/sp/qgspUKjOwLx6l158-JiIhGP9CZtDB_anspVrYXfvRo7m2WEbSA.jpg",
+            "description": "",
+            "missions": {
+               "mission": [
+                  {
+                     "description": "Participation à la conception de l'exposition \"Au delà de la Terre\", dédiée aux missions spatiales de l'Agence Spatiale Européenne"
+                  },
+                  {
+                     "description": "Conception et développement du site web (n'existe plus)"
+                  },
+                  {
+                     "description": "Conception et maquettage de supports de communication pour l'exposition"
+                  },
+                  {
+                     "description": "Recherches et rédactions de textes d'histoire des sciences"
+                  }
+               ]
+            }
+         },
+         {
+            "id": 12,
+            "title": "Développeur web",
+            "company": "Linea Networks",
+            "city": "Saint Germain en Laye",
+            "start": "2003-01-01",
+            "end": "2003-06-01",
+            "contractType": 3,
+            "0": null,
+            "state": null,
+            "logo": "",
+            "description": "",
+            "missions": {
+               "mission": [
+                  {
+                     "description": "Développement d'une plate-forme de recherche d'emploi"
+                  },
+                  {
+                     "description": "Plateforme .NET : VB.NET / SQL Server"
+                  }
+               ]
+            }
+         },
+         {
+            "id": 14,
+            "title": "Développeur & infographiste",
+            "company": "Thalès Training & Simulations",
+            "city": "Cergy Pontoise",
+            "start": "2002-01-31",
+            "end": "2002-01-31",
+            "contractType": 4,
+            "0": null,
+            "state": null,
+            "logo": "",
+            "description": "",
+            "missions": {
+               "mission": [
+                  {
+                     "description": "Développement et infographie sur une plate-forme d'e-learning"
+                  }
+               ]
+            }
+         },
+         {
+            "id": 15,
+            "title": "Monteur vidéo / développeur multimédia",
+            "company": "Perso Clip",
+            "city": "Nantes",
+            "start": "2001-06-01",
+            "end": "2001-12-01",
+            "contractType": 2,
+            "0": null,
+            "state": null,
+            "logo": null,
+            "description": "",
+            "missions": {
+               "mission": [
+                  {
+                     "description": "Montage vidéo, infographie et post-production sur des vidéos d'entreprises et reportages"
+                  },
+                  {
+                     "description": "Conception multimédia (création de CD-Roms et DVD vidéo pour entreprises et particuliers)"
+                  },
+                  {
+                     "description": "Conception et développement du site Internet (site vitrine et plate-forme de petites annonces), PHP / MySQL. Le site n'est plus en ligne."
+                  }
+               ]
+            }
+         }
+      ]
+   },
+   "educations": {
+      "education": [
+         {
+            "id": 141296,
+            "school": "Université de Versailles",
+            "start": "2003-09-01",
+            "end": "2005-06-01",
+            "degree": "IUP ASCM",
+            "description": "Gestion de projet // Culture scientifique.\nMention TB. Major de promo."
+         },
+         {
+            "id": 141297,
+            "school": "INSSET de St Quentin",
+            "start": "2002-09-01",
+            "end": "2003-06-01",
+            "degree": "Licence Pro Développement web",
+            "description": "Développement web, systèmes et serveurs."
+         },
+         {
+            "id": 141298,
+            "school": "IUT de Laval",
+            "start": "1999-01-01",
+            "end": "2001-01-01",
+            "degree": "DUT Services et Réseaux de Communication",
+            "description": "Formation multimédia (web, vidéo, dév.) et communication."
+         }
+      ]
+   },
+   "portfolios": {
+      "portfolio": [
+         {
+            "id": 203425,
+            "title": "Session de travail",
+            "description": "",
+            "createDate": "2014-07-10",
+            "content": "",
+            "embed": "",
+            "path": "/var/f/qg/sp/qgspk60huNntEy23f1oL-xaXTcIGA_RKlYwimb8SrHF_master.jpg",
+            "url": "https://twitter.com/doyoubuzz_fr/status/501995971405185024"
+         },
+         {
+            "id": 203426,
+            "title": "Lancement de la V2 de DoYouBuzz",
+            "description": "",
+            "createDate": "2014-03-31",
+            "content": "",
+            "embed": "",
+            "path": "/var/f/qg/sp/qgsp2yWOvoUFBkRSQuVDfrb_itlesT0JhIYN7G9LZgX_master.jpg",
+            "url": null
+         },
+         {
+            "id": 202853,
+            "title": "Workshop w/ Mailchimp UX Lead",
+            "description": "",
+            "createDate": "2014-09-03",
+            "content": "",
+            "embed": "",
+            "path": "/var/f/qg/sp/qgspZh31lpWvDMXineLOcx-I6mJuCb_s05t2zEy9HQA_master.jpg",
+            "url": null
+         }
+      ]
+   },
+   "links": {
+      "link": [
+         {
+            "id": 1064,
+            "type": "Github",
+            "url": "https://github.com/dzey"
+         },
+         {
+            "id": 335701,
+            "type": "Twitter",
+            "url": "http://twitter.com/dzey"
+         },
+         {
+            "id": 2966,
+            "type": "Linked In",
+            "url": "http://www.linkedin.com/in/jeremiepottier"
+         },
+         {
+            "id": 348969,
+            "type": "Google_plus",
+            "url": "https://plus.google.com/+JérémiePottier42"
+         },
+         {
+            "id": 417058,
+            "type": "Mon blog",
+            "url": "https://medium.com/@dzey"
+         }
+      ]
+   },
+   "contacts": {
+      "contact": [
+         {
+            "type": "public_email",
+            "value": "xxxxxxx@yyyyyyy.com"
+         },
+         {
+            "type": "phone",
+            "value": "+33xxxxxxxxxx"
+         },
+         {
+            "type": "skype",
+            "value": "jeremie.pottier"
+         }
+      ]
+   },
+   "skills": {
+      "skill": [         
+         {
+            "title": "Gestion de produit",
+            "children": {
+               "skill": [
+                  {
+                     "title": "Lean",
+                     "level": 60,
+                     "details": "Je m'intéresse aux théories et modèles de la gestion de produit, notamment dans un environnement startup. \n\nJe suis particulièrement sensible au modèle Lean et son légendaire MVP pour faire évoluer le produit, ainsi qu'au modèle AARRRR pour la visibilité qu'il apporte sur le pilotage de la stratégie produit."
+                  },
+                  {
+                     "title": "Analyse d'audience",
+                     "level": 80,
+                     "details": "Google Analytics, KissMetrics, MixPanel : une panoplie d'outils existe aujourd'hui pour suivre, analyser et comprendre le comportement des utilisateurs. \n\nJe pratique Google Analytics depuis de nombreuses d'années (variables personnalisées, événements, conversion eCommerce) et KissMetrics pour un suivi plus fin (analyse de cohorte, tunnels de conversions à la volée, A/B testing)."
+                  },
+                  {
+                     "title": "Culture tech",
+                     "level": 80,
+                     "details": null
+                  },
+                  {
+                     "title": "Conception",
+                     "level": 80,
+                     "details": "Mockups (avec Balsamiq !), spécifications fonctionnelles, UML..."
+                  }
+               ]
+            },
+            "level": null,
+            "details": null
+         },
+         {
+            "title": "Gestion de projet",
+            "children": {
+               "skill": [
+                  {
+                     "title": "Méthodes agiles",
+                     "level": 90,
+                     "details": "Je m'intéresse de près aux méthodes agiles depuis plus de cinq ans (lectures, conférences) et je les mets en oeuvre au quotidien à DoYouBuzz (Scrum pendant plusieurs années, et plus récemment Kanban).\n\nJe donne aussi des cours sur le sujet à l'ESSCA (public Master 2)."
+                  },
+                  {
+                     "title": "Relation client",
+                     "level": 80,
+                     "details": null
+                  },
+                  {
+                     "title": "Relations prestataires",
+                     "level": 80,
+                     "details": null
+                  }
+               ]
+            },
+            "level": null,
+            "details": null
+         },
+         {
+            "title": "Marketing web",
+            "children": {
+               "skill": [
+                  {
+                     "title": "Référencement naturel : beaucoup pratiqué (conseil et stratégie, mise en oeuvre, veille)",
+                     "level": null,
+                     "details": null
+                  },
+                  {
+                     "title": "Référencement payant : bonne connaissance (mise en oeuvre, veille)",
+                     "level": null,
+                     "details": null
+                  },
+                  {
+                     "title": "Publicité web : bonne connaissance (mise en oeuvre côté éditeur et annonceur), trafic management (OpenAdStream) et optimisations (créas, emplacements, etc.)",
+                     "level": null,
+                     "details": null
+                  }
+               ]
+            },
+            "level": null,
+            "details": null
+         },
+         {
+            "title": "Développement",
+            "children": {
+               "skill": [
+                  {
+                     "title": "PHP",
+                     "level": 60,
+                     "details": "J'ai commencé à pratiquer PHP pendant mes études et je continue aujourd'hui à utiliser ce langage pour des projets persos (je ne code pas dans un cadre professionnel, juste pour le fun).\n\nJ'utilise notamment PHP avec des frameworks comme FuelPHP ou Laravel."
+                  },
+                  {
+                     "title": "JS / Angular",
+                     "level": 40,
+                     "details": null
+                  },
+                  {
+                     "title": "Qualité",
+                     "level": 40,
+                     "details": "PHPUnit, Behat & Mink, Selenium, Travis, Jenkins"
+                  },
+                  {
+                     "title": "Automatisation",
+                     "level": 30,
+                     "details": "Intégration continue (Travis, Jenkins), automatisation des tâches de développement (Grunt)"
+                  }
+               ]
+            },
+            "level": null,
+            "details": null
+         }
+      ]
+   },
+   "interests": {
+      "interest": [
+         {
+            "title": "",
+            "children": {
+               "interest": [
+                  {
+                     "title": "Littérature contemporaine",
+                     "children": null
+                  },
+                  {
+                     "title": "Science-fiction",
+                     "children": null
+                  },
+                  {
+                     "title": "Vulgarisation scientifique",
+                     "children": null
+                  },
+                  {
+                     "title": "Magazines scientifiques / high-tech (Wired Magazine, New Scientist, Technology Review)",
+                     "children": null
+                  }
+               ]
+            }
+         },
+         {
+            "title": "",
+            "children": {
+               "interest": [
+                  {
+                     "title": "Rock, folk, électro",
+                     "children": null
+                  }
+               ]
+            }
+         },
+         {
+            "title": "",
+            "children": {
+               "interest": [
+                  {
+                     "title": "Tennis, badminton, squash, golf, plongée sous-marine",
+                     "children": null
+                  }
+               ]
+            }
+         },
+         {
+            "title": "Cinéma & séries",
+            "children": {
+               "interest": [
+                  {
+                     "title": "Other",
+                     "children": null
+                  }
+               ]
+            }
+         }         
+      ]
+   },
+   "printable": {
+      "pdf": "http://www.doyoubuzz.com/jeremie-pottier/cv/download/pdf?export_key=QGSpdN8igxUN3EUuIrKK",
+      "odt": null,
+      "doc": "http://www.doyoubuzz.com/jeremie-pottier/cv/download/rtf?export_key=QGSpdN8igxUN3EUuIrKK"
+   },
+   "published": true,
+   "indexed": true,
+   "protected": false
 }
 {% endset %}
 		
