@@ -1,0 +1,73 @@
+{% extends "base.twig" %}
+
+{% block title %}CV Display {% endblock %}
+{% block content %}
+
+<h1>CV Display</h1>
+
+<p>Return informations about the way the user has configured his resumes for display (web, print and mobile available).</p>
+
+<h2>Web display</h2>
+<p><span class="label label-info">GET</span> <code> https://api.doyoubuzz.com/cv/:id/display/web</code></p>
+
+
+
+{% set json %}
+
+{
+    "id": "springfield",
+    "color": "#50A3D9"
+}
+
+{% endset %}
+
+{% include 'examples.twig' %}
+		
+<h2>Print display</h2>
+<p><span class="label label-info">GET</span> <code> https://api.doyoubuzz.com/cv/:id/display/print</code></p>
+
+<p>The "displayConfig" parameters show if the user has configured these information to be displayed on their printable version</p>
+
+{% set json %}
+
+{
+    "id": "minimal",
+    "color": "#50a3d9",
+    "displayConfig":
+    {
+        "id": 1,
+        "experiences": true,
+        "educations": true,
+        "interests": true,
+        "presentation": true,
+        "skills": true,
+        "url": true,
+        "picture": false,
+        "location": true,
+        "drivingLicence": false,
+        "maritalStatus": true,
+        "address": false,
+        "age": false
+    }
+}
+
+{% endset %}
+
+{% include 'examples.twig' %}
+
+
+<h2>Mobile display</h2>
+<p><span class="label label-info">GET</span> <code> https://api.doyoubuzz.com/cv/:id/display/mobile</code> </p>
+
+
+{% set json %}
+{
+    "id": "simple"
+}
+{% endset %}		
+
+{% include 'examples.twig' %}
+
+
+{% endblock %}
+
