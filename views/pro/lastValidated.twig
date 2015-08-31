@@ -1,0 +1,55 @@
+{% extends "base.twig" %}
+
+{% block title %} CV {% endblock %}
+{% block content %}
+
+<h1>Last validated CV</h1>
+
+<h2>Get the last validated CV</h2>
+
+<p>This method return the CV which have been validated by an administrator since a given datetime.</p>
+
+<p><span class="label label-info">GET</span> <code> /cv/lastValidated?since={datetime}</code> 
+
+<h2>Parameters</h2>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>		
+	<tr>
+		<td>since</td>
+		<td><span class="label label-warning">mandatory</span> Datetime since the last update</td>
+		<td>See <a href="http://www.php.net/manual/en/datetime.formats.php">accepted formats</a>. For example '2012-05-05 18:03:36' or @946684800</td>
+	</tr>
+</table>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="pdf-cv-example">Example</a>
+
+
+<div class="js-expandable pdf-cv-example">
+<p><span class="label label-info">GET</span> <code> /cv/6/pdf</code>   
+<pre name="code" class="javascript">
+ {
+        "total": 1,
+        "resumes":
+        [
+            {
+                "title": "Starbuck : meilleure pilote de Viper de toute la flotte coloniale",
+                "anonymized": false,
+                "main": false,
+                "id": "12",
+                "created": "2015-08-28T11:01:57+0200",
+                "updated": "2015-08-28T11:01:57+0200",
+                "language": "fr_FR"
+            }
+        ]
+  }
+</pre>
+</div>
+
+
+{% endblock %}
+
