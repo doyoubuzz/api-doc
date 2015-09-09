@@ -7,9 +7,9 @@
 
 <h2>Get the last validated CV</h2>
 
-<p>This method return the CV which have been validated by an administrator since a given datetime.</p>
+<p>This method return the CV by status since a given datetime.</p>
 
-<p><span class="label label-info">GET</span> <code> /cv/lastValidated?since={datetime}</code> 
+<p><span class="label label-info">GET</span> <code> /cv/status/{status}?since={datetime}</code> 
 
 <h2>Parameters</h2>
 
@@ -19,9 +19,14 @@
 		<th>Description</th>
 		<th>Type</th>
 	</tr>		
+        <tr>
+		<td>status</td>
+		<td><span class="label label-warning">mandatory</span>The CV status</td>
+		<td>string that can get this value : draft, proofreading, rewrite, ready, sent</td>
+	</tr>
 	<tr>
 		<td>since</td>
-		<td><span class="label label-warning">mandatory</span> Datetime since the last update</td>
+		<td><span class="label label-warning">mandatory</span> Datetime since the last status change</td>
 		<td>See <a href="http://www.php.net/manual/en/datetime.formats.php">accepted formats</a>. For example '2012-05-05 18:03:36' or @946684800</td>
 	</tr>
 </table>
