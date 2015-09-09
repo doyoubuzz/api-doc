@@ -422,5 +422,37 @@ tags[]=16&tags[]=266&tags=271
 
 </div>
 
+<h2>Changer User Kind</h2>
+<p><span class="label label-info">PUT</span> <code> /users/:id/kind</code>
+
+<table class="table table-bordered table-striped">
+        <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+        </tr>
+        <tr>
+                <td>kind</td>
+                <td>New kind for the user</td>
+                <td>string "user", "candidate", "other"</td>
+        </tr>
+</table>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-kind">Example</a>
+
+<div class="js-expandable user-kind">
+
+<h3>Request</h3>
+<p><span class="label label-info">PUT</span> <code> /users/777/kind</code>
+
+<pre>
+kind=candidate
+</pre>
+
+<h3>Response</h3>
+<p>You get a 204 response code (request successful) if user's kind have been changed</p>
+
+</div>
+
 {% endblock %}
 
