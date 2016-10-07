@@ -5,9 +5,118 @@
 
 <h1>CV</h1>
 
+<h2>Get all the resumes by filters</h2>
+
+<p>This method returns your resumes</p>
+
+<p><span class="label label-info">POST|GET</span> <code> /cv/list</code>
+
+<h2>Attributes</h2>
+
+The attributes are given in JSON in the POST body.
+
+<h2>Available fields &amp; options</h2>
+
+<a name="filters"></a>
+<h3>List of available filter names</h3>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>
+	<tr>
+		<td>cvType</td>
+		<td>The resume's type. Possible values: main, secondary</td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>manager</td>
+		<td>The manager's id.</td>
+		<td>integer</td>
+	</tr>
+	<tr>
+		<td>recipient</td>
+		<td>The recipient of the CV.</td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>tagId</td>
+		<td>The tag's id. Please refer to <a href="/pro/tags">Tags</a></td>
+		<td>integer</td>
+	</tr>
+	<tr>
+		<td>created</td>
+		<td>Datetime of the creation of the CV.</td>
+		<td>Datetime (format Y-m-d)</td>
+	</tr>
+	<tr>
+		<td>updated</td>
+		<td>Datetime of the update of the CV.</td>
+		<td>Datetime (format Y-m-d)</td>
+	</tr>
+	<tr>
+		<td>completion</td>
+		<td>Completion of the CV</td>
+		<td>float (value between 0 and 1, 2 digits maximum)</td>
+	</tr>
+	<tr>
+		<td>comparator</td>
+		<td>The comparator sign to compare with. Works only with these attributes : created, updated, completion. Possible values : <, <=, >, >=, =, !=</td>
+		<td></td>
+	</tr>
+</table>
+
+<h2>Request example</h2>
+<p><span class="label label-info">POST</span> <code> /cv/list</code>   
+	<pre name="code" class="javascript">
+	{"filters": [
+		{"type": "manager", "value": "1245"},
+		{"type": "tagId", "value": "6260"},
+		{"type": "cvType", "value": "main" },
+		{"type": "updated", "comparator": ">", "value":"2016-05-30"},
+		{"type": "created", "comparator": "<=", "value": "2017-05-30"}
+	]}
+	</pre>
+</p>
+
+<h2>Response example</h2>
+<p><span class="label label-info">GET</span> <code> /cv/list</code>   
+	<pre name="code" class="javascript">
+	{"resumes": [
+		{
+			"title":"Directeur technique",
+			"anonymized":false,
+			"main":true,
+			"status":"20",
+			"id":"13",
+			"recipient":"",
+			"created":"2016-09-07T14:55:55+0200",
+			"manager":"Tom Zarek",
+			"updated":"2016-09-07T14:55:55+0200",
+			"language":"fr_FR"
+		},
+		{
+			"title":"Serveur Starbuck",
+			"anonymized":false,
+			"main":true,
+			"status":"20",
+			"id":"12",
+			"recipient":"IBM Corporation",
+			"created":"2016-09-07T14:55:55+0200",
+			"manager":"Tom Zarek",
+			"updated":"2016-09-07T14:55:55+0200",
+			"language":"fr_FR"
+		}
+	]}
+	</pre>
+</p>
+
+<p>&nbsp;</p>
 <h2>Get the PDF URL of the CV</h2>
 
-<p>This method return the URL of the PDF version of a CV.</p>
+<p>This method returns the URL of the PDF version of a CV.</p>
 
 <p><span class="label label-info">GET</span> <code> /cv/:id/pdf</code> 
 <p><a class="btn js-expand" href="javascript:void()" data-show-element="pdf-cv-example">Example</a>
