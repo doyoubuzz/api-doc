@@ -13,7 +13,7 @@
 
 <h2>Attributes</h2>
 
-The attributes are given in JSON in the POST body.
+The attributes are given in PHP then encoded in JSON in the POST body.
 
 <h2>Available fields &amp; options</h2>
 
@@ -70,14 +70,12 @@ The attributes are given in JSON in the POST body.
 
 <h2>Request example</h2>
 <p><span class="label label-info">POST</span> <code> /cv/list</code>   
-	<pre name="code" class="javascript">
-	{"filters": [
-		{"type": "manager", "value": "1245"},
-		{"type": "tagId", "value": "6260"},
-		{"type": "cvType", "value": "main" },
-		{"type": "updated", "comparator": ">", "value":"2016-05-30"},
-		{"type": "created", "comparator": "<=", "value": "2017-05-30"}
-	]}
+	<pre name="code" class="php">
+	$filters = [ "filters" => [
+		[ "type" => "cvType", "value" => "main" ],
+		[ "type" => "created", "value" => "2017-05-16", "comparator" => "<=" ],
+		[ "type" => "tagId", "value" => "22" ]
+	]];
 	</pre>
 </p>
 
