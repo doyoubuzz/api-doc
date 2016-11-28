@@ -68,46 +68,91 @@ The attributes are given in PHP then encoded in JSON in the POST body.
 	</tr>
 </table>
 
+	<a name="sorts"></a>
+	<h3>List of available sort names</h3>
+
+
+	<table class="table table-bordered table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Type</th>
+		</tr>
+		<tr>
+			<td>updated</td>
+			<td>The resume last update date</td>
+			<td>DateTime (format Y-m-d H:i:s</td>
+		</tr>
+		<tr>
+			<td>created</td>
+			<td>The resume create date</td>
+			<td>DateTime (format Y-m-d H:i:s</td>
+		</tr>
+		<tr>
+			<td>recipient</td>
+			<td>The recipient name</td>
+			<td>string</td>
+		</tr>
+		<tr>
+			<td>completion</td>
+			<td>The completion rate</td>
+			<td>float</td>
+		</tr>
+	</table>
+
 <h2>Request example</h2>
 <p><span class="label label-info">POST</span> <code> /cv/list</code>   
 	<pre name="code" class="php">
-	$filters = [ "filters" => [
-		[ "type" => "cvType", "value" => "main" ],
-		[ "type" => "created", "value" => "2017-05-16", "comparator" => "<=" ],
-		[ "type" => "tagId", "value" => "22" ]
-	]];
+	{
+           "filters" : [
+                {
+                    "type" : "updated",
+                    "value" : "2016-11-02",
+                    "comparator" : ">="
+                }
+           ],
+           "sort" : [
+                {
+					"field" : "updated",
+					"order" :"ASC"
+				}
+           ]
+        }
 	</pre>
 </p>
 
 <h2>Response example</h2>
 <p><span class="label label-info">GET</span> <code> /cv/list</code>   
 	<pre name="code" class="javascript">
-	{"resumes": [
-		{
-			"title":"Directeur technique",
-			"anonymized":false,
-			"main":true,
-			"status":"20",
-			"id":"13",
-			"recipient":"",
-			"created":"2016-09-07T14:55:55+0200",
-			"manager":"Tom Zarek",
-			"updated":"2016-09-07T14:55:55+0200",
-			"language":"fr_FR"
-		},
-		{
-			"title":"Serveur Starbuck",
-			"anonymized":false,
-			"main":true,
-			"status":"20",
-			"id":"12",
-			"recipient":"IBM Corporation",
-			"created":"2016-09-07T14:55:55+0200",
-			"manager":"Tom Zarek",
-			"updated":"2016-09-07T14:55:55+0200",
-			"language":"fr_FR"
-		}
-	]}
+	{
+   "resumes":[
+      {
+         "title":"Technicien",
+         "completion":0.91,
+         "anonymized":true,
+         "main":false,
+         "status":"20",
+         "id":"1265328",
+         "public_url":"http:\/\/URL.com/cv",
+         "private_url":"http:\/\/URL.com/cv",
+         "created":"2016-11-28T15:18:54+0100",
+         "indexed":true,
+         "protected":false,
+         "manager":"Mat",
+         "updated":"2016-11-28T16:05:31+0100",
+         "user":{
+            "username":"email@tl.eg",
+            "email":"email@tl.eg",
+            "firstname":"Bart",
+            "lastname":"Simpson",
+            "kind":"user",
+            "id":12,
+            "phone":"0612121212"
+         },
+         "language":"fr_FR"
+      }
+   ]
+}
 	</pre>
 </p>
 
