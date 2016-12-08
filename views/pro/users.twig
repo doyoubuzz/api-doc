@@ -322,6 +322,33 @@
 </pre>
 </div>
 
+
+<h2>Get a user comments</h2>
+<p><span class="label label-info">GET</span> <code> /users/:id/comments</code>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-tags">Example</a>
+	<div class="js-expandable user-tags">
+
+<p><span class="label label-info">GET</span> <code> /users/12/comments</code>
+<pre name="code" class="javascript">
+[
+  {
+    "id": 1,
+    "text": "Un très bon pilote.",
+    "created": "2016-12-08T15:51:48+0100",
+    "updated": "2016-12-08T16:12:23+0100",
+    "author": {
+      "username": "will.adama@bg.com",
+      "email": "will.adama@bg.com",
+      "firstname": "Will",
+      "lastname": "Adama",
+      "id": 42
+    }
+  }
+]
+</pre>
+</div>
+
 <h2>Logout a user</h2>
 <p><span class="label label-info">DELETE</span> <code> /users/:id/logout</code>
 
