@@ -323,30 +323,74 @@
 </div>
 
 
-<h2>Get a user comments</h2>
-<p><span class="label label-info">GET</span> <code> /users/:id/comments</code>
+<h2>Get comments</h2>
+<p>
+	<span class="label label-info">POST</span>
+	<code> /users/comments</code>
+	<p>The attributes are given in PHP then encoded in JSON in the POST body.</p>
+</p>
 
-<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-tags">Example</a>
-	<div class="js-expandable user-tags">
+<h3>Optional body parameters</h3>
 
-<p><span class="label label-info">GET</span> <code> /users/12/comments</code>
-<pre name="code" class="javascript">
-[
-  {
-    "id": 1,
-    "text": "Un très bon pilote.",
-    "created": "2016-12-08T15:51:48+0100",
-    "updated": "2016-12-08T16:12:23+0100",
-    "author": {
-      "username": "will.adama@bg.com",
-      "email": "will.adama@bg.com",
-      "firstname": "Will",
-      "lastname": "Adama",
-      "id": 42
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>
+	<tr>
+		<td>user</td>
+		<td>Id of the user</td>
+		<td>integer</td>
+	</tr>
+	<tr>
+		<td>created</td>
+		<td>The date of the creation of the comment(s). Format: YYYY-MM-DD</td>
+		<td>string</td>
+	</tr>
+	<tr>
+		<td>updated</td>
+		<td>The date of the update of the comment(s). Format: YYYY-MM-DD</td>
+		<td>string</td>
+	</tr>
+</table>
+
+<a class="btn js-expand" href="javascript:void()" data-show-element="user-comments">Example</a>
+<div class="js-expandable user-comments">
+	<h2>Request example</h2>
+	<span class="label label-info">POST</span> <code> /users/comments</code>
+	<pre name="code" class="javascript">
+	{
+		"filters": [
+			{ "type":"user", "value":"76" },
+			{ "type":"created", "value":"2018-02-01", "comparator":"<" }
+		],
+		"sort": [
+			{ "field":"created", "order":"ASC"}
+		]
+	}
+	</pre>
+	<h2>Response example</h2>
+	<span class="label label-info">GET</span> <code> /users/comments</code>
+	<pre name="code" class="javascript">
+	{
+    	"comments": [
+            {
+                "id": 1,
+                "text": "Un très bon pilote.",
+                "created": "2016-12-08T15:51:48+0100",
+                "updated": "2016-12-08T16:12:23+0100",
+                "author": {
+                    "username": "will.adama@bg.com",
+                    "email": "will.adama@bg.com",
+                    "firstname": "Will",
+                    "lastname": "Adama",
+                    "id": 42
+                }
+            }
+        ]
     }
-  }
-]
-</pre>
+	</pre>
 </div>
 
 <h2>Logout a user</h2>
