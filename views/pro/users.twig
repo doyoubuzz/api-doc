@@ -457,5 +457,37 @@ kind=candidate
 
 </div>
 
+<h2>Set User's manager</h2>
+<p><span class="label label-info">PUT</span> <code> /users/:id/manager</code>
+
+<table class="table table-bordered table-striped">
+        <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+        </tr>
+        <tr>
+                <td>managerId</td>
+                <td>New manager for the user</td>
+                <td>integer</td>
+        </tr>
+</table>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-kind">Example</a>
+
+<div class="js-expandable user-kind">
+
+<h3>Request</h3>
+<p><span class="label label-info">PUT</span> <code> /users/66709/manager</code>
+
+<pre>
+managerId=36789
+</pre>
+
+<h3>Response</h3>
+<p>You get a 204 response code (request successful) if user's manager has been changed</p>
+
+</div>
+
 {% endblock %}
 
