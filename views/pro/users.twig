@@ -489,5 +489,96 @@ managerId=36789
 
 </div>
 
+<h2>Get user consent</h2>
+<p><span class="label label-info">GET</span> <code> /users/:id/consent</code>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-kind">Example</a>
+
+<div class="js-expandable user-kind">
+
+<h3>Request</h3>
+<p><span class="label label-info">GET</span> <code> /users/66709/consent</code>
+
+	<pre name="code" class="javascript">
+{
+    "id": 1,
+    "user": {
+        "username": "sherman.cottle@bg.com",
+        "email": "sherman.cottle@bg.com",
+        "name": "Sherman Cottle",
+        "kind": "candidate",
+        "id": 898,
+        "firstname": "Sherman",
+        "lastname": "Cottle",
+        "title": "Chef médical",
+        "url": "/a/user/7",
+        "displayKind": "Candidat"
+    },
+    "modified_by": {
+        "username": "will.adama@bg.com",
+        "email": "will.adama@bg.com",
+        "name": "Will Adama",
+        "kind": "admin",
+        "id": 666,
+        "firstname": "Will",
+        "lastname": "Adama",
+        "phone": "",
+        "url": "/a/user/1",
+        "displayKind": "Administrateur"
+    },
+    "begin_date": "2018-01-25T00:00:00+0100",
+    "duration": 730,
+    "created_at": "2019-10-23T14:41:39+0200",
+    "updated_at": "2019-10-25T16:55:12+0200",
+    "type": "irl",
+    "proof_file_name": "api_upload_5db2c20db417d-5db2c20dcaac8.jpeg"
+}
+</pre>
+
+</div>
+
+	<h2>Update user consent</h2>
+<p><span class="label label-info">PUT</span> <code> /users/:id/consent</code>
+
+<table class="table table-bordered table-striped">
+        <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Type</th>
+        </tr>
+        <tr>
+                <td>begin_date</td>
+                <td>Begin date of user's consent</td>
+                <td>Date (format : DD/MM/YYYY)</td>
+        </tr>
+		<tr>
+                <td>type</td>
+                <td>The way you get the consent</td>
+                <td>String ('irl', 'mail, 'phone' only)</td>
+        </tr>
+		<tr>
+                <td>file</td>
+                <td>The file used as proof in case of contest</td>
+                <td>String (base64 encoded file)</td>
+        </tr>
+</table>
+
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-kind">Example</a>
+
+<div class="js-expandable user-kind">
+
+<h3>Request</h3>
+<p><span class="label label-info">PUT</span> <code> /users/66709/consent</code>
+
+<pre>
+begin_date=25/12/2018&type=irl&file=BASE64ENCODEDFILE
+</pre>
+
+<h3>Response</h3>
+<p>You get a 204 response code (request successful) if user's consent has been changed</p>
+<p>You get a 400 response code if something is wrong with parameters</p>
+
+</div>
+
 {% endblock %}
 
