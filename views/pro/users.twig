@@ -409,9 +409,9 @@ tags[]=16&tags[]=266&tags=271&reset=1
 	</tr>
 </table>
 
-<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-associateTags">Example</a>
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-dissociateTags">Example</a>
 
-<div class="js-expandable user-associateTags">
+<div class="js-expandable user-dissociateTags">
 
 <h3>Request</h3>
 <p><span class="label label-info">PUT</span> <code> /users/6/disassociateTags</code>
@@ -473,9 +473,9 @@ kind=candidate
         </tr>
 </table>
 
-<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-kind">Example</a>
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-manager">Example</a>
 
-<div class="js-expandable user-kind">
+<div class="js-expandable user-manager">
 
 <h3>Request</h3>
 <p><span class="label label-info">PUT</span> <code> /users/66709/manager</code>
@@ -489,96 +489,99 @@ managerId=36789
 
 </div>
 
-<h2>Get user consent</h2>
-<p><span class="label label-info">GET</span> <code> /users/:id/consent</code>
+	<h2>Get comment</h2>
+	<p>
+		<span class="label label-info">GET</span>
+		<code>/users/:id/comment</code>
+	</p>
 
-<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-kind">Example</a>
-
-<div class="js-expandable user-kind">
-
-<h3>Request</h3>
-<p><span class="label label-info">GET</span> <code> /users/66709/consent</code>
-
-	<pre name="code" class="javascript">
-{
+	<a class="btn js-expand" href="javascript:void()" data-show-element="user-get-comment">Example</a>
+	<div class="js-expandable user-get-comment">
+		<h2>Request example</h2>
+		<span class="label label-info">GET</span> <code>/users/123/comment</code>
+		<h2>Response example</h2>
+		<pre name="code" class="javascript">
+			{
     "id": 1,
+    "text": "Un employé model",
+    "created": "2019-11-19T16:41:14+0100",
+    "updated": "2019-11-19T16:47:50+0100",
     "user": {
-        "username": "sherman.cottle@bg.com",
-        "email": "sherman.cottle@bg.com",
-        "name": "Sherman Cottle",
+        "username": "karl.agathon@bg.com",
+        "email": "karl.agathon@bg.com",
+        "name": "Karl Agathon",
         "kind": "candidate",
-        "id": 898,
-        "firstname": "Sherman",
-        "lastname": "Cottle",
-        "title": "Chef médical",
-        "url": "/a/user/7",
+        "id": 123,
+        "id_origin": null,
+        "firstname": "Karl",
+        "lastname": "Agathon",
+        "title": "Officier de contre-mesures électroniques",
+        "phone": null,
+        "occupation": null,
+        "url": "/app_dev.php/a/user/6",
         "displayKind": "Candidat"
     },
-    "modified_by": {
-        "username": "will.adama@bg.com",
-        "email": "will.adama@bg.com",
-        "name": "Will Adama",
-        "kind": "admin",
-        "id": 666,
-        "firstname": "Will",
-        "lastname": "Adama",
-        "phone": "",
-        "url": "/a/user/1",
-        "displayKind": "Administrateur"
-    },
-    "begin_date": "2018-01-25T00:00:00+0100",
-    "duration": 730,
-    "created_at": "2019-10-23T14:41:39+0200",
-    "updated_at": "2019-10-25T16:55:12+0200",
-    "type": "irl",
-    "proof_file_name": "api_upload_5db2c20db417d-5db2c20dcaac8.jpeg"
+    "author": {
+                    "username": "will.adama@bg.com",
+                    "email": "will.adama@bg.com",
+                    "firstname": "Will",
+                    "lastname": "Adama",
+                    "id": 42
+                }
 }
-</pre>
+    </pre>
+	</div>
+	<h2>Update comment</h2>
+	<p>
+		<span class="label label-info">POST</span> ou <span class="label label-info">PUT</span>
+		<code>/users/:id/comments</code>
+	</p>
 
-</div>
+	<h3>Required body parameter</h3>
 
-	<h2>Update user consent</h2>
-<p><span class="label label-info">PUT</span> <code> /users/:id/consent</code>
-
-<table class="table table-bordered table-striped">
-        <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Type</th>
-        </tr>
-        <tr>
-                <td>begin_date</td>
-                <td>Begin date of user's consent</td>
-                <td>Date (format : DD/MM/YYYY)</td>
-        </tr>
+	<table class="table table-bordered table-striped">
 		<tr>
-                <td>type</td>
-                <td>The way you get the consent</td>
-                <td>String ('irl', 'mail, 'phone' only)</td>
-        </tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Type</th>
+		</tr>
 		<tr>
-                <td>file</td>
-                <td>The file used as proof in case of contest</td>
-                <td>String (base64 encoded file)</td>
-        </tr>
-</table>
+			<td>comment</td>
+			<td>The comment you want to set to the user</td>
+			<td>string</td>
+		</tr>
+	</table>
 
-<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-kind">Example</a>
-
-<div class="js-expandable user-kind">
-
-<h3>Request</h3>
-<p><span class="label label-info">PUT</span> <code> /users/66709/consent</code>
-
-<pre>
-begin_date=25/12/2018&type=irl&file=BASE64ENCODEDFILE
-</pre>
-
-<h3>Response</h3>
-<p>You get a 204 response code (request successful) if user's consent has been changed</p>
-<p>You get a 400 response code if something is wrong with parameters</p>
-
-</div>
-
+	<a class="btn js-expand" href="javascript:void()" data-show-element="user-post-comment">Example</a>
+	<div class="js-expandable user-post-comment">
+		<h2>Request example</h2>
+		<span class="label label-info">POST</span> <code>/users/:id/comment</code>
+		<pre>comment=Un employé model</pre>
+		<h2>Response example</h2>
+		<pre name="code" class="javascript">
+    {
+    "id": 1,
+    "text": "Un employé model",
+    "created": "2019-11-19T16:41:14+0100",
+    "updated": "2019-11-19T16:47:50+0100",
+    "user": {
+        "username": "karl.agathon@bg.com",
+        "email": "karl.agathon@bg.com",
+        "name": "Karl Agathon",
+        "kind": "candidate",
+        "id": 879,
+        "id_origin": null,
+        "firstname": "Karl",
+        "lastname": "Agathon",
+        "title": "Officier de contre-mesures électroniques",
+        "phone": null,
+        "occupation": null,
+        "url": "/app_dev.php/a/user/6",
+        "displayKind": "Candidat"
+    },
+    "author": null
+}
+    </pre>
+	</div>
 {% endblock %}
 
