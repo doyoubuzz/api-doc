@@ -302,7 +302,8 @@
 				field: "title",
 				content: "Business Development"
 			}
-		]
+		],
+        specialization: null,
 	},
 	{
 		id: 214,
@@ -316,7 +317,8 @@
 				field: "title",
 				content: "Development"
 			}
-		]
+		],
+        specialization: null,
 	}
 ]
 </pre>
@@ -409,9 +411,9 @@ tags[]=16&tags[]=266&tags=271&reset=1
 	</tr>
 </table>
 
-<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-associateTags">Example</a>
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-dissociateTags">Example</a>
 
-<div class="js-expandable user-associateTags">
+<div class="js-expandable user-dissociateTags">
 
 <h3>Request</h3>
 <p><span class="label label-info">PUT</span> <code> /users/6/disassociateTags</code>
@@ -473,9 +475,9 @@ kind=candidate
         </tr>
 </table>
 
-<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-kind">Example</a>
+<p><a class="btn js-expand" href="javascript:void()" data-show-element="user-manager">Example</a>
 
-<div class="js-expandable user-kind">
+<div class="js-expandable user-manager">
 
 <h3>Request</h3>
 <p><span class="label label-info">PUT</span> <code> /users/66709/manager</code>
@@ -489,5 +491,99 @@ managerId=36789
 
 </div>
 
+	<h2>Get comment</h2>
+	<p>
+		<span class="label label-info">GET</span>
+		<code>/users/:id/comment</code>
+	</p>
+
+	<a class="btn js-expand" href="javascript:void()" data-show-element="user-get-comment">Example</a>
+	<div class="js-expandable user-get-comment">
+		<h2>Request example</h2>
+		<span class="label label-info">GET</span> <code>/users/123/comment</code>
+		<h2>Response example</h2>
+		<pre name="code" class="javascript">
+			{
+    "id": 1,
+    "text": "Un employé model",
+    "created": "2019-11-19T16:41:14+0100",
+    "updated": "2019-11-19T16:47:50+0100",
+    "user": {
+        "username": "karl.agathon@bg.com",
+        "email": "karl.agathon@bg.com",
+        "name": "Karl Agathon",
+        "kind": "candidate",
+        "id": 123,
+        "id_origin": null,
+        "firstname": "Karl",
+        "lastname": "Agathon",
+        "title": "Officier de contre-mesures électroniques",
+        "phone": null,
+        "occupation": null,
+        "url": "/app_dev.php/a/user/6",
+        "displayKind": "Candidat"
+    },
+    "author": {
+                    "username": "will.adama@bg.com",
+                    "email": "will.adama@bg.com",
+                    "firstname": "Will",
+                    "lastname": "Adama",
+                    "id": 42
+                }
+}
+    </pre>
+	</div>
+	<h2>Update comment</h2>
+	<p>
+		<span class="label label-info">POST</span> ou <span class="label label-info">PUT</span>
+		<code>/users/:id/comments</code>
+	</p>
+
+	<h3>Required body parameter</h3>
+
+	<table class="table table-bordered table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Type</th>
+		</tr>
+		<tr>
+			<td>comment</td>
+			<td>The comment you want to set to the user</td>
+			<td>string</td>
+		</tr>
+	</table>
+
+	<a class="btn js-expand" href="javascript:void()" data-show-element="user-post-comment">Example</a>
+	<div class="js-expandable user-post-comment">
+		<h2>Request example</h2>
+		<span class="label label-info">POST</span> <code>/users/:id/comment</code>
+		<pre>comment=Un employé model</pre>
+		<h2>Response example</h2>
+		<pre name="code" class="javascript">
+    {
+    "id": 1,
+    "text": "Un employé model",
+    "created": "2019-11-19T16:41:14+0100",
+    "updated": "2019-11-19T16:47:50+0100",
+    "user": {
+        "username": "karl.agathon@bg.com",
+        "email": "karl.agathon@bg.com",
+        "name": "Karl Agathon",
+        "kind": "candidate",
+        "id": 879,
+        "id_origin": null,
+        "firstname": "Karl",
+        "lastname": "Agathon",
+        "title": "Officier de contre-mesures électroniques",
+        "phone": null,
+        "occupation": null,
+        "url": "/app_dev.php/a/user/6",
+        "displayKind": "Candidat"
+    },
+    "author": null
+}
+    </pre>
+	</div>
 {% endblock %}
 
