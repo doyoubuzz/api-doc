@@ -1,0 +1,263 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Doyoubuzz Showcase - Geo Mobilities
+  # put the contact info for your development or API team
+  contact:
+    email: francois@doyoubuzz.com
+
+# tags are used for organizing operations
+tags:
+  - name: geo-mobilities
+
+paths:
+  /geo-mobilities:
+    get:
+      tags:
+        - geo-mobilities
+      summary: Get all geomobilities of a company
+      parameters:
+        - name: user
+          in: query
+          required: false
+          type: string
+          description: Set user id to get only geo-mobilities of a specific user
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              pagination:
+                $ref: '#/definitions/pagination'
+              data:
+                type: array
+                items:
+                  $ref: '#/definitions/geo_mobility'
+        403:
+          description: Not authorized
+    post:
+      tags:
+        - geo-mobilities
+      summary: Add a geo-mobility
+      parameters:
+        - name: Data
+          description: Description
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              user_id:
+                type: string
+                example: 12345
+      produces:
+        - application/json
+      responses:
+        204:
+          description: OK
+        400:
+          description: Bad request
+  /geo-mobilities/{id}:
+    get:
+      tags:
+        - geo-mobilities
+      summary: Read a geo-mobility
+      parameters:
+        - name: id
+          description: 'Id of geo-mobility (example : "1518b80d-c22e-4a4b-9da2-b823e425b2e")'
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  geo_mobility:
+                    $ref: '#/definitions/geo_mobility'
+        403:
+          description: Access denied
+    put:
+      tags:
+        - geo-mobilities
+      summary: Modify a geo-mobility
+      parameters:
+        - name: id
+          description: 'Id of geo-mobility (example : "1518b80d-c22e-4a4b-9da2-b823e425b2e")'
+          in: path
+          required: true
+          type: string
+        - name: Data
+          description: New title
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+                example: Bordeaux
+      responses:
+        204:
+          description: OK
+        404:
+          description: Content not found
+        400:
+          description: Bad request
+        403:
+          description: Access denied
+    delete:
+      tags:
+        - geo-mobilities
+      summary: Delete a geo-mobility
+      parameters:
+        - name: id
+          description: 'Id of geo-mobility (example : "1518b80d-c22e-4a4b-9da2-b823e425b2e")'
+          in: path
+          required: true
+          type: string
+      responses:
+        204:
+          description: OK
+        404:
+          description: Content not found
+        403:
+          description: Access denied
+
+  /geo-mobilities/{id}/users:
+    get:
+      tags:
+        - geo-mobilities
+      summary: Get all users linked to a geo-mobility
+      parameters:
+        - name: id
+          description: 'Id of geo-mobility (example : "1518b80d-c22e-4a4b-9da2-b823e425b2e")'
+          in: path
+          required: true
+          type: string
+        - name: offset
+          in: query
+          required: false
+          type: integer
+        - name: results_per_page
+          in: query
+          required: false
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              pagination:
+                type: object
+                $ref: '#/definitions/pagination'
+              data:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: '12345'
+        403:
+          description: Access denied
+    post:
+      tags:
+        - geo-mobilities
+      summary: Add a user to a geo-mobility
+      parameters:
+        - name: id
+          description: 'Id of geo-mobility (example : "1518b80d-c22e-4a4b-9da2-b823e425b2e")'
+          in: path
+          required: true
+          type: string
+        - name: Data
+          description: User to add
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              user_id:
+                type: string
+                example: 1245
+      responses:
+        204:
+          description: OK
+        404:
+          description: Content not found
+        400:
+          description: Bad request
+        403:
+          description: Access denied
+    delete:
+      tags:
+        - geo-mobilities
+      summary: Remove a user from a geo-mobility
+      parameters:
+        - name: id
+          description: 'Id of geo-mobility (example : "1518b80d-c22e-4a4b-9da2-b823e425b2e")'
+          in: path
+          required: true
+          type: string
+        - name: Data
+          description: User to remove
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              user_id:
+                type: string
+                example: 1245
+      responses:
+        204:
+          description: OK
+        404:
+          description: Content not found
+        400:
+          description: Bad request
+        403:
+          description: Access denied
+
+definitions:
+  pagination:
+    type: object
+    properties:
+      total_number_objects:
+        type: integer
+        example: 123
+      offset:
+        type: integer
+        example: 0
+      results_per_page:
+        type: integer
+        example: 20
+  geo_mobility:
+    type: object
+    properties:
+      id:
+        type: string
+        example: "24814145-9c05-4f04-b932-fc0aa2b3b850"
+      company_id:
+        type: integer
+        example: 1
+      title:
+        type: string
+        example: "Nantes"
+host: showcase.doyoubuzz.com
+schemes:
+  - https
+basePath: /api/v1
+

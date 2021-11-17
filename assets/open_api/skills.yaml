@@ -1,0 +1,454 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Doyoubuzz Showcase - Skills
+  # put the contact info for your development or API team
+  contact:
+    email: francois@doyoubuzz.com
+
+# tags are used for organizing operations
+tags:
+  - name: referentials
+    description: Referentiel de compétences
+  - name: domains
+    description: Domaine de compétences
+  - name: skills
+    description: Compétence
+
+
+paths:
+  /skills-referentials:
+    get:
+      tags:
+        - referentials
+      summary: Lecture de tous les referentiels
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Lecture de tout les référentiels
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/referential'
+    post:
+      tags:
+        - referentials
+      summary: Ajout d'un referentiel
+      parameters:
+        - name: Reférentiel
+          description: Crée un nouveau référentiel
+          in: body
+          schema:
+            type: object
+            required:
+              - title
+            properties:
+              title:
+                type: string
+                example: Développement Web
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 123
+              title:
+                type: string
+                example: Développement Web
+        400:
+          description: Bad request
+  /skills-referentials/{id}:
+    get:
+      tags:
+        - referentials
+      summary: Lecture d'un reférentiel
+      parameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+          description: Id du rérentiel
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/referential'
+        404:
+          description: Not found
+    put:
+      tags:
+        - referentials
+      summary: Modification d'un reférentiel
+      parameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+          description: Id du rérentiel
+        - name: Reférentiel
+          description: Nouveau titre
+          required: true
+          in: body
+          schema:
+            type: object
+            required:
+              - title
+            properties:
+              title:
+                type: string
+                example: Artisanat
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/referential'
+        404:
+          description: Not found
+        400:
+          description: Bad request
+    delete:
+      tags:
+        - referentials
+      summary: Suppression d'un reférentiel
+      parameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+          description: Id du rérentiel
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not found
+
+
+  /skills-domains:
+    post:
+      tags:
+        - domains
+      summary: Ajout d'un domaine de compétences
+      parameters:
+        - name: Data
+          description: Description
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - title
+                culture
+                idRef
+            properties:
+              idRef:
+                type: integer
+                example: 123
+                description: Id du rérentiel parent
+              term:
+                type: string
+                example: Langage de Programmation
+              culture:
+                type: string
+                example: fr_FR
+              weight:
+                type: integer
+                example: 100
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+                example: 123
+              term:
+                type: string
+                example: Langage de Programmation
+              culture:
+                type: string
+                example: fr_FR
+              weight:
+                type: integer
+                example: 100
+              idRef:
+                type: integer
+                example: 123
+        400:
+          description: Bad request
+  /skills-domains/{id}:
+    get:
+      tags:
+        - domains
+      summary: Lecture d'un domaine de compétences
+      parameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+          description: Id du domaine de compétences
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Domain'
+        404:
+          description: Not found
+    put:
+      tags:
+        - domains
+      summary: Modification d'un domaine de compétences
+      parameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+          description: Id du domaine de compétences
+        - name: Data
+          description: Description
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              term:
+                type: string
+                example: Langage de Programmation
+              culture:
+                type: string
+                example: fr_FR
+              weight:
+                type: integer
+                example: 100
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/referential'
+        404:
+          description: Not found
+        400:
+          description: Bad request
+    delete:
+      tags:
+        - domains
+      summary: Suppression d'un domaine de compétences
+      parameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+          description: Id du domaine de compétences à supprimer
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not found
+  /skills:
+    post:
+      tags:
+        - skills
+      summary: Ajout d'une compétence
+      parameters:
+        - name: Data
+          description: Description
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - title
+                culture
+                idDom
+            properties:
+              idDom:
+                type: integer
+                description: Id du domaine de compétences parent
+                example: 123
+              title:
+                type: string
+                example: Langage de Programmation
+              culture:
+                type: string
+                example: fr_FR
+              weight:
+                type: integer
+                example: 100
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Skill'
+        400:
+          description: Bad request
+  /skills/{id}:
+    get:
+      tags:
+        - skills
+      summary: Lecture d'une compétence
+      parameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+          description: Id de la compétence
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Skill'
+        404:
+          description: Not found
+
+
+    put:
+      tags:
+        - skills
+      summary: Modification d'une compétence
+      parameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+          description: Id de la compétence
+        - name: Data
+          description: Description
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+                example: PHP
+              culture:
+                type: string
+                example: fr_FR
+              weight:
+                type: integer
+                example: 100
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Skill'
+        404:
+          description: Not found
+        400:
+          description: Bad request
+    delete:
+      tags:
+        - skills
+      summary: Suppression d'une compétence
+      parameters:
+        - name: id
+          in: path
+          type: integer
+          required: true
+          description: Id de la compétence
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not found
+
+
+definitions:
+  Skill:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 123
+      title:
+        type: string
+        example: "PHP"
+      culture:
+        type: string
+        example: "fr_FR"
+      weight:
+        type: integer
+        example: 1000
+      idDom:
+        type: integer
+        example: 123
+  Domain:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 123
+      term:
+        type: string
+        example: "Langage de programmation"
+      culture:
+        type: string
+        example: "fr_FR"
+      weight:
+        type: integer
+        example: 1000
+      idRef:
+        type: integer
+        example: 123
+      children:
+        type: array
+        items:
+          $ref: '#/definitions/Skill'
+  referential:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 123
+      title:
+        type: string
+        example: "Developpement Web"
+      skillTerms:
+        type: array
+        items:
+          $ref: '#/definitions/Domain'
+  pagination:
+    type: object
+    properties:
+      total_number_objects:
+        type: integer
+        example: 123
+      offset:
+        type: integer
+        example: 0
+      results_per_page:
+        type: integer
+        example: 20
+host: showcase.doyoubuzz.com
+schemes:
+  - https
+basePath: /api/v1
+

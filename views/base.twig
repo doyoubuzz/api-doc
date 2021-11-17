@@ -32,6 +32,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    {% block style %}
+    {% endblock style %}
   </head>
 
   <body>
@@ -92,6 +94,8 @@
               <li{% if template == 'pro/cv-per-status' %} class="active"{% endif %}><a href="/pro/cv-per-status">CV per status</a></li>
               <li{% if template == 'pro/tags' %} class="active"{% endif %}><a href="/pro/tags">Tags</a></li>
               <li{% if template == 'pro/comments' %} class="active"{% endif %}><a href="/pro/comments">Comments</a></li>
+              <li{% if template == 'pro/geo-mobilities' %} class="active"{% endif %}><a href="/pro/geo-mobilities">Geo-mobilities</a></li>
+              <li{% if template == 'pro/skills' %} class="active"{% endif %}><a href="/pro/skills">Skills</a></li>
 
               <li class="nav-header">Search API</li>
               <li{% if template == 'search/summary' %} class="active"{% endif %}><a href="/search/summary">Summary</a></li>              
@@ -139,6 +143,8 @@
     <script src="../assets/js/bootstrap-tab.js"></script>
     <script src="../assets/js/bootstrap-collapse.js"></script>
     <script src="../assets/js/dyb-api.js"></script>
+    {% block script %}
+    {% endblock %}
     
     
     <link type="text/css" rel="stylesheet" href="../assets/js/dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css"></link>
