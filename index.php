@@ -1,5 +1,4 @@
 <?php 
-
 error_reporting(-1);
 require_once 'libraries/twig/lib/Twig/Autoloader.php';
 
