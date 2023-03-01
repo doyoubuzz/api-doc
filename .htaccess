@@ -1,9 +1,12 @@
 Options -Indexes
-
 Options +FollowSymLinks
+
 RewriteEngine On
 RewriteBase /
 
-RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
 RewriteCond $1 !^(index\.php|assets/|robots\.txt)
 RewriteRule ^(.*)$ index.php?/$1 [L]
+
