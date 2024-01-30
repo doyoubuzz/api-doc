@@ -95,6 +95,7 @@
               <li{% if template == 'pro/skills' %} class="active"{% endif %}><a href="/pro/skills">Skills</a></li>
               <li{% if template == 'pro/availability' %} class="active"{% endif %}><a href="/pro/availability">Availability</a></li>
               <li{% if template == 'pro/webhooks' %} class="active"{% endif %}><a href="/pro/webhooks">Webhooks</a></li>  
+              <li{% if template == 'pro/webhooks' %} class="active"{% endif %}><a href="/pro/documents">Documents</a></li>
 
             </ul>
           </div><!--/.well -->
@@ -122,7 +123,7 @@
     </div><!--/.fluid-container-->
 	{% endblock %}
 	<footer>
-        <p>&copy; DoYouBuzz 2024 - If you find a typo or an error, <a href="https://github.com/doyoubuzz/api-doc/issues">open a ticket</a>.</p>
+        <p>&copy; DoYouBuzz&nbsp;{{ date() | date('Y') }} - If you find a typo or an error, <a href="https://github.com/doyoubuzz/api-doc/issues">open a ticket</a>.</p>
       </footer>
     <!-- Le javascript
     ================================================== -->
