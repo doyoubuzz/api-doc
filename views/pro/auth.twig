@@ -10,9 +10,36 @@
 
 <p>If you use DoYouBuzz Showcase or DoYouBuzz Campus, you can access the datas of your application, users and CV with this this API.</p>
 
+<h2>API keys</h2>
+
+<p>API keys are managed by an administrator of your Showcase / Campus account, under <strong>Settings</strong>, then <strong>API</strong>. From that page you can create as many keys as you need, and revoke them at any time.</p>
+
+<p>Each key is made of two values:</p>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Value</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>Public key</td>
+		<td>Looks like <code>shw_live_3f9a1c74be2058d6a1f4c39e7b0d82f4</code>. This is the value you send as the <code>apikey</code> parameter of every request. It stays visible in the settings page.</td>
+	</tr>
+	<tr>
+		<td>Secret</td>
+		<td>A 64 characters hexadecimal string, used to sign your requests. <strong>It is displayed only once, right after the creation of the key</strong>, and can never be read again: store it in your application configuration immediately. If you lose it, revoke the key and create a new one.</td>
+	</tr>
+</table>
+
+<p>When creating a key you choose its lifetime: unlimited, 30, 90 or 365 days. An expired or revoked key is refused exactly like an unknown one.</p>
+
+<p>The <strong>API consumption</strong> page of the same settings section shows your traffic, your rate limits and the calls that have been rejected, per key and per endpoint.</p>
+
+<div class="alert alert-info">Keys created before the introduction of the key manager still work, but they use the historical signature scheme described in the <a href="#legacy">Legacy keys</a> section at the bottom of this page. Every key you create today uses the HMAC signature described just below.</div>
+
 <h2>How to access protected resources</h2>
 
-<p><span class="label label-info">GET | PUT | POST | DELETE</span> <code>https://showcase.doyoubuzz.com/api/v1/&lt;method&gt;?apikey=:apikey&amp;timestamp=:timestamp&hash=:hash</code></p>
+<p><span class="label label-info">GET | PUT | POST | DELETE</span> <code>https://showcase.doyoubuzz.com/api/v1/&lt;method&gt;?apikey=:apikey&amp;timestamp=:timestamp&amp;nonce=:nonce&amp;hash=:hash</code></p>
 
 <h3>Mandatory parameters</h3>
 
@@ -24,23 +51,184 @@
 		<th>Description</th>
 	</tr>
 	<tr>
-		<td>apikey (mandatory) </td>
+		<td>apikey (mandatory)</td>
 		<td>
-			The API key of your application. You can get your apikey by login as an admin on your DoYouBuzz Showcase account, under "Settings", then "API".
+			The public key of your application (<code>shw_live_…</code>), obtained in the "Settings", then "API" section of your DoYouBuzz Showcase account.
 		</td>
 	</tr>
 	<tr>
 		<td>timestamp (mandatory)</td>
-		<td>The timestamp of your request</td>
+		<td>
+			The Unix timestamp of your request, <strong>in seconds</strong> (10 digits). Your request is accepted only if this timestamp is less than <strong>5 minutes</strong> (300 seconds) away from the server time, in the past or in the future.
+		</td>
+	</tr>
+	<tr>
+		<td>nonce (mandatory)</td>
+		<td>
+			A random value, <strong>unique for each request</strong> (a UUID or a few random hexadecimal bytes are perfect). Never reuse one: replaying an already signed URL is rejected.
+		</td>
 	</tr>
 	<tr>
 		<td>hash (mandatory)</td>
 		<td>
-			The hash is a security parameter you must compute and send for each request. An detailed explanation with code example is given below.
+			The signature of your request, that you must compute and send for each call. A detailed explanation with a code example is given below.
 		</td>
 	</tr>
 </table>
 
+<div class="alert">
+	<strong>Watch out for milliseconds.</strong> Several languages (JavaScript, Java...) give you a timestamp in milliseconds. A 13 digits timestamp is <strong>always rejected</strong>: divide it by 1000 and send the integer part.
+</div>
+
+<h4>How to compute the hash parameter?</h4>
+
+<p>The hash is an HMAC SHA-256 of a canonical representation of your request, keyed with your secret. Because the HTTP method and the path are part of what you sign, a signed URL cannot be replayed on another endpoint.</p>
+
+<h5>In plain english</h5>
+
+<ol>
+	<li>Build the <em>canonical string</em>: three lines joined by a line feed (<code>\n</code>).
+		<ol>
+			<li>The HTTP method, <strong>in upper case</strong>: <code>GET</code>, <code>POST</code>, <code>PUT</code> or <code>DELETE</code>.</li>
+			<li>The path of the request, <strong>and nothing else</strong>: no scheme, no host, no query string. For <code>https://showcase.doyoubuzz.com/api/v1/users/666?apikey=…</code> the path is <code>/api/v1/users/666</code>.</li>
+			<li>The query parameters: take all the parameters you send in the URL (both mandatory and optional) <strong>except <code>hash</code></strong>, sort them by parameter name, encode both the name and the value with a RFC 3986 encoding (<code>rawurlencode()</code> in PHP, <code>encodeURIComponent()</code> in JavaScript), write them as <code>name=value</code> and join them with <code>&amp;</code>. A parameter holding an array must be JSON encoded before being URL encoded.</li>
+		</ol>
+	</li>
+	<li>Compute the HMAC SHA-256 of that string, using your <strong>secret</strong> as the key, and send the hexadecimal digest as the <code>hash</code> parameter.</li>
+</ol>
+
+<h5>PHP function</h5>
+
+<p>This function takes the HTTP method, the path of the request, an associative array of the parameters to send, and the secret of your key. It returns the parameters with the computed <code>hash</code> added :</p>
+
+<pre name="code" class="php">
+function computeHash($method, $pathInfo, $params, $apiSecret)
+{
+    unset($params['hash']);
+    ksort($params);
+
+    $pairs = array();
+    foreach ($params as $paramKey => $paramVal) {
+        if (is_array($paramVal)) {
+            $paramVal = json_encode($paramVal);
+        }
+        $pairs[] = rawurlencode($paramKey) . '=' . rawurlencode($paramVal);
+    }
+
+    $canonical = strtoupper($method) . "\n" . $pathInfo . "\n" . implode('&', $pairs);
+
+    return array_merge($params, array('hash' => hash_hmac('sha256', $canonical, $apiSecret)));
+}
+</pre>
+
+<h5>Example</h5>
+
+<p>Let's say you want to get the user with the id 666. According to the documentation you need to send a <span class="label label-info">GET</span> to <code>https://showcase.doyoubuzz.com/api/v1/users/666</code> with these parameters :</p>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Parameter name</th>
+		<th>Parameter value</th>
+	</tr>
+	<tr>
+		<td>apikey</td>
+		<td><code>shw_live_3f9a1c74be2058d6a1f4c39e7b0d82f4</code></td>
+	</tr>
+	<tr>
+		<td>timestamp</td>
+		<td><code>1774267200</code></td>
+	</tr>
+	<tr>
+		<td>nonce</td>
+		<td><code>7b1f4c9a2e8d6035</code></td>
+	</tr>
+	<tr>
+		<td>hash</td>
+		<td>???</td>
+	</tr>
+</table>
+
+<p>So, let's compute the hash!</p>
+
+<ol>
+	<li>First, build the canonical string. The method is <code>GET</code>, the path is <code>/api/v1/users/666</code>, and the parameters sorted by name give <code>apikey=shw_live_3f9a1c74be2058d6a1f4c39e7b0d82f4&amp;nonce=7b1f4c9a2e8d6035&amp;timestamp=1774267200</code> (none of these values needs to be escaped). Joined by line feeds, the canonical string is :
+
+<pre>GET
+/api/v1/users/666
+apikey=shw_live_3f9a1c74be2058d6a1f4c39e7b0d82f4&amp;nonce=7b1f4c9a2e8d6035&amp;timestamp=1774267200</pre>
+	</li>
+	<li>Then compute the HMAC SHA-256 of that string with your secret as the key. Here the secret is <code>c4e1a9f7b2d85630fa47e91c8b0d2356e7f1a4c980b3d62e5f8a17c4b9d0e236</code>, and you get your hash parameter : <code>be49e8c3daffdfe07b90fd1ee47f3062960f82bba4238b2ec244fbbacc63d621</code></li>
+</ol>
+
+<p>Now, you can send the request to the API : </p>
+
+<p><span class="label label-info">GET</span> <code>https://showcase.doyoubuzz.com/api/v1/users/666?apikey=shw_live_3f9a1c74be2058d6a1f4c39e7b0d82f4&amp;timestamp=1774267200&amp;nonce=7b1f4c9a2e8d6035&amp;hash=be49e8c3daffdfe07b90fd1ee47f3062960f82bba4238b2ec244fbbacc63d621</code></p>
+
+<h3>Authentication errors</h3>
+
+<p>Every authentication problem is answered with a <span class="label label-important">403</span>, whatever its cause: missing parameter, unknown / revoked / expired key, timestamp out of the 5 minutes window, wrong signature, or reused nonce.</p>
+
+<p>For security reasons, an unknown key, a revoked key and an expired key all share the very same message ("This api key is not valid!"), so you cannot tell them apart from the response. If you get a 403 while your signature code is known to work, check the state of your key in the settings page.</p>
+
+<p>Note that the body of a 403 is a plain error response, it does not use the JSON envelope of the 429 described below.</p>
+
+<h2>Rate limiting</h2>
+
+<p>Calls are counted per company, over a <strong>fixed clock minute</strong>: the counters are reset at the beginning of each minute, they are not a sliding window.</p>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Type of call</th>
+		<th>Default limit</th>
+	</tr>
+	<tr>
+		<td>Standard calls</td>
+		<td>100 requests per minute</td>
+	</tr>
+	<tr>
+		<td>Intensive calls (CV export and CV PDF generation)</td>
+		<td>20 requests per minute, and 10 requests per minute for each of these two endpoints</td>
+	</tr>
+</table>
+
+<p>These are the default limits of the platform: the limits that actually apply to your account are displayed on the "API consumption" page of your settings. If they are too low for your use case, get in touch with us.</p>
+
+<p>Responses carry the state of your quota :</p>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Header</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>X-RateLimit-Limit</td>
+		<td>The number of calls allowed for the current minute.</td>
+	</tr>
+	<tr>
+		<td>X-RateLimit-Remaining</td>
+		<td>The number of calls you can still make during the current minute.</td>
+	</tr>
+	<tr>
+		<td>X-RateLimit-Reset</td>
+		<td>The Unix timestamp (in seconds) at which the counter is reset, i.e. the beginning of the next minute.</td>
+	</tr>
+	<tr>
+		<td>Retry-After</td>
+		<td>The number of seconds to wait before the counter is reset.</td>
+	</tr>
+</table>
+
+<p>Once the quota is exhausted, the API answers with a <span class="label label-important">429</span> carrying the same headers (with <code>X-RateLimit-Remaining: 0</code>) and this body :</p>
+
+<pre name="code" class="js">
+{"error": {"code": 429, "message": "API rate limit exceeded: maximum 100 standard request(s) per minute reached for your company. Retry after 14:32:00 Europe/Paris."}}
+</pre>
+
+<p>A rejected call is not counted against your quota, but please do wait for <code>Retry-After</code> seconds rather than retrying immediately.</p>
+
+<h2 id="legacy">Legacy keys</h2>
+
+<p>This section only concerns the API keys created <strong>before</strong> the introduction of the key manager. They keep working, unchanged, with the historical signature scheme: no <code>nonce</code>, and a MD5 signature. If you are integrating the API today, or if you created your key from the "API" settings page, use the HMAC scheme described above instead.</p>
 
 <h4>How to compute the hash parameter?</h4>
 
@@ -67,7 +255,7 @@ function computeHash($params, $apiSecret)
     $hash = md5($paramsStr . $apiSecret);
     return array_merge($params, array('hash' => $hash));
 }
-</pre> 
+</pre>
 
 
 <h5>Example</h5>
@@ -82,7 +270,7 @@ function computeHash($params, $apiSecret)
 	<tr>
 		<td>timestamp</td>
 		<td>1359021513</td>
-	</tr>	
+	</tr>
 	<tr>
 		<td>apikey</td>
 		<td>
@@ -102,7 +290,7 @@ function computeHash($params, $apiSecret)
 <ol>
 	<li>First, order the parameters according to their name, then concatenate their value. You will have the following string : <code>IuQSDLKQLSDK344590Li9871359021513</code>.</li>
 	<li>Then, append your apiSecret at the end of this string (here the apiSecret is <code>IuJyt42BnUiOlPM8FvB67tG</code>. You will have the resulting string : <code>IuQSDLKQLSDK344590Li9871359021513IuJyt42BnUiOlPM8FvB67tG</code>.</li>
-	<li>Use this string to create a MD5, and you will have your hash parameter : <code>44f36e1dd04a10c0be21b2d8e880f22b</code></li>	
+	<li>Use this string to create a MD5, and you will have your hash parameter : <code>44f36e1dd04a10c0be21b2d8e880f22b</code></li>
 </ol>
 
 <p>Now, you can send the request to the API : </p>
@@ -115,5 +303,5 @@ function computeHash($params, $apiSecret)
 
 
 
-	
+
 {% endblock %}
