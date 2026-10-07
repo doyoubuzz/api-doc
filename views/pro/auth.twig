@@ -33,7 +33,7 @@
 
 <p>When creating a key you choose its lifetime: unlimited, 30, 90 or 365 days. An expired or revoked key is refused exactly like an unknown one.</p>
 
-<p>The <strong>API consumption</strong> page of the same settings section shows your traffic, your rate limits and the calls that have been rejected, per key and per endpoint.</p>
+<p>The <strong>API consumption</strong> page of the same settings section shows your traffic, your <a href="/pro/rate-limit">rate limits</a> and the calls that have been rejected, per key and per endpoint.</p>
 
 <div class="alert alert-info">Keys created before the introduction of the key manager still work, but they use the historical signature scheme described in the <a href="#legacy">Legacy keys</a> section at the bottom of this page. Every key you create today uses the HMAC signature described just below.</div>
 
@@ -170,61 +170,7 @@ apikey=shw_live_3f9a1c74be2058d6a1f4c39e7b0d82f4&amp;nonce=7b1f4c9a2e8d6035&amp;
 
 <p>For security reasons, an unknown key, a revoked key and an expired key all share the very same message ("This api key is not valid!"), so you cannot tell them apart from the response. If you get a 403 while your signature code is known to work, check the state of your key in the settings page.</p>
 
-<p>Note that the body of a 403 is a plain error response, it does not use the JSON envelope of the 429 described below.</p>
-
-<h2>Rate limiting</h2>
-
-<p>Calls are counted per company, over a <strong>fixed clock minute</strong>: the counters are reset at the beginning of each minute, they are not a sliding window.</p>
-
-<table class="table table-bordered table-striped">
-	<tr>
-		<th>Type of call</th>
-		<th>Default limit</th>
-	</tr>
-	<tr>
-		<td>Standard calls</td>
-		<td>100 requests per minute</td>
-	</tr>
-	<tr>
-		<td>Intensive calls (CV export and CV PDF generation)</td>
-		<td>20 requests per minute, and 10 requests per minute for each of these two endpoints</td>
-	</tr>
-</table>
-
-<p>These are the default limits of the platform: the limits that actually apply to your account are displayed on the "API consumption" page of your settings. If they are too low for your use case, get in touch with us.</p>
-
-<p>Responses carry the state of your quota :</p>
-
-<table class="table table-bordered table-striped">
-	<tr>
-		<th>Header</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>X-RateLimit-Limit</td>
-		<td>The number of calls allowed for the current minute.</td>
-	</tr>
-	<tr>
-		<td>X-RateLimit-Remaining</td>
-		<td>The number of calls you can still make during the current minute.</td>
-	</tr>
-	<tr>
-		<td>X-RateLimit-Reset</td>
-		<td>The Unix timestamp (in seconds) at which the counter is reset, i.e. the beginning of the next minute.</td>
-	</tr>
-	<tr>
-		<td>Retry-After</td>
-		<td>The number of seconds to wait before the counter is reset.</td>
-	</tr>
-</table>
-
-<p>Once the quota is exhausted, the API answers with a <span class="label label-important">429</span> carrying the same headers (with <code>X-RateLimit-Remaining: 0</code>) and this body :</p>
-
-<pre name="code" class="js">
-{"error": {"code": 429, "message": "API rate limit exceeded: maximum 100 standard request(s) per minute reached for your company. Retry after 14:32:00 Europe/Paris."}}
-</pre>
-
-<p>A rejected call is not counted against your quota, but please do wait for <code>Retry-After</code> seconds rather than retrying immediately.</p>
+<p>Note that the body of a 403 is a plain error response, it does not use the JSON envelope of the 429 described in the <a href="/pro/rate-limit">rate limiting</a> page.</p>
 
 <h2 id="legacy">Legacy keys</h2>
 
