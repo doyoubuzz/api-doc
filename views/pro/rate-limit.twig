@@ -1,0 +1,106 @@
+{% extends "base.twig" %}
+
+{%  block title %}Showcase rate limiting{% endblock %}
+
+{% block content %}
+
+<h1>Rate limiting</h1>
+
+<p>To keep the platform responsive for everyone, the number of calls you can make to the Showcase API is limited.</p>
+
+<h2>Limits</h2>
+
+<p>Calls are counted per company, over a <strong>fixed clock minute</strong>: the counters are reset at the beginning of each minute, they are not a sliding window. All the API keys of your account share the same quotas.</p>
+
+<p>Each call is either a <span class="label">standard</span> call or an <span class="label label-warning">intensive</span> call, and each type has its own quota :</p>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Type of call</th>
+		<th>Default limit</th>
+	</tr>
+	<tr>
+		<td><span class="label">standard</span> All the calls that are not intensive</td>
+		<td>250 requests per minute</td>
+	</tr>
+	<tr>
+		<td><span class="label label-warning">intensive</span> The resource-heavy calls listed below</td>
+		<td>10 requests per minute</td>
+	</tr>
+</table>
+
+<p>The two quotas are independent: exhausting your intensive quota does not prevent you from making standard calls, and the other way round.</p>
+
+<p>These are the default limits of the platform: the limits that actually apply to your account are displayed on the <strong>API consumption</strong> page, under <strong>Settings</strong>, then <strong>API</strong>. If they are too low for your use case, get in touch with us.</p>
+
+<h2>Intensive calls</h2>
+
+<p>These endpoints need significantly more resources on our side, so they are counted against the intensive quota. They are also flagged as <em>intensive</em> in the reference documentation of each endpoint.</p>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Endpoint</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td><span class="label label-info">GET</span> <code>/api/v1/cv/{id}/export/{format}</code></td>
+		<td><a href="/pro/cv">Export a CV</a> in a given format</td>
+	</tr>
+	<tr>
+		<td><span class="label label-info">GET</span> <code>/api/v1/users/search</code></td>
+		<td><a href="/pro/users">Search for a user</a></td>
+	</tr>
+	<tr>
+		<td><span class="label label-info">PUT</span> <code>/api/v1/users/{id}</code></td>
+		<td><a href="/pro/users">Update a user</a></td>
+	</tr>
+	<tr>
+		<td><span class="label label-info">DELETE</span> <code>/api/v1/users/{id}</code></td>
+		<td><a href="/pro/users">Delete a user</a></td>
+	</tr>
+	<tr>
+		<td><span class="label label-info">GET</span> <code>/api/v1/tags/{id}/users</code></td>
+		<td><a href="/pro/tags">Get all users linked to a tag</a></td>
+	</tr>
+</table>
+
+<div class="alert alert-info">If you need to process a large number of users or CVs with these endpoints, spread your calls over time rather than sending them in bursts.</div>
+
+<h2>Rate limit headers</h2>
+
+<p>Responses carry the state of the quota of the call :</p>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th>Header</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>X-RateLimit-Limit</td>
+		<td>The number of calls allowed for the current minute.</td>
+	</tr>
+	<tr>
+		<td>X-RateLimit-Remaining</td>
+		<td>The number of calls you can still make during the current minute.</td>
+	</tr>
+	<tr>
+		<td>X-RateLimit-Reset</td>
+		<td>The Unix timestamp (in seconds) at which the counter is reset, i.e. the beginning of the next minute.</td>
+	</tr>
+</table>
+
+<p>These headers describe the quota of the type of the call: the response to an intensive call gives the state of your intensive quota, the response to a standard call the state of your standard quota.</p>
+
+<h2>When the limit is reached</h2>
+
+<p>Once a quota is exhausted, the API answers with a <span class="label label-important">429</span> carrying the same headers (with <code>X-RateLimit-Remaining: 0</code>), plus a <code>Retry-After</code> header giving the number of seconds to wait before the counter is reset, and this body :</p>
+
+<pre name="code" class="js">
+{"error": {"code": 429, "message": "API rate limit exceeded: maximum 250 standard request(s) per minute reached for your company. Retry after 14:32:00 Europe/Paris."}}
+</pre>
+
+<p>A rejected call is not counted against your quota, but please do wait for <code>Retry-After</code> seconds rather than retrying immediately.</p>
+
+<p>&nbsp;</p>
+
+{% endblock %}
